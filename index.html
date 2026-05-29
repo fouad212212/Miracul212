@@ -7,800 +7,1013 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#0a0c10;--surface:#111318;--surface2:#161b22;--surface3:#1c2128;
-    --border:#30363d;--border-glow:#58a6ff40;--accent:#58a6ff;--accent2:#3fb950;
-    --accent3:#f78166;--accent4:#d2a8ff;--accent5:#ffa657;--text:#e6edf3;
-    --text2:#8b949e;--text3:#484f58;--gold:#f0c040;--emerald:#3fb950;
-    --ruby:#f78166;--amethyst:#d2a8ff;--wiki-line:#21262d;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'Cairo',sans-serif;min-height:100vh;overflow-x:hidden}
-  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 20%,#0d1f3c 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,#0d2818 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,#1a0d2e 0%,transparent 70%);pointer-events:none;z-index:0}
+:root{
+  --bg:#0a0c10;--surface:#111318;--surface2:#161b22;--surface3:#1c2128;
+  --border:#30363d;--border-glow:#58a6ff40;--accent:#58a6ff;--accent4:#d2a8ff;
+  --accent5:#ffa657;--text:#e6edf3;--text2:#8b949e;--text3:#484f58;
+  --gold:#f0c040;--emerald:#3fb950;--ruby:#f78166;--amethyst:#d2a8ff;
+  --wiki-line:#21262d;--discord:#5865F2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Cairo',sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:
+  radial-gradient(ellipse at 20% 20%,#0d1f3c 0%,transparent 50%),
+  radial-gradient(ellipse at 80% 80%,#0d2818 0%,transparent 50%),
+  radial-gradient(ellipse at 50% 50%,#1a0d2e 0%,transparent 70%);
+  pointer-events:none;z-index:0}
 
-  /* HEADER */
-  .site-header{position:sticky;top:0;z-index:100;background:rgba(10,12,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;gap:1.5rem;height:64px}
-  .site-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-  .logo-gem{width:40px;height:40px;border-radius:8px;overflow:hidden;flex-shrink:0}
-  .logo-gem img{width:100%;height:100%;object-fit:cover;display:block}
-  .logo-text{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--amethyst),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
-  .logo-sub{font-size:.65rem;color:var(--text2);font-weight:300;letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-4px}
-  .header-search{flex:1;max-width:480px;margin:0 auto;position:relative}
-  .header-search input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:.5rem 1rem .5rem 2.5rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s,box-shadow .2s}
-  .header-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--border-glow)}
-  .search-icon{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--text2);font-size:.9rem;pointer-events:none}
-  .header-badges{display:flex;gap:.5rem;margin-left:auto}
-  .badge{padding:.25rem .75rem;border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
-  .badge-mc{background:#1a3a1a;color:var(--emerald);border:1px solid #2a5a2a}
-  .badge-forge{background:#2a1a0a;color:var(--accent5);border:1px solid #5a3a1a}
-  .badge-ver{background:#1a1a3a;color:var(--amethyst);border:1px solid #2a2a5a}
+/* ── HEADER ── */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,12,16,.95);
+  backdrop-filter:blur(20px);border-bottom:1px solid var(--border);
+  padding:0 1.5rem;display:flex;align-items:center;gap:1.25rem;height:64px}
+.site-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+.logo-img{width:36px;height:36px;border-radius:6px;object-fit:cover}
+.logo-text{font-size:1.35rem;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--amethyst),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+.logo-sub{font-size:.62rem;color:var(--text2);font-weight:300;letter-spacing:2px;text-transform:uppercase;display:block;margin-top:-4px}
+.header-search{flex:1;max-width:420px;margin:0 auto;position:relative}
+.header-search input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  padding:.45rem .9rem .45rem 2.2rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.88rem;
+  outline:none;transition:border-color .2s,box-shadow .2s}
+.header-search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--border-glow)}
+.search-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:var(--text2);font-size:.85rem;pointer-events:none}
+.header-right{display:flex;align-items:center;gap:.5rem;margin-left:auto;flex-shrink:0}
+.badge{padding:.2rem .65rem;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.5px;white-space:nowrap}
+.badge-mc{background:#1a3a1a;color:var(--emerald);border:1px solid #2a5a2a}
+.badge-forge{background:#2a1a0a;color:var(--accent5);border:1px solid #5a3a1a}
+.badge-ver{background:#1a1a3a;color:var(--amethyst);border:1px solid #2a2a5a}
+.hdr-btn{display:flex;align-items:center;gap:.4rem;padding:.3rem .7rem;border-radius:7px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:600;text-decoration:none;
+  border:1px solid;transition:all .2s;white-space:nowrap}
+.hdr-discord{background:rgba(88,101,242,.12);border-color:rgba(88,101,242,.35);color:var(--discord)}
+.hdr-discord:hover{background:rgba(88,101,242,.22)}
+.hdr-server{background:rgba(63,185,80,.1);border-color:rgba(63,185,80,.3);color:var(--emerald)}
+.hdr-server:hover{background:rgba(63,185,80,.2)}
 
-  /* LAYOUT */
-  .wiki-layout{display:grid;grid-template-columns:260px 1fr 220px;max-width:1400px;margin:0 auto;min-height:calc(100vh - 64px);position:relative;z-index:1}
+/* ── LAYOUT ── */
+.wiki-layout{display:grid;grid-template-columns:250px 1fr 220px;
+  max-width:1440px;margin:0 auto;min-height:calc(100vh - 64px);position:relative;z-index:1}
 
-  /* LEFT SIDEBAR */
-  .sidebar-left{border-right:1px solid var(--wiki-line);padding:2rem 0;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
-  .sidebar-left::-webkit-scrollbar{width:4px}
-  .sidebar-left::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-  .toc-title{padding:0 1.5rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
-  .toc-list{list-style:none}
-  .toc-item a{display:block;padding:.4rem 1.5rem;color:var(--text2);text-decoration:none;font-size:.85rem;transition:all .15s;border-left:2px solid transparent}
-  .toc-item a:hover,.toc-item a.active{color:var(--accent);background:rgba(88,166,255,.06);border-left-color:var(--accent)}
-  .toc-item.sub a{padding-left:2.5rem;font-size:.8rem}
-  .toc-section{margin-top:1.5rem;padding:0 1.5rem .5rem;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
-  .toc-count{float:right;background:var(--surface3);border-radius:100px;padding:.1rem .4rem;font-size:.65rem;color:var(--text2)}
+/* ── LEFT SIDEBAR ── */
+.sidebar-left{border-right:1px solid var(--wiki-line);padding:1.75rem 0;
+  position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.sidebar-left::-webkit-scrollbar{width:4px}
+.sidebar-left::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.toc-title{padding:0 1.4rem .85rem;font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
+.toc-list{list-style:none}
+.toc-item a{display:block;padding:.38rem 1.4rem;color:var(--text2);text-decoration:none;
+  font-size:.83rem;transition:all .15s;border-left:2px solid transparent}
+.toc-item a:hover,.toc-item a.active{color:var(--accent);background:rgba(88,166,255,.06);border-left-color:var(--accent)}
+.toc-item.sub a{padding-left:2.4rem;font-size:.78rem}
+.toc-section{margin-top:1.25rem;padding:0 1.4rem .45rem;font-size:.63rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
+.toc-count{float:right;background:var(--surface3);border-radius:100px;
+  padding:.1rem .4rem;font-size:.63rem;color:var(--text2)}
 
-  /* MAIN */
-  .wiki-main{padding:2.5rem 3rem;border-right:1px solid var(--wiki-line);border-left:1px solid var(--wiki-line)}
+/* ── MAIN ── */
+.wiki-main{padding:2.25rem 2.75rem;border-right:1px solid var(--wiki-line);border-left:1px solid var(--wiki-line)}
 
-  /* ARTICLE HEADER */
-  .article-header{margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--wiki-line)}
-  .breadcrumb{font-size:.8rem;color:var(--text2);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-  .breadcrumb a{color:var(--accent);text-decoration:none}
-  .breadcrumb a:hover{text-decoration:underline}
-  .breadcrumb span{color:var(--text3)}
-  .article-title{font-family:'Amiri',serif;font-size:2.8rem;font-weight:700;line-height:1.2;background:linear-gradient(135deg,#fff 30%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
-  .article-subtitle{color:var(--text2);font-size:1rem;font-weight:300;margin-bottom:1.5rem}
-  .article-meta{display:flex;gap:1rem;flex-wrap:wrap}
-  .meta-chip{display:flex;align-items:center;gap:.4rem;padding:.3rem .8rem;background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-size:.8rem}
-  .meta-chip .dot{width:8px;height:8px;border-radius:50%}
-  .dot-green{background:var(--emerald);box-shadow:0 0 6px var(--emerald)}
-  .dot-orange{background:var(--accent5);box-shadow:0 0 6px var(--accent5)}
-  .dot-blue{background:var(--accent);box-shadow:0 0 6px var(--accent)}
-  .dot-purple{background:var(--amethyst);box-shadow:0 0 6px var(--amethyst)}
+/* ── ARTICLE HEADER ── */
+.article-header{margin-bottom:2.25rem;padding-bottom:1.75rem;border-bottom:1px solid var(--wiki-line)}
+.breadcrumb{font-size:.78rem;color:var(--text2);margin-bottom:.85rem;display:flex;align-items:center;gap:.4rem}
+.breadcrumb a{color:var(--accent);text-decoration:none}.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{color:var(--text3)}
+.article-title{font-family:'Amiri',serif;font-size:2.6rem;font-weight:700;line-height:1.2;
+  background:linear-gradient(135deg,#fff 30%,var(--gold) 100%);-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;margin-bottom:.4rem}
+.article-subtitle{color:var(--text2);font-size:.95rem;font-weight:300;margin-bottom:1.25rem}
+.article-meta{display:flex;gap:.75rem;flex-wrap:wrap}
+.meta-chip{display:flex;align-items:center;gap:.35rem;padding:.25rem .75rem;
+  background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-size:.78rem}
+.meta-chip .dot{width:7px;height:7px;border-radius:50%}
+.dot-green{background:var(--emerald);box-shadow:0 0 5px var(--emerald)}
+.dot-orange{background:var(--accent5);box-shadow:0 0 5px var(--accent5)}
+.dot-blue{background:var(--accent);box-shadow:0 0 5px var(--accent)}
+.dot-purple{background:var(--amethyst);box-shadow:0 0 5px var(--amethyst)}
 
-  /* INFOBOX */
-  .infobox{float:right;margin:0 0 1.5rem 2rem;width:280px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:.85rem}
-  .infobox-header{background:linear-gradient(135deg,#1a1f2e,#0d1f3c);padding:1rem;text-align:center;border-bottom:1px solid var(--border)}
-  .infobox-banner{width:100%;height:100px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:8px;margin-bottom:.75rem;background:linear-gradient(135deg,#0d2818,#1a0d2e,#0d1f3c)}
-  .gem-big{font-size:3rem;filter:drop-shadow(0 0 20px var(--amethyst));animation:gemPulse 3s ease-in-out infinite}
-  @keyframes gemPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 15px var(--amethyst))}50%{transform:scale(1.05);filter:drop-shadow(0 0 30px var(--amethyst))}}
-  .infobox-name{font-size:1.1rem;font-weight:700;color:var(--text)}
-  .infobox-body{padding:.5rem 0}
-  .infobox-row{display:flex;padding:.5rem 1rem;border-bottom:1px solid var(--wiki-line);align-items:flex-start;gap:.5rem}
-  .infobox-row:last-child{border-bottom:none}
-  .infobox-key{color:var(--text2);font-weight:600;min-width:90px;font-size:.8rem}
-  .infobox-val{color:var(--text);flex:1;font-size:.8rem}
-  .infobox-val a{color:var(--accent);text-decoration:none}
-  .infobox-val a:hover{text-decoration:underline}
+/* ── INFOBOX ── */
+.infobox{float:right;margin:0 0 1.5rem 2rem;width:272px;background:var(--surface);
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;font-size:.83rem}
+.infobox-header{background:linear-gradient(135deg,#1a1f2e,#0d1f3c);padding:.9rem;
+  text-align:center;border-bottom:1px solid var(--border)}
+.infobox-banner{width:100%;height:90px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;border-radius:8px;margin-bottom:.65rem;background:#0d1020}
+.infobox-banner img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.infobox-name{font-size:1rem;font-weight:700;color:var(--text)}
+.infobox-body{padding:.4rem 0}
+.infobox-row{display:flex;padding:.45rem .9rem;border-bottom:1px solid var(--wiki-line);
+  align-items:center;gap:.4rem}
+.infobox-row:last-child{border-bottom:none}
+.infobox-key{color:var(--text2);font-weight:600;min-width:95px;font-size:.77rem}
+.infobox-val{color:var(--text);flex:1;font-size:.77rem}
+.infobox-val a{color:var(--accent);text-decoration:none}
+.infobox-val a:hover{text-decoration:underline}
 
-  /* SECTIONS */
-  .wiki-section{margin-bottom:3rem}
-  .section-heading{font-family:'Amiri',serif;font-size:1.6rem;font-weight:700;color:var(--text);padding:.75rem 0;border-bottom:1px solid var(--wiki-line);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
-  .sh-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-  .sh-blue{background:rgba(88,166,255,.15);color:var(--accent)}
-  .sh-green{background:rgba(63,185,80,.15);color:var(--emerald)}
-  .sh-orange{background:rgba(255,166,87,.15);color:var(--accent5)}
-  .sh-purple{background:rgba(210,168,255,.15);color:var(--amethyst)}
-  .sh-red{background:rgba(247,129,102,.15);color:var(--ruby)}
-  .sh-gold{background:rgba(240,192,64,.15);color:var(--gold)}
-  .sub-heading{font-size:1.1rem;font-weight:700;color:var(--text);margin:1.5rem 0 1rem;padding-bottom:.4rem;border-bottom:1px dashed var(--wiki-line)}
-  .wiki-p{color:var(--text2);line-height:1.9;font-size:.92rem;margin-bottom:1rem}
-  .wiki-p strong{color:var(--text);font-weight:600}
-  .wiki-p a{color:var(--accent);text-decoration:none}
-  .wiki-p a:hover{text-decoration:underline}
+/* ── SECTIONS ── */
+.wiki-section{margin-bottom:2.75rem}
+.section-heading{font-family:'Amiri',serif;font-size:1.5rem;font-weight:700;color:var(--text);
+  padding:.65rem 0;border-bottom:1px solid var(--wiki-line);margin-bottom:1.25rem;
+  display:flex;align-items:center;gap:.7rem}
+.sh-icon{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:.85rem;flex-shrink:0}
+.sh-blue{background:rgba(88,166,255,.15);color:var(--accent)}
+.sh-green{background:rgba(63,185,80,.15);color:var(--emerald)}
+.sh-orange{background:rgba(255,166,87,.15);color:var(--accent5)}
+.sh-purple{background:rgba(210,168,255,.15);color:var(--amethyst)}
+.sh-red{background:rgba(247,129,102,.15);color:var(--ruby)}
+.sh-gold{background:rgba(240,192,64,.15);color:var(--gold)}
+.sh-discord{background:rgba(88,101,242,.15);color:var(--discord)}
+.sub-heading{font-size:1.05rem;font-weight:700;color:var(--text);
+  margin:1.4rem 0 .9rem;padding-bottom:.35rem;border-bottom:1px dashed var(--wiki-line)}
+.wiki-p{color:var(--text2);line-height:1.85;font-size:.9rem;margin-bottom:.9rem}
+.wiki-p strong{color:var(--text);font-weight:600}
+.wiki-p a{color:var(--accent);text-decoration:none}
+.wiki-p a:hover{text-decoration:underline}
 
-  /* STATS */
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.5rem 0}
-  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center;transition:border-color .2s,transform .2s;cursor:default}
-  .stat-card:hover{transform:translateY(-2px)}
-  .stat-card.blue:hover{border-color:var(--accent)}
-  .stat-card.green:hover{border-color:var(--emerald)}
-  .stat-card.orange:hover{border-color:var(--accent5)}
-  .stat-card.purple:hover{border-color:var(--amethyst)}
-  .stat-num{font-size:2.2rem;font-weight:900;line-height:1;margin-bottom:.25rem}
-  .stat-card.blue .stat-num{color:var(--accent)}
-  .stat-card.green .stat-num{color:var(--emerald)}
-  .stat-card.orange .stat-num{color:var(--accent5)}
-  .stat-card.purple .stat-num{color:var(--amethyst)}
-  .stat-label{font-size:.75rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+/* ── STATS ── */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;margin:1.25rem 0}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:1.1rem;text-align:center;transition:border-color .2s,transform .2s;cursor:default}
+.stat-card:hover{transform:translateY(-2px)}
+.stat-card.blue:hover{border-color:var(--accent)}.stat-card.green:hover{border-color:var(--emerald)}
+.stat-card.orange:hover{border-color:var(--accent5)}.stat-card.purple:hover{border-color:var(--amethyst)}
+.stat-num{font-size:2rem;font-weight:900;line-height:1;margin-bottom:.2rem}
+.stat-card.blue .stat-num{color:var(--accent)}.stat-card.green .stat-num{color:var(--emerald)}
+.stat-card.orange .stat-num{color:var(--accent5)}.stat-card.purple .stat-num{color:var(--amethyst)}
+.stat-label{font-size:.72rem;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600}
 
-  /* MOD TABLE */
-  .search-bar{position:relative;margin-bottom:1rem}
-  .search-bar input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.6rem 1rem .6rem 2.5rem;color:var(--text);font-family:'Cairo',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s}
-  .search-bar input:focus{border-color:var(--accent)}
-  .search-bar .s-icon{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
-  .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center}
-  .filter-btn{padding:.3rem .8rem;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text2);font-family:'Cairo',sans-serif;font-size:.8rem;cursor:pointer;transition:all .15s}
-  .filter-btn:hover,.filter-btn.active{background:rgba(88,166,255,.1);border-color:var(--accent);color:var(--accent)}
-  .mod-table{width:100%;border-collapse:collapse;font-size:.85rem}
-  .mod-table th{background:var(--surface2);padding:.75rem 1rem;text-align:left;font-weight:600;color:var(--text2);font-size:.78rem;letter-spacing:.5px;text-transform:uppercase;border-bottom:2px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
-  .mod-table th:hover{color:var(--accent)}
-  .mod-table td{padding:.7rem 1rem;border-bottom:1px solid var(--wiki-line);vertical-align:middle}
-  .mod-table tr:hover td{background:rgba(88,166,255,.03)}
-  .mod-row{animation:fadeIn .2s ease}
-  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-  .mod-name-cell{display:flex;align-items:center;gap:.75rem}
-  .mod-icon{width:32px;height:32px;border-radius:6px;background:linear-gradient(135deg,var(--surface2),var(--surface3));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid var(--border)}
-  .mod-title{font-weight:600;color:var(--text);font-size:.85rem}
-  .mod-filename{font-size:.7rem;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
-  .type-tag{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.72rem;font-weight:600;white-space:nowrap}
-  .tag-performance{background:rgba(63,185,80,.15);color:var(--emerald)}
-  .tag-content{background:rgba(88,166,255,.15);color:var(--accent)}
-  .tag-visual{background:rgba(210,168,255,.15);color:var(--amethyst)}
-  .tag-utility{background:rgba(255,166,87,.15);color:var(--accent5)}
-  .tag-library{background:rgba(247,129,102,.15);color:var(--ruby)}
-  .tag-disabled{background:rgba(72,79,88,.3);color:var(--text3)}
-  .dl-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .7rem;background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.2);border-radius:6px;color:var(--accent);text-decoration:none;font-size:.75rem;font-weight:600;transition:all .15s;white-space:nowrap}
-  .dl-btn:hover{background:rgba(88,166,255,.2);border-color:var(--accent)}
+/* ── MOD TABLE ── */
+.search-bar{position:relative;margin-bottom:.9rem}
+.search-bar input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;
+  padding:.55rem .9rem .55rem 2.3rem;color:var(--text);font-family:'Cairo',sans-serif;
+  font-size:.88rem;outline:none;transition:border-color .2s}
+.search-bar input:focus{border-color:var(--accent)}
+.search-bar .s-icon{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none}
+.filter-bar{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.9rem;align-items:center}
+.filter-btn{padding:.25rem .7rem;border-radius:100px;border:1px solid var(--border);
+  background:transparent;color:var(--text2);font-family:'Cairo',sans-serif;font-size:.77rem;
+  cursor:pointer;transition:all .15s}
+.filter-btn:hover,.filter-btn.active{background:rgba(88,166,255,.1);border-color:var(--accent);color:var(--accent)}
+.mod-table{width:100%;border-collapse:collapse;font-size:.83rem}
+.mod-table th{background:var(--surface2);padding:.65rem .9rem;text-align:left;font-weight:600;
+  color:var(--text2);font-size:.75rem;letter-spacing:.5px;text-transform:uppercase;
+  border-bottom:2px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
+.mod-table th:hover{color:var(--accent)}
+.mod-table td{padding:.6rem .9rem;border-bottom:1px solid var(--wiki-line);vertical-align:middle}
+.mod-table tr:hover td{background:rgba(88,166,255,.03)}
+.mod-row{animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.mod-name-cell{display:flex;align-items:center;gap:.65rem}
+.mod-icon{width:30px;height:30px;border-radius:5px;background:linear-gradient(135deg,var(--surface2),var(--surface3));
+  display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid var(--border)}
+.mod-title{font-weight:600;color:var(--text);font-size:.83rem}
+.mod-filename{font-size:.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;
+  margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+.type-tag{display:inline-block;padding:.15rem .55rem;border-radius:4px;font-size:.7rem;font-weight:600;white-space:nowrap}
+.tag-performance{background:rgba(63,185,80,.15);color:var(--emerald)}
+.tag-content{background:rgba(88,166,255,.15);color:var(--accent)}
+.tag-visual{background:rgba(210,168,255,.15);color:var(--amethyst)}
+.tag-utility{background:rgba(255,166,87,.15);color:var(--accent5)}
+.tag-library{background:rgba(247,129,102,.15);color:var(--ruby)}
+.dl-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;
+  background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.2);border-radius:6px;
+  color:var(--accent);text-decoration:none;font-size:.72rem;font-weight:600;transition:all .15s;white-space:nowrap}
+.dl-btn:hover{background:rgba(88,166,255,.2);border-color:var(--accent)}
 
-  /* PAGINATION */
-  .pagination{display:flex;gap:.4rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
-  .page-btn{min-width:36px;height:36px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text2);font-family:'Cairo',sans-serif;font-size:.85rem;cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0 .5rem}
-  .page-btn:hover,.page-btn.active{background:rgba(88,166,255,.15);border-color:var(--accent);color:var(--accent)}
-  .page-info{font-size:.8rem;color:var(--text2);display:flex;align-items:center}
+/* ── PAGINATION ── */
+.pagination{display:flex;gap:.35rem;flex-wrap:wrap}
+.page-btn{min-width:34px;height:34px;border-radius:6px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text2);font-family:'Cairo',sans-serif;font-size:.83rem;
+  cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0 .45rem}
+.page-btn:hover,.page-btn.active{background:rgba(88,166,255,.15);border-color:var(--accent);color:var(--accent)}
+.page-info{font-size:.78rem;color:var(--text2)}
 
-  /* NOTICE */
-  .notice{border-radius:10px;padding:1rem 1.25rem;margin:1.5rem 0;display:flex;gap:.75rem;align-items:flex-start;font-size:.88rem;line-height:1.7}
-  .notice-icon{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
-  .notice.info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.2);color:var(--text2)}
-  .notice.warning{background:rgba(255,166,87,.08);border:1px solid rgba(255,166,87,.2);color:var(--text2)}
-  .notice.tip{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2);color:var(--text2)}
+/* ── NOTICE ── */
+.notice{border-radius:10px;padding:.9rem 1.1rem;margin:1.25rem 0;display:flex;
+  gap:.65rem;align-items:flex-start;font-size:.86rem;line-height:1.65}
+.notice-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem}
+.notice.info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.2);color:var(--text2)}
+.notice.warning{background:rgba(255,166,87,.08);border:1px solid rgba(255,166,87,.2);color:var(--text2)}
+.notice.tip{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2);color:var(--text2)}
+.notice.discord{background:rgba(88,101,242,.08);border:1px solid rgba(88,101,242,.25);color:var(--text2)}
+.notice.server{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.25);color:var(--text2)}
 
-  /* RIGHT SIDEBAR */
-  .sidebar-right{padding:2rem 1.5rem;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
-  .sidebar-right::-webkit-scrollbar{width:4px}
-  .sidebar-right::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-  .side-widget{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.25rem}
-  .side-widget-header{background:var(--surface2);padding:.6rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);border-bottom:1px solid var(--border)}
-  .side-widget-body{padding:.75rem 1rem}
-  .side-stat{display:flex;justify-content:space-between;align-items:center;padding:.45rem 0;border-bottom:1px solid var(--wiki-line);font-size:.8rem}
-  .side-stat:last-child{border-bottom:none}
-  .side-stat .label{color:var(--text2)}
-  .side-stat .value{color:var(--text);font-weight:600}
-  .quick-link{display:flex;padding:.45rem 0;color:var(--accent);text-decoration:none;font-size:.8rem;border-bottom:1px solid var(--wiki-line);transition:opacity .15s;align-items:center;gap:.4rem}
-  .quick-link:last-child{border-bottom:none}
-  .quick-link:hover{opacity:.7}
+/* ── RIGHT SIDEBAR ── */
+.sidebar-right{padding:1.75rem 1.25rem;position:sticky;top:64px;
+  height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.sidebar-right::-webkit-scrollbar{width:4px}
+.sidebar-right::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.side-widget{background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;margin-bottom:1.1rem}
+.side-widget-header{background:var(--surface2);padding:.55rem .9rem;font-size:.7rem;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);border-bottom:1px solid var(--border)}
+.side-widget-body{padding:.65rem .9rem}
+.side-stat{display:flex;justify-content:space-between;align-items:center;
+  padding:.4rem 0;border-bottom:1px solid var(--wiki-line);font-size:.78rem}
+.side-stat:last-child{border-bottom:none}
+.side-stat .label{color:var(--text2)}.side-stat .value{color:var(--text);font-weight:600}
+.quick-link{display:flex;align-items:center;gap:.4rem;padding:.4rem 0;color:var(--accent);
+  text-decoration:none;font-size:.78rem;border-bottom:1px solid var(--wiki-line);transition:opacity .15s}
+.quick-link:last-child{border-bottom:none}.quick-link:hover{opacity:.7}
 
-  /* PERF BARS */
-  .perf-bar{margin-bottom:.75rem}
-  .perf-label{display:flex;justify-content:space-between;font-size:.75rem;color:var(--text2);margin-bottom:.3rem}
-  .perf-track{height:6px;border-radius:3px;background:var(--surface3);overflow:hidden}
-  .perf-fill{height:100%;border-radius:3px;transition:width 1s ease}
+/* ── PERF BARS ── */
+.perf-bar{margin-bottom:.65rem}
+.perf-label{display:flex;justify-content:space-between;font-size:.73rem;color:var(--text2);margin-bottom:.28rem}
+.perf-track{height:5px;border-radius:3px;background:var(--surface3);overflow:hidden}
+.perf-fill{height:100%;border-radius:3px;transition:width 1s ease}
 
-  /* CODE */
-  .code-block{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1rem;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--text2);margin:1rem 0;overflow-x:auto;line-height:1.7;direction:ltr;text-align:left}
-  .code-block .comment{color:var(--text3)}
-  .code-block .keyword{color:var(--amethyst)}
+/* ── CODE ── */
+.code-block{background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  padding:.9rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--text2);
+  margin:.9rem 0;overflow-x:auto;line-height:1.65;direction:ltr;text-align:left}
+.code-block .comment{color:var(--text3)}.code-block .kw{color:var(--amethyst)}
 
-  /* HERO */
-  .hero-banner{background:linear-gradient(135deg,#0d1f3c 0%,#1a0d2e 50%,#0d2818 100%);border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-bottom:2.5rem;position:relative;overflow:hidden;text-align:center}
-  .hero-banner::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2358a6ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-  .hero-gems{display:flex;justify-content:center;gap:1rem;margin-bottom:1.5rem;font-size:2.5rem}
-  .hero-gem{animation:float 3s ease-in-out infinite}
-  .hero-gem:nth-child(2){animation-delay:.5s}
-  .hero-gem:nth-child(3){animation-delay:1s}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-  .hero-title{font-family:'Amiri',serif;font-size:3.5rem;font-weight:700;background:linear-gradient(135deg,#fff 0%,var(--gold) 50%,var(--amethyst) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
-  .hero-tagline{color:var(--text2);font-size:1rem;max-width:540px;margin:0 auto;line-height:1.7}
-  .hero-ver-badge{display:inline-block;margin-top:1.25rem;padding:.35rem 1rem;background:rgba(210,168,255,.1);border:1px solid rgba(210,168,255,.3);border-radius:100px;font-size:.8rem;color:var(--amethyst);font-weight:600;letter-spacing:1px}
+/* ── SERVER CARD ── */
+.server-card{background:linear-gradient(135deg,#0a1a0d,#0d1f3c);border:1px solid rgba(63,185,80,.35);
+  border-radius:12px;padding:1.35rem 1.5rem;display:flex;align-items:center;gap:1.1rem;
+  margin:1rem 0;transition:border-color .2s}
+.server-card:hover{border-color:rgba(63,185,80,.6)}
+.server-icon{width:52px;height:52px;border-radius:10px;background:rgba(63,185,80,.15);
+  border:1px solid rgba(63,185,80,.3);display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;flex-shrink:0}
+.server-name{font-weight:800;font-size:1.05rem;color:var(--text);margin-bottom:.2rem}
+.server-ip{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--emerald);font-weight:600;margin-bottom:.15rem}
+.server-desc{font-size:.78rem;color:var(--text2);line-height:1.5}
+.server-copy{margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .65rem;
+  background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.3);border-radius:6px;
+  color:var(--emerald);font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Cairo',sans-serif;transition:all .2s}
+.server-copy:hover{background:rgba(63,185,80,.22)}
 
-  /* CLEARFIX */
-  .clearfix::after{content:'';display:table;clear:both}
+/* ── DISCORD CARD ── */
+.discord-card{background:linear-gradient(135deg,#0e0f1f,#1a1c3a);border:1px solid rgba(88,101,242,.35);
+  border-radius:12px;padding:1.35rem 1.5rem;display:flex;align-items:center;gap:1.1rem;margin:1rem 0;transition:border-color .2s}
+.discord-card:hover{border-color:rgba(88,101,242,.6)}
+.discord-icon{width:52px;height:52px;border-radius:10px;background:rgba(88,101,242,.15);
+  border:1px solid rgba(88,101,242,.3);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+.discord-name{font-weight:800;font-size:1.05rem;color:var(--text);margin-bottom:.2rem}
+.discord-tag{font-size:.8rem;color:var(--discord);font-weight:600;margin-bottom:.15rem}
+.discord-desc{font-size:.78rem;color:var(--text2);line-height:1.5}
+.discord-join{margin-top:.5rem;display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .8rem;
+  background:var(--discord);border-radius:6px;color:#fff;font-size:.8rem;font-weight:700;
+  text-decoration:none;transition:opacity .2s}
+.discord-join:hover{opacity:.85}
 
-  /* TABS */
-  .tab-bar{display:flex;border-bottom:2px solid var(--wiki-line);margin-bottom:1.5rem;overflow-x:auto}
-  .tab-btn{padding:.6rem 1.25rem;background:none;border:none;color:var(--text2);font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .15s;white-space:nowrap}
-  .tab-btn:hover{color:var(--text)}
-  .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* ── SHADER CARDS ── */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.85rem;margin-top:.9rem}
+.shader-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;transition:all .2s}
+.shader-card:hover{border-color:var(--amethyst);transform:translateY(-3px);box-shadow:0 8px 30px rgba(210,168,255,.1)}
+.shader-thumb{height:84px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;
+  position:relative;overflow:hidden}
+.shader-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c1,#0d1f3c),var(--c2,#1a0d2e))}
+.shader-thumb span{position:relative;z-index:1}
+.shader-body{padding:.65rem}
+.shader-name{font-weight:700;font-size:.82rem;color:var(--text);margin-bottom:.2rem}
+.shader-ver{font-size:.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace}
 
-  /* SHADERS */
-  .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;margin-top:1rem}
-  .shader-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .2s}
-  .shader-card:hover{border-color:var(--amethyst);transform:translateY(-3px);box-shadow:0 8px 30px rgba(210,168,255,.1)}
-  .shader-thumb{height:90px;display:flex;align-items:center;justify-content:center;font-size:2rem;position:relative;overflow:hidden}
-  .shader-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c1,#0d1f3c),var(--c2,#1a0d2e))}
-  .shader-thumb span{position:relative;z-index:1}
-  .shader-body{padding:.75rem}
-  .shader-name{font-weight:700;font-size:.85rem;color:var(--text);margin-bottom:.25rem}
-  .shader-ver{font-size:.72rem;color:var(--text3);font-family:'JetBrains Mono',monospace}
+/* ── RP CARDS ── */
+.rp-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem;
+  display:flex;gap:.65rem;align-items:flex-start;transition:border-color .2s}
+.rp-card:hover{border-color:var(--accent5)}
+.rp-icon{width:40px;height:40px;border-radius:7px;background:linear-gradient(135deg,var(--surface2),var(--surface3));
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;border:1px solid var(--border)}
+.rp-name{font-weight:700;font-size:.85rem;color:var(--text);margin-bottom:.15rem}
+.rp-desc{font-size:.73rem;color:var(--text2);line-height:1.45}
 
-  /* RP */
-  .rp-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;gap:.75rem;align-items:flex-start;transition:border-color .2s}
-  .rp-card:hover{border-color:var(--accent5)}
-  .rp-icon{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--surface2),var(--surface3));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border:1px solid var(--border)}
-  .rp-name{font-weight:700;font-size:.88rem;color:var(--text);margin-bottom:.2rem}
-  .rp-desc{font-size:.75rem;color:var(--text2);line-height:1.5}
+/* ── INSTALL STEPS ── */
+.install-steps{display:grid;gap:.65rem;margin:1rem 0}
+.install-step{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 1.1rem;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;transition:border-color .2s}
+.install-step:hover{border-color:var(--accent)}
+.step-num{width:30px;height:30px;border-radius:50%;background:rgba(88,166,255,.15);color:var(--accent);
+  font-weight:900;font-size:.85rem;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;border:1px solid rgba(88,166,255,.3)}
+.step-body{flex:1}
+.step-title{font-weight:700;font-size:.87rem;color:var(--text);margin-bottom:.25rem}
+.step-desc{font-size:.8rem;color:var(--text2);line-height:1.55}
+.step-desc a{color:var(--accent);text-decoration:none}.step-desc a:hover{text-decoration:underline}
+.step-tag{display:inline-block;padding:.12rem .45rem;border-radius:4px;font-size:.68rem;
+  font-weight:700;margin:.15rem 0;font-family:'JetBrains Mono',monospace;
+  background:var(--surface2);color:var(--accent4);border:1px solid var(--border)}
 
-  /* SCROLLBAR */
-  ::-webkit-scrollbar{width:6px;height:6px}
-  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+/* ── CREDITS ── */
+.credit-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:1.25rem 1.4rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:1.1rem;transition:border-color .2s}
+.credit-card:hover{border-color:rgba(210,168,255,.4)}
+.credit-icon{width:50px;height:50px;border-radius:9px;display:flex;align-items:center;
+  justify-content:center;font-size:1.5rem;flex-shrink:0;border:1px solid var(--border)}
+.credit-role{font-size:.76rem;font-weight:600;margin-bottom:.3rem}
+.credit-name{font-weight:800;font-size:1.05rem;color:var(--text);margin-bottom:.15rem}
+.credit-desc{font-size:.79rem;color:var(--text2);line-height:1.55}
 
-  /* FOOTER */
-  .wiki-footer{border-top:1px solid var(--wiki-line);padding:2rem 3rem;grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--text3);position:relative;z-index:1;flex-wrap:wrap;gap:1rem}
-  .footer-links{display:flex;gap:1.5rem}
-  .footer-links a{color:var(--text3);text-decoration:none;transition:color .15s}
-  .footer-links a:hover{color:var(--accent)}
+/* ── DOWNLOAD BUTTONS ── */
+.dl-big{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s}
+.dl-big:hover{transform:translateY(-2px)}
+.dl-big.modrinth:hover{border-color:var(--emerald)}
+.dl-big-icon{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;
+  justify-content:center;font-size:1.4rem;flex-shrink:0}
+.dl-big-name{font-weight:700;font-size:.9rem;color:var(--text)}
+.dl-big-url{font-size:.73rem;margin-top:.1rem}
 
-  @media(max-width:1100px){.wiki-layout{grid-template-columns:220px 1fr}.sidebar-right{display:none}}
-  @media(max-width:768px){.wiki-layout{grid-template-columns:1fr}.sidebar-left{display:none}.wiki-main{padding:1.5rem}.stats-grid{grid-template-columns:repeat(2,1fr)}.infobox{float:none;width:100%;margin:0 0 1.5rem}.hero-title{font-size:2.5rem}}
+/* ── HERO ── */
+.hero-banner{background:linear-gradient(135deg,#0d1f3c 0%,#1a0d2e 50%,#0d2818 100%);
+  border:1px solid var(--border);border-radius:16px;padding:2.25rem;margin-bottom:2.25rem;
+  position:relative;overflow:hidden;text-align:center}
+.hero-banner::before{content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2358a6ff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none}
+.hero-logo{width:80px;height:80px;border-radius:16px;margin:0 auto .9rem;
+  display:block;object-fit:cover;border:2px solid rgba(210,168,255,.3);
+  box-shadow:0 0 30px rgba(210,168,255,.2)}
+.hero-title{font-family:'Amiri',serif;font-size:3rem;font-weight:700;
+  background:linear-gradient(135deg,#fff 0%,var(--gold) 50%,var(--amethyst) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.4rem}
+.hero-tagline{color:var(--text2);font-size:.95rem;max-width:500px;margin:0 auto;line-height:1.65}
+.hero-badges{display:flex;gap:.65rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.hero-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .85rem;
+  border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.3px}
+.hb-ver{background:rgba(210,168,255,.12);border:1px solid rgba(210,168,255,.3);color:var(--amethyst)}
+.hb-discord{background:rgba(88,101,242,.12);border:1px solid rgba(88,101,242,.3);color:var(--discord);text-decoration:none}
+.hb-discord:hover{background:rgba(88,101,242,.22)}
+.hb-server{background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);color:var(--emerald)}
+
+.clearfix::after{content:'';display:table;clear:both}
+.tab-bar{display:flex;border-bottom:2px solid var(--wiki-line);margin-bottom:1.25rem;overflow-x:auto}
+.tab-btn{padding:.55rem 1.1rem;background:none;border:none;color:var(--text2);font-family:'Cairo',sans-serif;
+  font-size:.85rem;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;
+  margin-bottom:-2px;transition:all .15s;white-space:nowrap}
+.tab-btn:hover{color:var(--text)}.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+.wiki-footer{border-top:1px solid var(--wiki-line);padding:1.75rem 2.75rem;grid-column:1/-1;
+  display:flex;justify-content:space-between;align-items:center;font-size:.78rem;
+  color:var(--text3);position:relative;z-index:1;flex-wrap:wrap;gap:1rem}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-links a{color:var(--text3);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:var(--accent)}
+
+@media(max-width:1150px){.wiki-layout{grid-template-columns:220px 1fr}.sidebar-right{display:none}}
+@media(max-width:768px){.wiki-layout{grid-template-columns:1fr}.sidebar-left{display:none}
+  .wiki-main{padding:1.25rem}.stats-grid{grid-template-columns:repeat(2,1fr)}
+  .infobox{float:none;width:100%;margin:0 0 1.25rem}.hero-title{font-size:2.2rem}}
 </style>
 </head>
 <body>
 
+<!-- ══ HEADER ══ -->
 <header class="site-header">
   <a href="#" class="site-logo">
-    <div class="logo-gem">
-        <img src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212 Logo">
-      </div>
+    <img class="logo-img" src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212">
     <div>
       <span class="logo-text">Miracul212</span>
       <span class="logo-sub">Wiki · Modpack Encyclopedia</span>
     </div>
   </a>
+
   <div class="header-search">
     <span class="search-icon">🔍</span>
     <input type="text" id="globalSearch" placeholder="Search the wiki..." oninput="handleGlobalSearch(this.value)">
   </div>
-  <div class="header-badges">
+
+  <div class="header-right">
     <span class="badge badge-mc">MC 1.20.1</span>
     <span class="badge badge-forge">Forge</span>
-    <span class="badge badge-ver">v1.0.7</span>
+    <span class="badge badge-ver">v1.0.8</span>
+    <a class="hdr-btn hdr-discord" href="https://discord.gg/mU6WBcxNuG" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      Discord
+    </a>
+    <a class="hdr-btn hdr-server" href="#server-section">⚔️ Server</a>
   </div>
 </header>
 
+<!-- ══ LAYOUT ══ -->
 <div class="wiki-layout">
 
-  <!-- LEFT SIDEBAR -->
-  <nav class="sidebar-left">
-    <div class="toc-title">📋 Contents</div>
-    <ul class="toc-list">
-      <li class="toc-item"><a href="#overview">Overview</a></li>
-      <li class="toc-item"><a href="#changelog">Changelog (1.0.7)</a></li>
-      <li class="toc-item"><a href="#features">Features</a></li>
-      <li class="toc-item sub"><a href="#performance">Performance</a></li>
-      <li class="toc-item sub"><a href="#visuals">Visuals</a></li>
-      <li class="toc-item sub"><a href="#content">Content</a></li>
-      <div class="toc-section">Components</div>
-      <li class="toc-item"><a href="#mods-section">Mods <span class="toc-count">93</span></a></li>
-      <li class="toc-item"><a href="#shaders-section">Shaders <span class="toc-count">10</span></a></li>
-      <li class="toc-item"><a href="#rp-section">Resource Packs <span class="toc-count">12</span></a></li>
-      <div class="toc-section">Info</div>
-      <li class="toc-item"><a href="#install-section">Installation</a></li>
-      <li class="toc-item"><a href="#requirements">Requirements</a></li>
-      <li class="toc-item"><a href="#credits">Credits &amp; Rights</a></li>
-    </ul>
-  </nav>
+<!-- LEFT SIDEBAR -->
+<nav class="sidebar-left">
+  <div class="toc-title">📋 Contents</div>
+  <ul class="toc-list">
+    <li class="toc-item"><a href="#overview">Overview</a></li>
+    <li class="toc-item"><a href="#changelog">Changelog (1.0.8)</a></li>
+    <li class="toc-item"><a href="#features">Features</a></li>
+    <li class="toc-item sub"><a href="#performance">Performance</a></li>
+    <li class="toc-item sub"><a href="#visuals">Visuals</a></li>
+    <li class="toc-item sub"><a href="#content">Content</a></li>
+    <div class="toc-section">Community</div>
+    <li class="toc-item"><a href="#server-section">🎮 Official Server</a></li>
+    <li class="toc-item"><a href="#discord-section">💬 Discord</a></li>
+    <div class="toc-section">Components</div>
+    <li class="toc-item"><a href="#mods-section">Mods <span class="toc-count">100</span></a></li>
+    <li class="toc-item"><a href="#shaders-section">Shaders <span class="toc-count">10</span></a></li>
+    <li class="toc-item"><a href="#rp-section">Resource Packs <span class="toc-count">12</span></a></li>
+    <div class="toc-section">Info</div>
+    <li class="toc-item"><a href="#install-section">Installation</a></li>
+    <li class="toc-item"><a href="#requirements">Requirements</a></li>
+    <li class="toc-item"><a href="#credits">Credits</a></li>
+  </ul>
+</nav>
 
-  <!-- MAIN -->
-  <main class="wiki-main">
+<!-- MAIN -->
+<main class="wiki-main">
 
-    <div class="breadcrumb">
-      <a href="#">Home</a><span>›</span>
-      <a href="#">Minecraft Modpacks</a><span>›</span>
-      <span>Miracul212</span>
+  <div class="breadcrumb">
+    <a href="#">Home</a><span>›</span>
+    <a href="#">Minecraft Modpacks</a><span>›</span>
+    <span>Miracul212</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-banner">
+    <img class="hero-logo" src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212">
+    <div class="hero-title">Miracul212</div>
+    <div class="hero-tagline">A comprehensive Minecraft modpack on Forge 1.20.1 — high performance, stunning visuals, and rich content for an exceptional gameplay experience.</div>
+    <div class="hero-badges">
+      <span class="hero-badge hb-ver">✦ Version 1.0.8 — Latest</span>
+      <a class="hero-badge hb-discord" href="https://discord.gg/mU6WBcxNuG" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        Join Discord
+      </a>
+      <span class="hero-badge hb-server">⚔️ play.minetro.com:1795</span>
     </div>
+  </div>
 
-    <div class="hero-banner">
-      <div class="hero-gems">
-        <span class="hero-gem">💎</span>
-        <span class="hero-gem">✨</span>
-        <span class="hero-gem">🪩</span>
-      </div>
-      <div class="hero-title">Miracul212</div>
-      <div class="hero-tagline">A comprehensive Minecraft modpack built on Forge 1.20.1 — blending high performance, stunning visuals, and rich content for an exceptional gameplay experience.</div>
-      <div class="hero-ver-badge">✦ Version 1.0.7 — Latest Release</div>
+  <!-- ARTICLE HEADER -->
+  <div class="article-header" id="overview">
+    <div class="article-title">Miracul212</div>
+    <div class="article-subtitle">Comprehensive Minecraft Modpack · Version 1.0.8</div>
+    <div class="article-meta">
+      <div class="meta-chip"><span class="dot dot-green"></span> Active &amp; Updated</div>
+      <div class="meta-chip"><span class="dot dot-orange"></span> Forge 1.20.1</div>
+      <div class="meta-chip"><span class="dot dot-blue"></span> 122 Components</div>
+      <div class="meta-chip"><span class="dot dot-purple"></span> Nastia Special Edition</div>
     </div>
+  </div>
 
-    <div class="article-header" id="overview">
-      <div class="article-title">Miracul212</div>
-      <div class="article-subtitle">Comprehensive Minecraft Modpack · Version 1.0.7</div>
-      <div class="article-meta">
-        <div class="meta-chip"><span class="dot dot-green"></span> Active &amp; Updated</div>
-        <div class="meta-chip"><span class="dot dot-orange"></span> Forge 1.20.1</div>
-        <div class="meta-chip"><span class="dot dot-blue"></span> 115 Components</div>
-        <div class="meta-chip"><span class="dot dot-purple"></span> Nastia Special Edition</div>
-      </div>
-    </div>
-
-    <div class="clearfix">
-      <div class="infobox">
-        <div class="infobox-header">
-          <div class="infobox-banner" style="overflow:hidden;padding:0">
-            <img src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212" style="width:100%;height:100%;object-fit:cover;display:block">
-          </div>
-          <div class="infobox-name">Miracul212</div>
+  <!-- INFOBOX + INTRO -->
+  <div class="clearfix">
+    <div class="infobox">
+      <div class="infobox-header">
+        <div class="infobox-banner">
+          <img src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212">
         </div>
-        <div class="infobox-body">
-          <div class="infobox-row"><div class="infobox-key">Version</div><div class="infobox-val">1.0.7</div></div>
-          <div class="infobox-row"><div class="infobox-key">Minecraft</div><div class="infobox-val">1.20.1</div></div>
-          <div class="infobox-row"><div class="infobox-key">Mod Loader</div><div class="infobox-val">Forge</div></div>
-          <div class="infobox-row"><div class="infobox-key">Mods</div><div class="infobox-val">93 mods</div></div>
-          <div class="infobox-row"><div class="infobox-key">Shaders</div><div class="infobox-val">10 shaders</div></div>
-          <div class="infobox-row"><div class="infobox-key">Resource Packs</div><div class="infobox-val">12 packs</div></div>
-          <div class="infobox-row"><div class="infobox-key">Modrinth</div><div class="infobox-val"><a href="https://modrinth.com/modpack/miracul212" target="_blank">miracul212 ↗</a></div></div>
-          <div class="infobox-row"><div class="infobox-key">CurseForge</div><div class="infobox-val"><a href="https://legacy.curseforge.com/minecraft/modpacks/miracul212" target="_blank">miracul212 ↗</a></div></div>
-          <div class="infobox-row"><div class="infobox-key">Author</div><div class="infobox-val"><strong>fouad212</strong></div></div>
-        </div>
+        <div class="infobox-name">Miracul212</div>
       </div>
-
-      <div class="wiki-section">
-        <p class="wiki-p"><strong>Miracul212</strong> is a comprehensive Minecraft modpack designed for version <strong>1.20.1</strong> using the <strong>Forge</strong> mod loader. The pack contains a carefully curated collection of <strong>115 components</strong> — mods, shaders, and resource packs — all working together to deliver an exceptional gameplay experience balancing high performance with stunning visuals.</p>
-        <p class="wiki-p">The modpack features the exclusive <strong>nastias_miracle_stones_mod</strong> alongside mob additions from <strong>Alex's Mobs</strong> and <strong>Naturalist</strong>, and a comprehensive performance suite including <strong>Embeddium</strong>, <strong>ModernFix</strong>, and <strong>FerriteCore</strong>. This makes Miracul212 an ideal choice for players seeking a content-rich experience without sacrificing performance.</p>
-        <p class="wiki-p">Social features are enhanced through <strong>Simple Voice Chat</strong> for in-game proximity voice, and <strong>e4mc</strong> for direct peer-to-peer multiplayer without a dedicated server.</p>
+      <div class="infobox-body">
+        <div class="infobox-row"><div class="infobox-key">Version</div><div class="infobox-val">1.0.8</div></div>
+        <div class="infobox-row"><div class="infobox-key">Minecraft</div><div class="infobox-val">1.20.1</div></div>
+        <div class="infobox-row"><div class="infobox-key">Loader</div><div class="infobox-val">Forge</div></div>
+        <div class="infobox-row"><div class="infobox-key">Author</div><div class="infobox-val"><strong>fouad212</strong></div></div>
+        <div class="infobox-row"><div class="infobox-key">Mods</div><div class="infobox-val">100 mods</div></div>
+        <div class="infobox-row"><div class="infobox-key">Shaders</div><div class="infobox-val">10 packs</div></div>
+        <div class="infobox-row"><div class="infobox-key">Resource Packs</div><div class="infobox-val">12 packs</div></div>
+        <div class="infobox-row"><div class="infobox-key">Server</div><div class="infobox-val" style="color:var(--emerald);font-family:monospace;font-size:.72rem">play.minetro.com:1795</div></div>
+        <div class="infobox-row"><div class="infobox-key">Discord</div><div class="infobox-val"><a href="https://discord.gg/mU6WBcxNuG" target="_blank">Join ↗</a></div></div>
+        <div class="infobox-row"><div class="infobox-key">Modrinth</div><div class="infobox-val"><a href="https://modrinth.com/modpack/miracul212" target="_blank">miracul212 ↗</a></div></div>
       </div>
     </div>
 
-    <div class="stats-grid">
-      <div class="stat-card blue"><div class="stat-num">93</div>
-      <div class="stat-label">Mods<//div></div>
-      <div class="stat-card purple"><div class="stat-num">10</div><div class="stat-label">Shaders</div></div>
-      <div class="stat-card orange"><div class="stat-num">12</div><div class="stat-label">Resource Packs</div></div>
-      <div class="stat-card green"><div class="stat-num">115</div><div class="stat-label">Total Components</div></div>
+    <div class="wiki-section">
+      <p class="wiki-p"><strong>Miracul212</strong> is a comprehensive Minecraft modpack for version <strong>1.20.1</strong> using <strong>Forge</strong>. It contains <strong>122 carefully curated components</strong> — 100 mods, 10 shaders, and 12 resource packs — delivering an exceptional experience that balances high performance with stunning visuals and rich content.</p>
+      <p class="wiki-p">The pack features the exclusive <strong>nastias_miracle_stones_mod</strong>, creature additions from <strong>Alex's Mobs</strong> &amp; <strong>Naturalist</strong>, the revolutionary <strong>Create</strong> mod for mechanical automation, and a complete performance suite including <strong>Embeddium</strong>, <strong>ModernFix 5.27.40</strong>, and <strong>FerriteCore</strong>.</p>
+      <p class="wiki-p">Join the official community server at <strong style="color:var(--emerald);font-family:monospace">play.minetro.com:1795</strong> and connect with other players on <a href="https://discord.gg/mU6WBcxNuG" target="_blank">Discord</a>.</p>
     </div>
+  </div>
 
-    <!-- CHANGELOG -->
-    <div class="wiki-section" id="changelog">
-      <div class="section-heading"><span class="sh-icon sh-green">📝</span>Changelog — Version 1.0.7</div>
-      <p class="wiki-p">Version 1.0.7 is a stability update — removing two mods, updating four core mods, and refreshing two shaders and one resource pack.</p>
-      <div class="notice info"><span class="notice-icon">ℹ️</span><div>Compared to v1.0.6: <strong>2 mods removed</strong> (CityCraft, Illias Addon), <strong>4 mods updated</strong>. Shaders: Complementary Reimagined → r5.8.1, Mellow Shader → v3.2. Resource pack: FA+ Objects → v2.1.1.</div></div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
-        <div class="side-widget">
-          <div class="side-widget-header" style="color:var(--ruby)">🔴 Removed (2)</div>
-          <div class="side-widget-body">
-            <div class="side-stat"><span class="label">CityCraft</span><span class="value" style="color:var(--ruby);font-size:.75rem">removed ✕</span></div>
-            <div class="side-stat"><span class="label">Illias Addon</span><span class="value" style="color:var(--ruby);font-size:.75rem">removed ✕</span></div>
-          </div>
-        </div>
-        <div class="side-widget">
-          <div class="side-widget-header" style="color:var(--accent)">🔵 Updated (4)</div>
-          <div class="side-widget-body">
-            <div class="side-stat"><span class="label">ModernFix</span><span class="value" style="color:var(--accent);font-size:.75rem">5.27.25 → 5.27.40</span></div>
-            <div class="side-stat"><span class="label">Traveler's Backpack</span><span class="value" style="color:var(--accent);font-size:.75rem">9.1.54 → 9.1.55</span></div>
-            <div class="side-stat"><span class="label">Simple Voice Chat</span><span class="value" style="color:var(--accent);font-size:.75rem">2.6.17 → 2.6.18</span></div>
-            <div class="side-stat"><span class="label">CreativeCore</span><span class="value" style="color:var(--accent);font-size:.75rem">2.12.37 → 2.12.38</span></div>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top:1rem" class="side-widget">
-        <div class="side-widget-header" style="color:var(--amethyst)">🌈 Shaders &amp; Packs Updated</div>
-        <div class="side-widget-body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem">
-          <div class="side-stat"><span class="label">Complementary</span><span class="value" style="color:var(--amethyst);font-size:.75rem">r5.8 → r5.8.1</span></div>
-          <div class="side-stat"><span class="label">Mellow Shader</span><span class="value" style="color:var(--amethyst);font-size:.75rem">v3.1.1 → v3.2</span></div>
-          <div class="side-stat"><span class="label">FA+ Objects</span><span class="value" style="color:var(--amethyst);font-size:.75rem">v2.1 → v2.1.1</span></div>
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="stat-card blue"><div class="stat-num">100</div><div class="stat-label">Mods</div></div>
+    <div class="stat-card purple"><div class="stat-num">10</div><div class="stat-label">Shaders</div></div>
+    <div class="stat-card orange"><div class="stat-num">12</div><div class="stat-label">Resource Packs</div></div>
+    <div class="stat-card green"><div class="stat-num">122</div><div class="stat-label">Total</div></div>
+  </div>
+
+  <!-- CHANGELOG -->
+  <div class="wiki-section" id="changelog">
+    <div class="section-heading"><span class="sh-icon sh-green">📝</span>Changelog — Version 1.0.8</div>
+    <p class="wiki-p">Version 1.0.8 is a major content update — adding <strong>7 new mods</strong> including <strong>Create</strong> for mechanical engineering, <strong>Moving Elevators</strong>, <strong>Cluttered</strong>, and more. This brings the total to 100 mods.</p>
+    <div class="notice info"><span class="notice-icon">ℹ️</span><div>Compared to v1.0.7 (93 mods): <strong>7 new mods added</strong> including Create 6.0.8. Illias Addon returns. No mods were removed.</div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+      <div class="side-widget">
+        <div class="side-widget-header" style="color:var(--emerald)">🟢 New Mods (7)</div>
+        <div class="side-widget-body">
+          <div class="side-stat"><span class="label">⚙️ Create</span><span class="value" style="color:var(--emerald);font-size:.75rem">v6.0.8 ✓</span></div>
+          <div class="side-stat"><span class="label">🛗 Moving Elevators</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">📚 Cluttered</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">🪑 Furniture Tools Refurbished</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">✨ Illias Addon</span><span class="value" style="color:var(--emerald);font-size:.75rem">returned ✓</span></div>
+          <div class="side-stat"><span class="label">🔧 SuperMartijn642 Config Lib</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">📦 SuperMartijn642 Core Lib</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
         </div>
       </div>
-    </div>
-
-    <!-- FEATURES -->
-    <div class="wiki-section" id="features">
-      <div class="section-heading"><span class="sh-icon sh-gold">⭐</span>Key Features</div>
-
-      <div id="performance">
-        <div class="sub-heading">⚡ Performance &amp; Optimization</div>
-        <p class="wiki-p">Miracul212 prioritizes performance through a comprehensive optimization suite. <strong>Embeddium</strong> (Forge's Sodium port) rewrites the rendering engine, while <strong>Oculus</strong> enables efficient shader support. <strong>FerriteCore</strong> dramatically reduces memory usage, <strong>ModernFix 5.27.40</strong> speeds up startup, <strong>Entity Culling 1.10.2</strong> skips off-screen entities, <strong>Noisium</strong> accelerates world generation, and <strong>Starlight</strong> provides a fully rewritten light engine.</p>
-        <div style="margin:1rem 0">
-          <div class="perf-bar"><div class="perf-label"><span>Rendering</span><span style="color:var(--emerald)">Very High</span></div><div class="perf-track"><div class="perf-fill" style="width:92%;background:var(--emerald)"></div></div></div>
-          <div class="perf-bar"><div class="perf-label"><span>Memory</span><span style="color:var(--accent)">High</span></div><div class="perf-track"><div class="perf-fill" style="width:80%;background:var(--accent)"></div></div></div>
-          <div class="perf-bar"><div class="perf-label"><span>Load Speed</span><span style="color:var(--amethyst)">Excellent</span></div><div class="perf-track"><div class="perf-fill" style="width:85%;background:var(--amethyst)"></div></div></div>
-          <div class="perf-bar"><div class="perf-label"><span>Framerate</span><span style="color:var(--accent5)">Very Good</span></div><div class="perf-track"><div class="perf-fill" style="width:75%;background:var(--accent5)"></div></div></div>
+      <div class="side-widget">
+        <div class="side-widget-header" style="color:var(--accent)">📊 Pack Stats After Update</div>
+        <div class="side-widget-body">
+          <div class="side-stat"><span class="label">Total Mods</span><span class="value" style="color:var(--accent)">93 → 100</span></div>
+          <div class="side-stat"><span class="label">Total Components</span><span class="value" style="color:var(--accent)">115 → 122</span></div>
+          <div class="side-stat"><span class="label">Removed</span><span class="value" style="color:var(--text2)">None</span></div>
+          <div class="side-stat"><span class="label">ModernFix</span><span class="value" style="color:var(--text2)">5.27.40 ✓</span></div>
+          <div class="side-stat"><span class="label">Nastia Stones</span><span class="value" style="color:var(--amethyst)">1.7.2 ✓</span></div>
         </div>
       </div>
-
-      <div id="visuals">
-        <div class="sub-heading">🎨 Visuals &amp; Graphics</div>
-        <p class="wiki-p">Built around <strong>FreshAnimations</strong> and its multiple extensions, every entity in the game gains smooth, detailed animations. <strong>Entity Model Features</strong> and <strong>Entity Texture Features</strong> add variety to mob appearances. <strong>Continuity</strong> (new in v1.0.4) enables connected textures for glass and other blocks. Ten curated shaders cover all hardware tiers — from lightweight <strong>BVS</strong> and <strong>Pixel Perfect</strong> to powerhouse <strong>BSL v10</strong> and <strong>Complementary Reimagined r5.8.1</strong> and <strong>Mellow Shader v3.2</strong>.</p>
-      </div>
-
-      <div id="content">
-        <div class="sub-heading">🌍 Content &amp; Gameplay</div>
-        <p class="wiki-p"><strong>Alex's Mobs</strong> and <strong>Naturalist</strong> add hundreds of new creatures. <strong>Farmer's Delight 1.3.2</strong> (updated in v1.0.7) brings an even more expanded farming and cooking system. The clothing and roleplay system via <strong>FazRoleplay Clothes</strong> and <strong>ClothingCraft</strong> remains. <strong>Eye Mod</strong> adds dynamic eye tracking to player and mob models. <strong>Nastia's Miracle Stones 1.7.2</strong> is the stable signature mod at the heart of this pack, with all known bugs resolved.</p>
-      </div>
-
-      <div class="notice info"><span class="notice-icon">ℹ️</span><div><strong>Simple Voice Chat</strong> enables proximity voice communication and <strong>e4mc</strong> allows LAN-over-internet multiplayer — no dedicated server required.</div></div>
     </div>
+  </div>
 
-    <!-- MODS -->
-    <div class="wiki-section" id="mods-section">
-      <div class="section-heading"><span class="sh-icon sh-blue">🧩</span>Mod List — 93 Mods</div>
+  <!-- FEATURES -->
+  <div class="wiki-section" id="features">
+    <div class="section-heading"><span class="sh-icon sh-gold">⭐</span>Key Features</div>
 
-      <div class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab('all')">All (93)</button>
-        <button class="tab-btn" onclick="switchTab('performance')">⚡ Performance</button>
-        <button class="tab-btn" onclick="switchTab('visual')">🎨 Visual</button>
-        <button class="tab-btn" onclick="switchTab('content')">🌍 Content</button>
-        <button class="tab-btn" onclick="switchTab('utility')">🔧 Utility</button>
-        <button class="tab-btn" onclick="switchTab('library')">📦 Libraries</button>
-      </div>
-
-      <div class="search-bar">
-        <span class="s-icon">🔍</span>
-        <input type="text" id="modSearch" placeholder="Search mods..." oninput="filterMods()">
-      </div>
-
-      <div class="filter-bar">
-        <button class="filter-btn" onclick="sortMods('name')">Sort A–Z ↕</button>
-        <button class="filter-btn" onclick="sortMods('type')">Sort by Type</button>
-        <span id="mod-count-display" style="margin-left:auto;font-size:.8rem;color:var(--text2)"></span>
-      </div>
-
-      <div style="overflow-x:auto">
-        <table class="mod-table">
-          <thead>
-            <tr>
-              <th onclick="sortMods('name')">Name</th>
-              <th onclick="sortMods('type')">Type</th>
-              <th>File</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody id="modTableBody"></tbody>
-        </table>
-      </div>
-
-      <div style="display:flex;align-items:center;margin-top:1rem;gap:1rem;flex-wrap:wrap">
-        <span class="page-info" id="pageInfo"></span>
-        <div class="pagination" id="pagination"></div>
+    <div id="performance">
+      <div class="sub-heading">⚡ Performance &amp; Optimization</div>
+      <p class="wiki-p"><strong>Embeddium</strong> rewrites the rendering engine for maximum FPS. <strong>Oculus</strong> enables efficient shader support. <strong>FerriteCore</strong> dramatically cuts memory usage. <strong>ModernFix 5.27.40</strong> speeds startup and improves tick rates. <strong>Entity Culling</strong> hides off-screen entities. <strong>Noisium</strong> accelerates world generation. <strong>Starlight</strong> provides a fully rewritten light engine.</p>
+      <div style="margin:.9rem 0">
+        <div class="perf-bar"><div class="perf-label"><span>Rendering</span><span style="color:var(--emerald)">Very High</span></div><div class="perf-track"><div class="perf-fill" style="width:92%;background:var(--emerald)"></div></div></div>
+        <div class="perf-bar"><div class="perf-label"><span>Memory</span><span style="color:var(--accent)">High</span></div><div class="perf-track"><div class="perf-fill" style="width:82%;background:var(--accent)"></div></div></div>
+        <div class="perf-bar"><div class="perf-label"><span>Load Speed</span><span style="color:var(--amethyst)">Excellent</span></div><div class="perf-track"><div class="perf-fill" style="width:87%;background:var(--amethyst)"></div></div></div>
+        <div class="perf-bar"><div class="perf-label"><span>Framerate</span><span style="color:var(--accent5)">Very Good</span></div><div class="perf-track"><div class="perf-fill" style="width:78%;background:var(--accent5)"></div></div></div>
       </div>
     </div>
 
-    <!-- SHADERS -->
-    <div class="wiki-section" id="shaders-section">
-      <div class="section-heading"><span class="sh-icon sh-purple">🌈</span>Shaders — 10 Packs</div>
-      <p class="wiki-p">A diverse shader collection covering every hardware tier, powered by the bundled <strong>Oculus</strong> mod.</p>
-      <div class="notice warning"><span class="notice-icon">⚠️</span><div>For mid-range hardware, use <strong>Mellow Shader</strong> or <strong>BVS</strong>. For high-end systems, <strong>BSL</strong> or <strong>Complementary Reimagined</strong> offer the best results.</div></div>
-      <div class="card-grid" id="shaderGrid"></div>
+    <div id="visuals">
+      <div class="sub-heading">🎨 Visuals &amp; Graphics</div>
+      <p class="wiki-p"><strong>FreshAnimations</strong> and its extensions bring smooth, detailed animations to every entity. <strong>Entity Model Features 3.2.4</strong> and <strong>Entity Texture Features 7.1</strong> add variety to mob appearances. <strong>Continuity</strong> enables connected textures. Ten curated shaders cover all hardware tiers — from lightweight <strong>BVS</strong> to powerhouse <strong>BSL v10.1.3</strong> and <strong>Complementary Reimagined r5.8.1</strong>.</p>
     </div>
 
-    <!-- RESOURCE PACKS -->
-    <div class="wiki-section" id="rp-section">
-      <div class="section-heading"><span class="sh-icon sh-orange">🖼️</span>Resource Packs — 12 Packs</div>
-      <p class="wiki-p">The resource packs overhaul entity animations, block textures, and font rendering for a completely refreshed visual experience.</p>
-      <div style="display:grid;gap:.75rem;margin-top:1rem" id="rpGrid"></div>
+    <div id="content">
+      <div class="sub-heading">🌍 Content &amp; Gameplay</div>
+      <p class="wiki-p"><strong>Create 6.0.8</strong> (new in v1.0.8) adds a complete mechanical engineering system — build factories, automate farms, and engineer contraptions. <strong>Alex's Mobs</strong> and <strong>Naturalist</strong> add hundreds of creatures. <strong>Farmer's Delight</strong> expands cooking and farming. <strong>Moving Elevators</strong> adds functional elevator blocks. <strong>Cluttered</strong> and <strong>Furniture Tools Refurbished</strong> enhance decoration. <strong>Nastia's Miracle Stones 1.7.2</strong> remains the signature exclusive mod.</p>
     </div>
 
-    <!-- INSTALLATION -->
-    <div class="wiki-section" id="install-section">
-      <div class="section-heading"><span class="sh-icon sh-green">⬇️</span>Installation Guide</div>
-      <div class="notice tip"><span class="notice-icon">💡</span><div>The easiest method is the <strong>Modrinth App</strong> — it handles Forge, all mods, and settings automatically.</div></div>
+    <div class="notice info"><span class="notice-icon">ℹ️</span><div><strong>Simple Voice Chat 2.6.18</strong> enables proximity voice and <strong>e4mc</strong> allows direct LAN-over-internet play. Or join the official server at <strong style="color:var(--emerald);font-family:monospace">play.minetro.com:1795</strong>!</div></div>
+  </div>
 
-      <div class="sub-heading">Method 1: Modrinth App (Recommended)</div>
-      <p class="wiki-p">
-        1. Download and install the <strong>Modrinth App</strong> from <a href="https://modrinth.com/app" target="_blank">modrinth.com/app</a><br>
-        2. Open the app and click <strong>"Import"</strong><br>
-        3. Select <code style="background:var(--surface2);padding:.1rem .4rem;border-radius:4px;font-family:monospace;font-size:.85rem">Miracul212_1_0_7.mrpack</code><br>
-        4. Wait for all mods to download automatically<br>
-        5. Click <strong>"Play"</strong> — enjoy!
-      </p>
+  <!-- SERVER -->
+  <div class="wiki-section" id="server-section">
+    <div class="section-heading"><span class="sh-icon sh-green">⚔️</span>Official Minecraft Server</div>
+    <p class="wiki-p">Play Miracul212 with the community on the official server! Connect with other players, explore together, and experience the modpack the way it was meant to be played.</p>
+    <div class="server-card">
+      <div class="server-icon">⚔️</div>
+      <div style="flex:1">
+        <div class="server-name">Miracul212 Official Server</div>
+        <div class="server-ip">play.minetro.com:1795</div>
+        <div class="server-desc">Forge 1.20.1 · Install Miracul212 v1.0.8 to connect · 24/7 online</div>
+        <button class="server-copy" onclick="copyIP()">📋 Copy IP</button>
+      </div>
+    </div>
+    <div class="notice server"><span class="notice-icon">ℹ️</span><div>Make sure you have <strong>Miracul212 v1.0.8</strong> installed before connecting. Both the server and your client must run the same version. Open Minecraft → Multiplayer → Add Server → paste the IP.</div></div>
+    <div class="sub-heading">How to Connect</div>
+    <div class="install-steps">
+      <div class="install-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Install Miracul212 v1.0.8</div>
+          <div class="step-desc">Download and install the modpack from <a href="https://modrinth.com/modpack/miracul212" target="_blank">Modrinth</a> using the Modrinth App.</div>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Open Multiplayer</div>
+          <div class="step-desc">Launch Miracul212 → click <strong>Multiplayer</strong> → <strong>Add Server</strong>.</div>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Enter the Server Address</div>
+          <div class="step-desc">Server Address: <span class="step-tag">play.minetro.com:1795</span> → Save → Connect!</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <div class="sub-heading">Method 2: Manual</div>
-      <p class="wiki-p">
-        1. Install <strong>Forge 1.20.1</strong> from <a href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html" target="_blank">files.minecraftforge.net</a><br>
-        2. Unzip the <code style="background:var(--surface2);padding:.1rem .4rem;border-radius:4px;font-family:monospace;font-size:.85rem">.mrpack</code> file (standard ZIP)<br>
-        3. Copy <code style="background:var(--surface2);padding:.1rem .4rem;border-radius:4px;font-family:monospace;font-size:.85rem">overrides/</code> contents into your <code style="background:var(--surface2);padding:.1rem .4rem;border-radius:4px;font-family:monospace;font-size:.85rem">.minecraft</code> folder<br>
-        4. Download mods from the URLs in <code style="background:var(--surface2);padding:.1rem .4rem;border-radius:4px;font-family:monospace;font-size:.85rem">modrinth.index.json</code>
-      </p>
+  <!-- DISCORD -->
+  <div class="wiki-section" id="discord-section">
+    <div class="section-heading"><span class="sh-icon sh-discord">💬</span>Community Discord</div>
+    <p class="wiki-p">Join the official Miracul212 Discord server to get support, share your builds, report bugs, stay updated on new versions, and connect with the community.</p>
+    <div class="discord-card">
+      <div class="discord-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      </div>
+      <div style="flex:1">
+        <div class="discord-name">Miracul212 Community</div>
+        <div class="discord-tag">discord.gg/mU6WBcxNuG</div>
+        <div class="discord-desc">Support · Announcements · Screenshots · Bug Reports · General Chat</div>
+        <a class="discord-join" href="https://discord.gg/mU6WBcxNuG" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+          Join Server
+        </a>
+      </div>
+    </div>
+  </div>
 
-      <div class="code-block">
-<span class="comment"># .mrpack file structure</span>
-Miracul212_1_0_5.mrpack
-├── <span class="keyword">modrinth.index.json</span>   <span class="comment"># mod metadata &amp; CDN download URLs</span>
+  <!-- MODS -->
+  <div class="wiki-section" id="mods-section">
+    <div class="section-heading"><span class="sh-icon sh-blue">🧩</span>Mod List — 100 Mods</div>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('all')">All (100)</button>
+      <button class="tab-btn" onclick="switchTab('performance')">⚡ Performance</button>
+      <button class="tab-btn" onclick="switchTab('visual')">🎨 Visual</button>
+      <button class="tab-btn" onclick="switchTab('content')">🌍 Content</button>
+      <button class="tab-btn" onclick="switchTab('utility')">🔧 Utility</button>
+      <button class="tab-btn" onclick="switchTab('library')">📦 Libraries</button>
+    </div>
+    <div class="search-bar">
+      <span class="s-icon">🔍</span>
+      <input type="text" id="modSearch" placeholder="Search mods..." oninput="filterMods()">
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn" onclick="sortMods('name')">Sort A–Z ↕</button>
+      <button class="filter-btn" onclick="sortMods('type')">Sort by Type</button>
+      <span id="mod-count-display" style="margin-left:auto;font-size:.77rem;color:var(--text2)"></span>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="mod-table">
+        <thead><tr>
+          <th onclick="sortMods('name')">Name</th>
+          <th onclick="sortMods('type')">Type</th>
+          <th>File</th>
+          <th>Link</th>
+        </tr></thead>
+        <tbody id="modTableBody"></tbody>
+      </table>
+    </div>
+    <div style="display:flex;align-items:center;margin-top:.9rem;gap:1rem;flex-wrap:wrap">
+      <span class="page-info" id="pageInfo"></span>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </div>
+
+  <!-- SHADERS -->
+  <div class="wiki-section" id="shaders-section">
+    <div class="section-heading"><span class="sh-icon sh-purple">🌈</span>Shaders — 10 Packs</div>
+    <p class="wiki-p">Powered by <strong>Oculus</strong>. Covers every hardware tier from lightweight to ultra.</p>
+    <div class="notice warning"><span class="notice-icon">⚠️</span><div>Mid-range: <strong>Mellow Shader v3.2</strong> or <strong>BVS</strong>. High-end: <strong>BSL v10.1.3</strong> or <strong>Complementary Reimagined r5.8.1</strong>.</div></div>
+    <div class="card-grid" id="shaderGrid"></div>
+  </div>
+
+  <!-- RESOURCE PACKS -->
+  <div class="wiki-section" id="rp-section">
+    <div class="section-heading"><span class="sh-icon sh-orange">🖼️</span>Resource Packs — 12 Packs</div>
+    <p class="wiki-p">Overhauls entity animations, block textures, weather effects, and font rendering.</p>
+    <div style="display:grid;gap:.65rem;margin-top:.9rem" id="rpGrid"></div>
+  </div>
+
+  <!-- INSTALLATION -->
+  <div class="wiki-section" id="install-section">
+    <div class="section-heading"><span class="sh-icon sh-green">⬇️</span>Installation Guide</div>
+    <div class="notice tip"><span class="notice-icon">💡</span><div>Use the <strong>Modrinth App</strong> — it downloads Forge and all 100 mods automatically.</div></div>
+
+    <div class="sub-heading">🟢 Method 1 — Modrinth App (Recommended)</div>
+    <div class="install-steps">
+      <div class="install-step"><div class="step-num">1</div><div class="step-body">
+        <div class="step-title">Download Modrinth App</div>
+        <div class="step-desc">Visit <a href="https://modrinth.com/app" target="_blank">modrinth.com/app</a> and install it for your OS.</div>
+      </div></div>
+      <div class="install-step"><div class="step-num">2</div><div class="step-body">
+        <div class="step-title">Import the Pack</div>
+        <div class="step-desc">Click <strong>"+"</strong> → <strong>"Import"</strong> → select <span class="step-tag">Miracul212_1_0_8.mrpack</span></div>
+      </div></div>
+      <div class="install-step"><div class="step-num">3</div><div class="step-body">
+        <div class="step-title">Wait for Download</div>
+        <div class="step-desc">All 100 mods download automatically. Takes 2–5 minutes.</div>
+      </div></div>
+      <div class="install-step"><div class="step-num">4</div><div class="step-body">
+        <div class="step-title">Set RAM &amp; Play</div>
+        <div class="step-desc">Go to Instance Settings → Java → allocate <strong>8 GB RAM</strong> minimum. Click <strong>Play</strong>!</div>
+      </div></div>
+    </div>
+
+    <div class="sub-heading">🔧 Method 2 — Manual</div>
+    <div class="install-steps">
+      <div class="install-step"><div class="step-num">1</div><div class="step-body">
+        <div class="step-title">Install Forge 1.20.1</div>
+        <div class="step-desc">Download from <a href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html" target="_blank">files.minecraftforge.net</a> → run installer → "Install client".</div>
+      </div></div>
+      <div class="install-step"><div class="step-num">2</div><div class="step-body">
+        <div class="step-title">Extract the .mrpack</div>
+        <div class="step-desc">Rename <span class="step-tag">Miracul212_1_0_8.mrpack</span> to <span class="step-tag">.zip</span> and extract it.</div>
+      </div></div>
+      <div class="install-step"><div class="step-num">3</div><div class="step-body">
+        <div class="step-title">Copy Overrides</div>
+        <div class="step-desc">Copy <span class="step-tag">overrides/</span> contents into <span class="step-tag">%appdata%\.minecraft</span></div>
+      </div></div>
+      <div class="install-step"><div class="step-num">4</div><div class="step-body">
+        <div class="step-title">Download Mods</div>
+        <div class="step-desc">Download each mod from its URL in <span class="step-tag">modrinth.index.json</span> into <span class="step-tag">.minecraft/mods/</span></div>
+      </div></div>
+    </div>
+
+    <div class="code-block">
+<span class="comment"># .mrpack structure</span>
+Miracul212_1_0_8.mrpack
+├── <span class="kw">modrinth.index.json</span>   <span class="comment"># all 100 mod download URLs</span>
 └── overrides/
-    ├── mods/             <span class="comment"># bundled mods (included directly)</span>
-    ├── shaderpacks/      <span class="comment"># shader packs</span>
-    ├── options.txt       <span class="comment"># pre-configured game settings</span>
-    └── config/           <span class="comment"># mod configuration files</span>
+    ├── mods/             <span class="comment"># pre-bundled .jar files</span>
+    ├── shaderpacks/      <span class="comment"># 10 shader packs</span>
+    ├── resourcepacks/    <span class="comment"># 12 resource packs</span>
+    └── options.txt       <span class="comment"># pre-configured settings</span>
+    </div>
+    <div class="notice warning"><span class="notice-icon">⚠️</span><div>Requires <strong>Java 17+</strong>. For best performance use <a href="https://www.graalvm.org" target="_blank">GraalVM JDK 17</a>. Allocate at least <strong>8 GB RAM</strong> — Create mod needs extra memory.</div></div>
+  </div>
+
+  <!-- REQUIREMENTS -->
+  <div class="wiki-section" id="requirements">
+    <div class="section-heading"><span class="sh-icon sh-red">💻</span>System Requirements</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.9rem">
+      <div class="side-widget">
+        <div class="side-widget-header">🟡 Minimum</div>
+        <div class="side-widget-body">
+          <div class="side-stat"><span class="label">CPU</span><span class="value">i5-8th / Ryzen 5 2600</span></div>
+          <div class="side-stat"><span class="label">RAM</span><span class="value">8 GB allocated</span></div>
+          <div class="side-stat"><span class="label">GPU</span><span class="value">GTX 1060 / RX 580</span></div>
+          <div class="side-stat"><span class="label">Storage</span><span class="value">4 GB free</span></div>
+          <div class="side-stat"><span class="label">Java</span><span class="value">Java 17+</span></div>
+        </div>
+      </div>
+      <div class="side-widget">
+        <div class="side-widget-header">⭐ Recommended</div>
+        <div class="side-widget-body">
+          <div class="side-stat"><span class="label">CPU</span><span class="value">i7-10th / Ryzen 7 3700X</span></div>
+          <div class="side-stat"><span class="label">RAM</span><span class="value">10–12 GB allocated</span></div>
+          <div class="side-stat"><span class="label">GPU</span><span class="value">RTX 2060 / RX 6600</span></div>
+          <div class="side-stat"><span class="label">Storage</span><span class="value">6 GB free (SSD)</span></div>
+          <div class="side-stat"><span class="label">Java</span><span class="value">GraalVM JDK 17</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDITS -->
+  <div class="wiki-section" id="credits">
+    <div class="section-heading"><span class="sh-icon sh-gold">🏆</span>Credits &amp; Rights</div>
+
+    <div class="credit-card">
+      <div class="credit-icon" style="background:linear-gradient(135deg,#1a0d2e,#0d1f3c);border-color:rgba(88,166,255,.3)">🧊</div>
+      <div>
+        <div class="credit-name">fouad212</div>
+        <div class="credit-role" style="color:var(--accent)">✦ Modpack Creator &amp; Curator</div>
+        <div class="credit-desc">Creator of Miracul212. All rights to the modpack compilation, configuration, and curation belong to <strong>fouad212</strong>.</div>
       </div>
     </div>
 
-    <!-- REQUIREMENTS -->
-    <div class="wiki-section" id="requirements">
-      <div class="section-heading"><span class="sh-icon sh-red">💻</span>System Requirements</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
-        <div class="side-widget">
-          <div class="side-widget-header">🟡 Minimum</div>
-          <div class="side-widget-body">
-            <div class="side-stat"><span class="label">CPU</span><span class="value">i5-8th / Ryzen 5 2600</span></div>
-            <div class="side-stat"><span class="label">RAM</span><span class="value">6 GB allocated</span></div>
-            <div class="side-stat"><span class="label">GPU</span><span class="value">GTX 1060 / RX 580</span></div>
-            <div class="side-stat"><span class="label">Storage</span><span class="value">3 GB free</span></div>
-            <div class="side-stat"><span class="label">Java</span><span class="value">Java 17+</span></div>
-          </div>
-        </div>
-        <div class="side-widget">
-          <div class="side-widget-header">⭐ Recommended</div>
-          <div class="side-widget-body">
-            <div class="side-stat"><span class="label">CPU</span><span class="value">i7-10th / Ryzen 7 3700X</span></div>
-            <div class="side-stat"><span class="label">RAM</span><span class="value">8–10 GB allocated</span></div>
-            <div class="side-stat"><span class="label">GPU</span><span class="value">RTX 2060 / RX 6600</span></div>
-            <div class="side-stat"><span class="label">Storage</span><span class="value">5 GB free (SSD)</span></div>
-            <div class="side-stat"><span class="label">Java</span><span class="value">Java 17+ (GraalVM)</span></div>
-          </div>
-        </div>
+    <div class="credit-card" style="border-color:rgba(210,168,255,.25)">
+      <div class="credit-icon" style="background:linear-gradient(135deg,#1a0d2e,#2a0d3e);border-color:rgba(210,168,255,.3)">💎</div>
+      <div>
+        <div class="credit-name">nastia</div>
+        <div class="credit-role" style="color:var(--amethyst)">✦ Author of nastias_miracle_stones_mod</div>
+        <div class="credit-desc">Creator of <strong>Nastia's Miracle Stones</strong> — the exclusive signature mod at the heart of this modpack. All rights to <em>nastias_miracle_stones_mod</em> and <em>Unified Stones — Nastia's Extension</em> belong to <strong>nastia</strong>.</div>
+        <a href="https://modrinth.com/mod/wiKMnwWH" target="_blank" style="display:inline-flex;align-items:center;gap:.3rem;margin-top:.5rem;padding:.22rem .6rem;background:rgba(210,168,255,.1);border:1px solid rgba(210,168,255,.25);border-radius:6px;color:var(--amethyst);text-decoration:none;font-size:.73rem;font-weight:600">↗ View on Modrinth</a>
       </div>
     </div>
 
-    <!-- CREDITS -->
-    <div class="wiki-section" id="credits">
-      <div class="section-heading"><span class="sh-icon sh-gold">🏆</span>Credits &amp; Rights</div>
+    <p class="wiki-p" style="margin-top:1rem">All included mods retain their authors' copyrights and licenses. Visit each mod's Modrinth page for license details.</p>
 
-      <!-- Creator -->
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.25rem;">
-        <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#1a0d2e,#0d1f3c);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:1px solid var(--border)">🧊</div>
+    <div class="sub-heading">📥 Download</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:.75rem">
+      <a href="https://modrinth.com/modpack/miracul212" target="_blank" class="dl-big modrinth">
+        <div class="dl-big-icon" style="background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.3)">🟢</div>
         <div>
-          <div style="font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:.2rem">fouad212</div>
-          <div style="font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:.4rem">✦ Modpack Creator &amp; Curator</div>
-          <div style="font-size:.82rem;color:var(--text2);line-height:1.6">Creator of the <strong>Miracul212</strong> modpack. All rights to the modpack compilation, configuration, and curation belong to <strong>fouad212</strong>.</div>
+          <div class="dl-big-name">Modrinth</div>
+          <div class="dl-big-url" style="color:var(--emerald)">modrinth.com/modpack/miracul212</div>
         </div>
-      </div>
-
-      <!-- Nastia -->
-      <div style="background:var(--surface);border:1px solid rgba(210,168,255,.35);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.25rem;">
-        <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#1a0d2e,#2a0d3e);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;border:1px solid rgba(210,168,255,.3)">💎</div>
-        <div>
-          <div style="font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:.2rem">Nastia</div>
-          <div style="font-size:.8rem;color:var(--amethyst);font-weight:600;margin-bottom:.4rem">✦ Author of Nastia`s Miracle Stones</div>
-          <div style="font-size:.82rem;color:var(--text2);line-height:1.6">Creator of <strong>Nastia's Miracle Stones</strong> — the exclusive signature mod at the heart of this modpack. All rights to <em>nastias_miracle_stones_mod</em> and its extension <em>Unified Stones — Nastia's Extension</em> belong to <strong>nastia</strong>.</div>
-          <a href="https://modrinth.com/mod/wiKMnwWH" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;margin-top:.6rem;padding:.25rem .7rem;background:rgba(210,168,255,.1);border:1px solid rgba(210,168,255,.25);border-radius:6px;color:var(--amethyst);text-decoration:none;font-size:.75rem;font-weight:600">↗ View on Modrinth</a>
-        </div>
-      </div>
-
-      <!-- Mod Devs -->
-      <p class="wiki-p">
-        Miracul212 is grateful to all mod developers whose work is included in this pack. Every mod retains its original author's copyright and is distributed under its respective license. Please visit each mod's page on Modrinth or CurseForge for full license information.
-      </p>
-
-      <!-- Download Links -->
-      <div class="sub-heading">📥 Official Download Pages</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
-        <a href="https://modrinth.com/modpack/miracul212" target="_blank" style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='var(--emerald)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#1a3a1a,#0d2818);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border:1px solid #2a5a2a">🟢</div>
-          <div>
-            <div style="font-weight:700;font-size:.9rem;color:var(--text)">Modrinth</div>
-            <div style="font-size:.75rem;color:var(--emerald);margin-top:.1rem">modrinth.com/modpack/miracul212</div>
-          </div>
-          <span style="margin-left:auto;color:var(--text3);font-size:.8rem">↗</span>
-        </a>
-        <a href="https://legacy.curseforge.com/minecraft/modpacks/miracul212" target="_blank" style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s" onmouseover="this.style.borderColor='var(--accent5)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#2a1a0a,#1a1000);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border:1px solid #5a3a1a">🔥</div>
-          <div>
-            <div style="font-weight:700;font-size:.9rem;color:var(--text)">CurseForge</div>
-            <div style="font-size:.75rem;color:var(--accent5);margin-top:.1rem">curseforge.com · miracul212</div>
-          </div>
-          <span style="margin-left:auto;color:var(--text3);font-size:.8rem">↗</span>
-        </a>
-      </div>
-
-      <div class="notice info" style="margin-top:1.5rem">
-        <span class="notice-icon">ℹ️</span>
-        <div>Always download Miracul212 from official sources only — <strong>Modrinth</strong> or <strong>CurseForge</strong>. Avoid third-party reposts as they may contain outdated or modified versions.</div>
-      </div>
+        <span style="margin-left:auto;color:var(--text3)">↗</span>
+      </a>
     </div>
 
-  </main>
+    <div class="notice info" style="margin-top:1rem"><span class="notice-icon">ℹ️</span><div>Always download Miracul212 from the official <strong>Modrinth</strong> page only. Avoid third-party reposts.</div></div>
+  </div>
 
-  <!-- RIGHT SIDEBAR -->
-  <aside class="sidebar-right">
-    <div class="side-widget">
-      <div class="side-widget-header">📊 Quick Stats</div>
-      <div class="side-widget-body">
-        <div class="side-stat"><span class="label">Mods</span><span class="value" style="color:var(--accent)">94</span></div>
-        <div class="side-stat"><span class="label">Shaders</span><span class="value" style="color:var(--amethyst)">10</span></div>
-        <div class="side-stat"><span class="label">Resource Packs</span><span class="value" style="color:var(--accent5)">12</span></div>
-        <div class="side-stat"><span class="label">Performance Mods</span><span class="value" style="color:var(--emerald)">15</span></div>
-        <div class="side-stat"><span class="label">Content Mods</span><span class="value" style="color:var(--ruby)">24+</span></div>
-        <div class="side-stat"><span class="label">Version</span><span class="value">1.0.5</span></div>
-      </div>
-    </div>
+</main>
 
-    <div class="side-widget">
-      <div class="side-widget-header">🔗 Quick Links</div>
-      <div class="side-widget-body">
-        <a class="quick-link" href="https://modrinth.com/modpack/miracul212" target="_blank">🟢 Miracul212 on Modrinth</a>
-        <a class="quick-link" href="https://legacy.curseforge.com/minecraft/modpacks/miracul212" target="_blank">🔥 Miracul212 on CurseForge</a>
-        <a class="quick-link" href="https://modrinth.com/app" target="_blank">📱 Modrinth App</a>
-        <a class="quick-link" href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html" target="_blank">🔨 Forge Downloads</a>
-        <a class="quick-link" href="https://modrinth.com/mod/wiKMnwWH" target="_blank">💎 Nastia Miracle Stones</a>
-        <a class="quick-link" href="https://modrinth.com/mod/sk9rgfiA" target="_blank">⚡ Embeddium</a>
-        <a class="quick-link" href="https://modrinth.com/mod/uXXizFIs" target="_blank">🧠 FerriteCore</a>
-        <a class="quick-link" href="https://modrinth.com/mod/nmDcB62a" target="_blank">🚀 ModernFix</a>
-        <a class="quick-link" href="https://modrinth.com/mod/GchcoXML" target="_blank">👁️ Oculus (Shaders)</a>
-        <a class="quick-link" href="https://modrinth.com/mod/9eGKb6K1" target="_blank">🎙️ Simple Voice Chat</a>
-      </div>
+<!-- RIGHT SIDEBAR -->
+<aside class="sidebar-right">
+  <div class="side-widget">
+    <div class="side-widget-header">📊 Quick Stats</div>
+    <div class="side-widget-body">
+      <div class="side-stat"><span class="label">Mods</span><span class="value" style="color:var(--accent)">100</span></div>
+      <div class="side-stat"><span class="label">Shaders</span><span class="value" style="color:var(--amethyst)">10</span></div>
+      <div class="side-stat"><span class="label">Resource Packs</span><span class="value" style="color:var(--accent5)">12</span></div>
+      <div class="side-stat"><span class="label">Total</span><span class="value" style="color:var(--emerald)">122</span></div>
+      <div class="side-stat"><span class="label">Version</span><span class="value">1.0.8</span></div>
     </div>
+  </div>
 
-    <div class="side-widget">
-      <div class="side-widget-header">🌟 Highlights</div>
-      <div class="side-widget-body">
-        <div class="side-stat"><span class="label">💎 Nastia Stones</span><span class="value" style="font-size:.7rem;color:var(--amethyst)">exclusive</span></div>
-        <div class="side-stat"><span class="label">👗 FazRoleplay Clothes</span><span class="value" style="font-size:.7rem;color:var(--accent)">new!</span></div>
-        <div class="side-stat"><span class="label">🏙️ CityCraft</span><span class="value" style="font-size:.7rem;color:var(--emerald)">new!</span></div>
-        <div class="side-stat"><span class="label">🚗 Immersive Vehicles</span><span class="value" style="font-size:.7rem;color:var(--accent5)">vehicles</span></div>
-        <div class="side-stat"><span class="label">🦁 Alex's Mobs</span><span class="value" style="font-size:.7rem;color:var(--accent)">creatures</span></div>
-        <div class="side-stat"><span class="label">⚡ Embeddium</span><span class="value" style="font-size:.7rem;color:var(--accent)">performance</span></div>
-      </div>
+  <div class="side-widget" style="border-color:rgba(88,101,242,.3)">
+    <div class="side-widget-header" style="color:var(--discord)">💬 Discord</div>
+    <div class="side-widget-body">
+      <p style="font-size:.78rem;color:var(--text2);line-height:1.55;margin-bottom:.65rem">Join the community for support, updates &amp; more.</p>
+      <a href="https://discord.gg/mU6WBcxNuG" target="_blank" style="display:block;text-align:center;padding:.45rem;background:var(--discord);border-radius:7px;color:#fff;text-decoration:none;font-size:.82rem;font-weight:700">Join Discord</a>
     </div>
+  </div>
 
-    <div class="side-widget">
-      <div class="side-widget-header">📁 Pack Info</div>
-      <div class="side-widget-body">
-        <div class="side-stat"><span class="label">Name</span><span class="value" style="font-size:.72rem;font-family:monospace">Miracul212</span></div>
-        <div class="side-stat"><span class="label">Format</span><span class="value" style="font-size:.72rem;font-family:monospace">.mrpack</span></div>
-        <div class="side-stat"><span class="label">MC Version</span><span class="value">1.20.1</span></div>
-        <div class="side-stat"><span class="label">Loader</span><span class="value">Forge</span></div>
-      </div>
+  <div class="side-widget" style="border-color:rgba(63,185,80,.3)">
+    <div class="side-widget-header" style="color:var(--emerald)">⚔️ Official Server</div>
+    <div class="side-widget-body">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--emerald);font-weight:600;margin-bottom:.35rem;text-align:center">play.minetro.com</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text2);margin-bottom:.55rem;text-align:center">Port: 1795</div>
+      <button onclick="copyIP()" style="width:100%;padding:.4rem;background:rgba(63,185,80,.12);border:1px solid rgba(63,185,80,.3);border-radius:7px;color:var(--emerald);font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer">📋 Copy IP</button>
     </div>
-  </aside>
+  </div>
+
+  <div class="side-widget">
+    <div class="side-widget-header">🔗 Quick Links</div>
+    <div class="side-widget-body">
+      <a class="quick-link" href="https://modrinth.com/modpack/miracul212" target="_blank">🟢 Miracul212 on Modrinth</a>
+      <a class="quick-link" href="https://discord.gg/mU6WBcxNuG" target="_blank" style="color:var(--discord)">💬 Discord Community</a>
+      <a class="quick-link" href="https://modrinth.com/app" target="_blank">📱 Modrinth App</a>
+      <a class="quick-link" href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html" target="_blank">🔨 Forge 1.20.1</a>
+      <a class="quick-link" href="https://modrinth.com/mod/wiKMnwWH" target="_blank">💎 Nastia Miracle Stones</a>
+      <a class="quick-link" href="https://modrinth.com/mod/sk9rgfiA" target="_blank">⚡ Embeddium</a>
+      <a class="quick-link" href="https://modrinth.com/mod/uXXizFIs" target="_blank">🧠 FerriteCore</a>
+      <a class="quick-link" href="https://modrinth.com/mod/LNytGWDc" target="_blank">⚙️ Create</a>
+    </div>
+  </div>
+
+  <div class="side-widget">
+    <div class="side-widget-header">🌟 Highlights</div>
+    <div class="side-widget-body">
+      <div class="side-stat"><span class="label">⚙️ Create</span><span class="value" style="font-size:.7rem;color:var(--accent)">new! v6.0.8</span></div>
+      <div class="side-stat"><span class="label">💎 Nastia Stones</span><span class="value" style="font-size:.7rem;color:var(--amethyst)">exclusive</span></div>
+      <div class="side-stat"><span class="label">🦁 Alex's Mobs</span><span class="value" style="font-size:.7rem;color:var(--accent)">creatures</span></div>
+      <div class="side-stat"><span class="label">🌿 Farmer's Delight</span><span class="value" style="font-size:.7rem;color:var(--emerald)">content</span></div>
+      <div class="side-stat"><span class="label">🚗 Immersive Vehicles</span><span class="value" style="font-size:.7rem;color:var(--accent5)">vehicles</span></div>
+      <div class="side-stat"><span class="label">⚡ Embeddium</span><span class="value" style="font-size:.7rem;color:var(--accent)">performance</span></div>
+    </div>
+  </div>
+</aside>
 
 </div>
 
 <div class="wiki-footer">
-  <span>© 2026 <strong style="color:var(--text2)">fouad212</strong> · Miracul212 Wiki · v1.0.5 · Forge 1.20.1 · <em style="color:var(--text3)">Nastia`s Miracle Stones © Nastia</em></span>
+  <span>© 2026 <strong style="color:var(--text2)">fouad212</strong> · Miracul212 Wiki · v1.0.8 · Forge 1.20.1 · <em style="color:var(--text3)">nastias_miracle_stones_mod © nastia</em></span>
   <div class="footer-links">
     <a href="https://modrinth.com/modpack/miracul212" target="_blank">Modrinth</a>
-    <a href="https://legacy.curseforge.com/minecraft/modpacks/miracul212" target="_blank">CurseForge</a>
+    <a href="https://discord.gg/mU6WBcxNuG" target="_blank">Discord</a>
+    <a href="#server-section">Server</a>
     <a href="#mods-section">Mods</a>
-    <a href="#shaders-section">Shaders</a>
     <a href="#install-section">Installation</a>
     <a href="#credits">Credits</a>
   </div>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-// MOD DATA — v1.0.5 (PIDs from modrinth.index.json)
-// +4 new: CityCraft, FazRoleplay Clothes, ClothingCraft, Illias Addon
-// ModernFix 5.27.15 | EMF 3.2.2 | Farmer's Delight 1.3.1 | CreativeCore 2.12.37
-// ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+// COPY IP
+// ═══════════════════════════════════════════════
+function copyIP() {
+  navigator.clipboard.writeText('play.minetro.com:1795').then(() => {
+    document.querySelectorAll('.server-copy').forEach(b => { b.textContent = '✅ Copied!'; setTimeout(()=>b.textContent='📋 Copy IP', 2000); });
+  });
+}
+
+// ═══════════════════════════════════════════════
+// MOD DATA — v1.0.8 (100 mods, PIDs from modrinth.index.json)
+// ═══════════════════════════════════════════════
 const ALL_MODS = [
-  // PERFORMANCE
-  {name:"Embeddium",                    file:"embeddium-0.3.31+mc1.20.1.jar",                            type:"performance",icon:"🚀",pid:"sk9rgfiA"},
-  {name:"Oculus",                       file:"oculus-mc1.20.1-1.8.0.jar",                                type:"performance",icon:"👁️",pid:"GchcoXML"},
-  {name:"FerriteCore",                  file:"ferritecore-6.0.1-forge.jar",                              type:"performance",icon:"🧠",pid:"uXXizFIs"},
-  {name:"ModernFix",                    file:"modernfix-forge-5.27.15+mc1.20.1.jar",                     type:"performance",icon:"⚡",pid:"nmDcB62a"},
-  {name:"Entity Culling",               file:"entityculling-forge-1.10.1-mc1.20.1.jar",                  type:"performance",icon:"⚡",pid:"NNAgCjsB"},
-  {name:"Noisium",                      file:"noisium-forge-2.3.0+mc1.20-1.20.1.jar",                    type:"performance",icon:"🌍",pid:"KuNKN7d2"},
-  {name:"Starlight",                    file:"starlight-1.1.2+forge.1cda73c.jar",                        type:"performance",icon:"⭐",pid:"iRfIGC1s"},
-  {name:"BadOptimizations",             file:"BadOptimizations-2.4.1-1.20.1.jar",                        type:"performance",icon:"⚡",pid:"g96Z4WVZ"},
-  {name:"Dynamic FPS",                  file:"dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",            type:"performance",icon:"🖥️",pid:"LQ3K71Q1"},
-  {name:"ImmediatelyFast",              file:"ImmediatelyFast-Forge-1.5.4+1.20.4.jar",                   type:"performance",icon:"⚡",pid:"5ZwdcRci"},
-  {name:"Memory Leak Fix",              file:"memoryleakfix-forge-1.17+-1.1.5.jar",                      type:"performance",icon:"🧠",pid:"NRjRiSSD"},
-  {name:"RRLS",                         file:"rrls-4.0.6.1+mc1.20.1-forge.jar",                          type:"performance",icon:"⚡",pid:"ZP7xHXtw"},
-  {name:"Fastload Reforged",            file:"Fastload-Reforged-mc1.20.1-3.4.0.jar",                     type:"performance",icon:"🚀",pid:"kCpssoSb"},
-  {name:"Rubidium Extra",               file:"rubidium-extra-0.5.4.4+mc1.20.1-build.131.jar",            type:"performance",icon:"⚡",pid:"oY2B1pjg"},
-  {name:"GPU Tape",                     file:"GPUTape-1.18x-1.21x-1.0.5.1.jar",                          type:"performance",icon:"🖥️",pid:"5CTSrY8X"},
-  // VISUAL
-  {name:"Entity Texture Features",      file:"entity_texture_features_1.20.1-forge-7.1.jar",             type:"visual",     icon:"🎨",pid:"BVzZfTc1"},
-  {name:"Entity Model Features",        file:"entity_model_features_1.20.1-forge-3.2.2.jar",             type:"visual",     icon:"🦊",pid:"4I1XuqiY"},
-  {name:"Skin Layers 3D",               file:"skinlayers3d-forge-1.11.1-mc1.20.1.jar",                   type:"visual",     icon:"👤",pid:"zV5r3pPn"},
-  {name:"Prism",                        file:"Prism-1.20.1-forge-1.0.5.jar",                             type:"visual",     icon:"🌈",pid:"1OE8wbN0"},
-  {name:"Chat Animation",               file:"chatanimation-forge-1.20.1-1.1.3.jar",                     type:"visual",     icon:"💬",pid:"DnNYdJsx"},
-  {name:"Sound Physics Remastered",     file:"sound-physics-remastered-forge-1.20.1-1.5.1.jar",          type:"visual",     icon:"🔊",pid:"qyVF9oeo"},
-  {name:"Chat Heads",                   file:"chat_heads-0.15.1-forge-1.20.jar",                         type:"visual",     icon:"👤",pid:"Wb5oqrBJ"},
-  {name:"Photon",                       file:"photon-forge-1.20.1-1.1.17.jar",                           type:"visual",     icon:"💡",pid:"gzevkJbM"},
-  {name:"CIT Resewn",                   file:"citresewn-1.2.2+1.20.1.jar",                               type:"visual",     icon:"🎨",pid:"otVJckYQ"},
-  {name:"Continuity",                   file:"continuity-3.0.0+1.20.1.forge.jar",                        type:"visual",     icon:"🪟",pid:"1IjD5062"},
-  {name:"Polytone",                     file:"polytone-1.20-3.5.25.jar",                                 type:"visual",     icon:"🎨",pid:"3qAYkBMB"},
-  // CONTENT
-  {name:"Nastia's Miracle Stones",      file:"nastias_miracle_stones_mod-1.7.1_Peacock_Addition+Bugfix.jar",type:"content", icon:"💎",pid:"wiKMnwWH"},
-  {name:"Unified Stones (Nastia Ext.)", file:"unified_stones_nastias_extension-1.3.5.0-forge-1.20.1.jar",type:"content",   icon:"🪨",pid:"4LBBy7c4"},
-  {name:"Alex's Mobs",                  file:"alexsmobs-1.22.9.jar",                                     type:"content",    icon:"🦁",pid:"2cMuAZAp"},
-  {name:"Naturalist",                   file:"naturalist-5.0pre3+forge-1.20.1.jar",                      type:"content",    icon:"🦊",pid:"F8BQNPWX"},
-  {name:"Farmer's Delight",             file:"FarmersDelight-1.20.1-1.3.1.jar",                          type:"content",    icon:"🌾",pid:"R2OftAxM"},
-  {name:"Supplementaries",              file:"supplementaries-1.20-3.1.43-forge.jar",                    type:"content",    icon:"🏮",pid:"fFEIiSDQ"},
-  {name:"Another Furniture",            file:"another_furniture-forge-1.20.1-3.0.4.jar",                 type:"content",    icon:"🛋️",pid:"ulloLmqG"},
-  {name:"Handcrafted",                  file:"handcrafted-forge-1.20.1-3.0.6.jar",                       type:"content",    icon:"🪑",pid:"pJmCFF0p"},
-  {name:"Traveler's Backpack",          file:"travelersbackpack-forge-1.20.1-9.1.53.jar",                type:"content",    icon:"🎒",pid:"rlloIFEV"},
-  {name:"Exposure",                     file:"exposure-forge-1.20.1-1.9.20.jar",                         type:"content",    icon:"📸",pid:"hB899VmG"},
-  {name:"Exposure Polaroid",            file:"exposure_polaroid-forge-1.20.1-1.1.3.jar",                 type:"content",    icon:"📷",pid:"WEWiqYkW"},
-  {name:"Immersive Vehicles",           file:"Immersive Vehicles-1.20.1-24.0.0.jar",                     type:"content",    icon:"🚗",pid:"BCzBuhJ5"},
-  {name:"New Cars",                     file:"New_Cars4.4(1.16-1.20)cut.jar",                            type:"content",    icon:"🏎️",pid:"TYrKkSaT"},
-  {name:"Modern Japan City",            file:"ModernJapanCity-Forge-1.20.1-1.0.8.jar",                   type:"content",    icon:"🏯",pid:"htWs7oGd"},
-  {name:"Deco Storage",                 file:"deco_storage-4.0303-forge-1.20.1.jar",                     type:"content",    icon:"📦",pid:"DLpaTTzJ"},
-  {name:"GWoodworks",                   file:"gwoodworks-1.1.1a-1.20.1-forge.jar",                       type:"content",    icon:"🪵",pid:"NTFyR6MX"},
-  {name:"Dinnerware",                   file:"dinnerware-0.9.1-1.20.1.jar",                              type:"content",    icon:"🍽️",pid:"TcN3MJnS"},
-  {name:"Spudacious Shops",             file:"spudaciousshops-1.10.2-forge-1.20.1.jar",                  type:"content",    icon:"🏪",pid:"sHFbDnFN"},
-  {name:"FazRoleplay Clothes",          file:"FazRoleplayClothes-1.20.1-2.4.jar",                        type:"content",    icon:"👗",pid:"zjMFbe7B"},
-  {name:"ClothingCraft",                file:"clothingcraft-1.0.0.jar",                                  type:"content",    icon:"🧵",pid:"9QeKihMe"},
-  {name:"CityCraft",                    file:"CityCraft-1.20.x-(v.1.7.0).jar",                           type:"content",    icon:"🏙️",pid:"94iqI5Ec"},
-  {name:"Illias Addon",                 file:"illiasaddon-1.0-forge-1.20.1.jar",                         type:"content",    icon:"✨",pid:"9Z2wBBTT"},
-  // UTILITY
-  {name:"JEI (Just Enough Items)",      file:"jei-1.20.1-forge-15.20.0.130.jar",                        type:"utility",    icon:"📖",pid:"u6dRKJwZ"},
-  {name:"Jade",                         file:"Jade-1.20.1-Forge-11.13.2.jar",                            type:"utility",    icon:"🔍",pid:"nvQzSEkH"},
-  {name:"Xaero's Minimap",              file:"xaerominimap-forge-1.20.1-25.3.10.jar",                    type:"utility",    icon:"🗺️",pid:"1bokaNcj"},
-  {name:"Xaero's World Map",            file:"xaeroworldmap-forge-1.20.1-1.40.11.jar",                   type:"utility",    icon:"🌐",pid:"NcUtCpym"},
-  {name:"Simple Voice Chat",            file:"voicechat-forge-1.20.1-2.6.16.jar",                       type:"utility",    icon:"🎙️",pid:"9eGKb6K1"},
-  {name:"e4mc",                         file:"e4mc-forge-6.1.0.jar",                                     type:"utility",    icon:"🌐",pid:"qANg5Jrr"},
-  {name:"AppleSkin",                    file:"appleskin-forge-mc1.20.1-2.5.1.jar",                       type:"utility",    icon:"🍎",pid:"EsAfCjCV"},
-  {name:"Vein Miner",                   file:"veinminer-1.1.0.jar",                                      type:"utility",    icon:"⛏️",pid:"OhduvhIc"},
-  {name:"Mouse Tweaks",                 file:"MouseTweaks-forge-mc1.20.1-2.25.1.jar",                    type:"utility",    icon:"🖱️",pid:"aC3cM3Vq"},
-  {name:"Shulker Box Tooltip",          file:"shulkerboxtooltip-forge-4.0.4+1.20.1.jar",                 type:"utility",    icon:"📦",pid:"2M01OLQq"},
-  {name:"Carry On",                     file:"carryon-forge-1.20.1-2.1.2.7.jar",                         type:"utility",    icon:"📦",pid:"joEfVgkn"},
-  {name:"WI Zoom",                      file:"WI-Zoom-1.5-MC1.20.1-Forge.jar",                           type:"utility",    icon:"🔍",pid:"o7DitHWP"},
-  {name:"Do a Barrel Roll",             file:"do_a_barrel_roll-forge-3.5.6+1.20.1.jar",                  type:"utility",    icon:"🛩️",pid:"6FtRfnLg"},
-  {name:"Freecam",                      file:"freecam-forge-1.2.1+1.20.jar",                             type:"utility",    icon:"📷",pid:"XeEZ3fK2"},
-  {name:"Spark",                        file:"spark-1.10.53-forge.jar",                                  type:"utility",    icon:"🔥",pid:"l6YH9Als"},
-  {name:"CraftPresence",                file:"CraftPresence-2.7.1+1.20.1-forge.jar",                     type:"utility",    icon:"🎮",pid:"DFqQfIBR"},
-  {name:"Clumps",                       file:"Clumps-forge-1.20.1-12.0.0.4.jar",                         type:"utility",    icon:"🧲",pid:"Wnxd13zP"},
-  {name:"Sit",                          file:"sit-1.20.1-1.3.5.jar",                                     type:"utility",    icon:"🪑",pid:"VKXzIykF"},
-  {name:"Showcase Item",                file:"showcaseitem-1.20.1-1.2.jar",                              type:"utility",    icon:"🖼️",pid:"P5Jjjezm"},
-  {name:"Watut",                        file:"watut-forge-1.20.1-1.2.3.jar",                             type:"utility",    icon:"🌊",pid:"AtB5mHky"},
-  {name:"Skin Restorer",                file:"skinrestorer-2.7.0+1.20-forge.jar",                        type:"utility",    icon:"🎭",pid:"ghrZDhGW"},
-  {name:"Self Expression",              file:"selfexpression-2.22a-forge-1.20.1.jar",                    type:"utility",    icon:"🎭",pid:"yv3OK08E"},
-  {name:"Better Third Person",          file:"BetterThirdPerson-Forge-1.20-1.9.0.jar",                   type:"utility",    icon:"📹",pid:"G1s2WpNo"},
-  {name:"Melody",                       file:"melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",                 type:"utility",    icon:"🎵",pid:"CVT4pFB2"},
-  {name:"Kleider's Custom Renderer",    file:"kleiders_custom_renderer-7.4.1-forge-1.20.1.jar",          type:"utility",    icon:"👗",pid:"oaG6aa1j"},
-  {name:"BetterF3",                     file:"BetterF3-7.0.2-Forge-1.20.1.jar",                         type:"utility",    icon:"🔧",pid:"8shC1gFX"},
-  {name:"Essential",                    file:"Essential_1-3-10-8_forge_1-20-1.jar",                      type:"utility",    icon:"💫",pid:"k2ZPuTBm"},
-  // LIBRARIES
-  {name:"UniLib",                       file:"UniLib-1.2.1+1.20.1-forge.jar",                            type:"library",    icon:"📦",pid:"nT86WUER"},
-  {name:"Architectury",                 file:"architectury-9.2.14-forge.jar",                            type:"library",    icon:"📦",pid:"lhGA9TYQ"},
-  {name:"GeckoLib",                     file:"geckolib-forge-1.20.1-4.8.3.jar",                          type:"library",    icon:"🦎",pid:"8BmcQJ2H"},
-  {name:"Resourceful Lib",              file:"resourcefullib-forge-1.20.1-2.1.29.jar",                   type:"library",    icon:"📦",pid:"G1hIVOrD"},
-  {name:"Cloth Config",                 file:"cloth-config-11.1.136-forge.jar",                          type:"library",    icon:"📦",pid:"9s6osm5g"},
-  {name:"Kotlin for Forge",             file:"kotlinforforge-4.12.0-all.jar",                            type:"library",    icon:"📦",pid:"ordsPcFz"},
-  {name:"Citadel",                      file:"citadel-2.6.3-1.20.1.jar",                                type:"library",    icon:"📦",pid:"jJfV67b1"},
-  {name:"Konkrete",                     file:"konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",                  type:"library",    icon:"📦",pid:"J81TRJWm"},
-  {name:"MRU",                          file:"MRU-1.0.4+1.20.1+forge.jar",                              type:"library",    icon:"📦",pid:"SNVQ2c0g"},
-  {name:"CoroUtil",                     file:"coroutil-forge-1.20.1-1.3.7.jar",                          type:"library",    icon:"📦",pid:"rLLJ1OZM"},
-  {name:"Iceberg",                      file:"Iceberg-1.20.1-forge-1.1.25.jar",                         type:"library",    icon:"📦",pid:"5faXoLqX"},
-  {name:"Moonlight Lib",                file:"moonlight-1.20-2.16.30-forge.jar",                         type:"library",    icon:"🌙",pid:"twkfQtEc"},
-  {name:"Curios API",                   file:"curios-forge-5.14.1+1.20.1.jar",                           type:"library",    icon:"💍",pid:"vvuO3ImH"},
-  {name:"Fabric API (Connector)",       file:"fabric-api-0.92.6+1.11.14+1.20.1.jar",                    type:"library",    icon:"📦",pid:"Aqlf1Shp"},
-  {name:"Connector",                    file:"Connector-1.0.0-beta.48+1.20.1.jar",                      type:"library",    icon:"📦",pid:"u58R1TMW"},
-  {name:"CreativeCore",                 file:"CreativeCore_FORGE_v2.12.37_mc1.20.1.jar",                 type:"library",    icon:"📦",pid:"OsZiaDHq"},
-  {name:"Decorative Core",              file:"decorative_core-2.0602-forge-1.20.1.jar",                  type:"library",    icon:"📦",pid:"g0YZhKZF"},
-  {name:"MacuLib",                      file:"macu_lib-forge-1.0.7-1.20.1.jar",                          type:"library",    icon:"📦",pid:"XnLNz8og"},
-  {name:"Sounds",                       file:"Sounds-2.2.1+1.20.1+forge.jar",                           type:"library",    icon:"🔊",pid:"ZouiUX7t"},
+  // PERFORMANCE (15)
+  {name:"Embeddium",                     file:"embeddium-0.3.31+mc1.20.1.jar",                           type:"performance",icon:"🚀",pid:"sk9rgfiA"},
+  {name:"Oculus",                        file:"oculus-mc1.20.1-1.8.0.jar",                               type:"performance",icon:"👁️",pid:"GchcoXML"},
+  {name:"FerriteCore",                   file:"ferritecore-6.0.1-forge.jar",                             type:"performance",icon:"🧠",pid:"uXXizFIs"},
+  {name:"ModernFix",                     file:"modernfix-forge-5.27.40+mc1.20.1.jar",                    type:"performance",icon:"⚡",pid:"nmDcB62a"},
+  {name:"Entity Culling",                file:"entityculling-forge-1.10.2-mc1.20.1.jar",                 type:"performance",icon:"⚡",pid:"NNAgCjsB"},
+  {name:"Noisium",                       file:"noisium-forge-2.3.0+mc1.20-1.20.1.jar",                   type:"performance",icon:"🌍",pid:"KuNKN7d2"},
+  {name:"Starlight",                     file:"starlight-1.1.2+forge.1cda73c.jar",                       type:"performance",icon:"⭐",pid:"iRfIGC1s"},
+  {name:"BadOptimizations",              file:"BadOptimizations-2.4.1-1.20.1.jar",                       type:"performance",icon:"⚡",pid:"g96Z4WVZ"},
+  {name:"Dynamic FPS",                   file:"dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",           type:"performance",icon:"🖥️",pid:"LQ3K71Q1"},
+  {name:"ImmediatelyFast",               file:"ImmediatelyFast-Forge-1.5.4+1.20.4.jar",                  type:"performance",icon:"⚡",pid:"5ZwdcRci"},
+  {name:"Memory Leak Fix",               file:"memoryleakfix-forge-1.17+-1.1.5.jar",                     type:"performance",icon:"🧠",pid:"NRjRiSSD"},
+  {name:"RRLS",                          file:"rrls-4.0.6.1+mc1.20.1-forge.jar",                         type:"performance",icon:"⚡",pid:"ZP7xHXtw"},
+  {name:"Fastload Reforged",             file:"Fastload-Reforged-mc1.20.1-3.4.0.jar",                    type:"performance",icon:"🚀",pid:"kCpssoSb"},
+  {name:"Rubidium Extra",                file:"rubidium-extra-0.5.4.4+mc1.20.1-build.131.jar",           type:"performance",icon:"⚡",pid:"oY2B1pjg"},
+  {name:"GPU Tape",                      file:"GPUTape-1.18x-1.21x-1.0.5.1.jar",                         type:"performance",icon:"🖥️",pid:"5CTSrY8X"},
+  // VISUAL (11)
+  {name:"Entity Texture Features",       file:"entity_texture_features_1.20.1-forge-7.1.jar",            type:"visual",     icon:"🎨",pid:"BVzZfTc1"},
+  {name:"Entity Model Features",         file:"entity_model_features-3.2.4-1.20.1-forge.jar",            type:"visual",     icon:"🦊",pid:"4I1XuqiY"},
+  {name:"Skin Layers 3D",                file:"skinlayers3d-forge-1.11.1-mc1.20.1.jar",                  type:"visual",     icon:"👤",pid:"zV5r3pPn"},
+  {name:"Prism",                         file:"Prism-1.20.1-forge-1.0.5.jar",                            type:"visual",     icon:"🌈",pid:"1OE8wbN0"},
+  {name:"Chat Animation",                file:"chatanimation-forge-1.20.1-1.1.3.jar",                    type:"visual",     icon:"💬",pid:"DnNYdJsx"},
+  {name:"Sound Physics Remastered",      file:"sound-physics-remastered-forge-1.20.1-1.5.1.jar",         type:"visual",     icon:"🔊",pid:"qyVF9oeo"},
+  {name:"Chat Heads",                    file:"chat_heads-0.15.1-forge-1.20.jar",                        type:"visual",     icon:"👤",pid:"Wb5oqrBJ"},
+  {name:"Photon",                        file:"photon-forge-1.20.1-1.1.17.jar",                          type:"visual",     icon:"💡",pid:"gzevkJbM"},
+  {name:"CIT Resewn",                    file:"citresewn-1.2.2+1.20.1.jar",                              type:"visual",     icon:"🎨",pid:"otVJckYQ"},
+  {name:"Continuity",                    file:"continuity-3.0.0+1.20.1.forge.jar",                       type:"visual",     icon:"🪟",pid:"1IjD5062"},
+  {name:"Polytone",                      file:"polytone-1.20-3.5.26.jar",                                type:"visual",     icon:"🎨",pid:"3qAYkBMB"},
+  // CONTENT (24)
+  {name:"Nastia's Miracle Stones",       file:"nastias_miracle_stones_mod-1.7.2_Bugfix.jar",              type:"content",    icon:"💎",pid:"wiKMnwWH"},
+  {name:"Unified Stones (Nastia Ext.)",  file:"unified_stones_nastias_extension-1.3.5.0-forge-1.20.1.jar",type:"content",   icon:"🪨",pid:"4LBBy7c4"},
+  {name:"Alex's Mobs",                   file:"alexsmobs-1.22.9.jar",                                    type:"content",    icon:"🦁",pid:"2cMuAZAp"},
+  {name:"Naturalist",                    file:"naturalist-5.0pre3+forge-1.20.1.jar",                     type:"content",    icon:"🦊",pid:"F8BQNPWX"},
+  {name:"Farmer's Delight",              file:"FarmersDelight-1.20.1-1.3.2.jar",                         type:"content",    icon:"🌾",pid:"R2OftAxM"},
+  {name:"Supplementaries",               file:"supplementaries-1.20-3.1.43-forge.jar",                   type:"content",    icon:"🏮",pid:"fFEIiSDQ"},
+  {name:"Another Furniture",             file:"another_furniture-forge-1.20.1-3.0.4.jar",                type:"content",    icon:"🛋️",pid:"ulloLmqG"},
+  {name:"Handcrafted",                   file:"handcrafted-forge-1.20.1-3.0.6.jar",                      type:"content",    icon:"🪑",pid:"pJmCFF0p"},
+  {name:"Traveler's Backpack",           file:"travelersbackpack-forge-1.20.1-9.1.55.jar",               type:"content",    icon:"🎒",pid:"rlloIFEV"},
+  {name:"Exposure",                      file:"exposure-forge-1.20.1-1.9.20.jar",                        type:"content",    icon:"📸",pid:"hB899VmG"},
+  {name:"Exposure Polaroid",             file:"exposure_polaroid-forge-1.20.1-1.1.4.jar",                type:"content",    icon:"📷",pid:"WEWiqYkW"},
+  {name:"Immersive Vehicles",            file:"Immersive Vehicles-1.20.1-24.0.0.jar",                    type:"content",    icon:"🚗",pid:"BCzBuhJ5"},
+  {name:"New Cars",                      file:"New_Cars4.4(1.16-1.20)cut.jar",                           type:"content",    icon:"🏎️",pid:"TYrKkSaT"},
+  {name:"Modern Japan City",             file:"ModernJapanCity-Forge-1.20.1-1.0.8.jar",                  type:"content",    icon:"🏯",pid:"htWs7oGd"},
+  {name:"Deco Storage",                  file:"deco_storage-4.0405-forge-1.20.1.jar",                    type:"content",    icon:"📦",pid:"DLpaTTzJ"},
+  {name:"GWoodworks",                    file:"gwoodworks-1.1.1a-1.20.1-forge.jar",                      type:"content",    icon:"🪵",pid:"NTFyR6MX"},
+  {name:"Dinnerware",                    file:"dinnerware-1.0.0-1.20.1-forge.jar",                       type:"content",    icon:"🍽️",pid:"TcN3MJnS"},
+  {name:"Spudacious Shops",              file:"spudaciousshops-1.10.2-forge-1.20.1.jar",                 type:"content",    icon:"🏪",pid:"sHFbDnFN"},
+  {name:"FazRoleplay Clothes",           file:"FazRoleplayClothes-1.20.1-2.4.jar",                       type:"content",    icon:"👗",pid:"zjMFbe7B"},
+  {name:"ClothingCraft",                 file:"clothingcraft-1.0.0.jar",                                 type:"content",    icon:"🧵",pid:"9QeKihMe"},
+  {name:"Create",                        file:"create-1.20.1-6.0.8.jar",                                 type:"content",    icon:"⚙️",pid:"LNytGWDc"},
+  {name:"Cluttered",                     file:"cluttered-[Forge]-3.0.3-1.20.1.jar",                      type:"content",    icon:"📚",pid:"UnAEo77V"},
+  {name:"Moving Elevators",              file:"movingelevators-1.4.12-forge-mc1.20.1.jar",               type:"content",    icon:"🛗",pid:"9KZOe6HD"},
+  {name:"Furniture Tools Refurbished",   file:"furniture_mod_tools_refurbished-1.0.1-forge-1.20.1.jar",  type:"content",    icon:"🪑",pid:"wjNYBh7l"},
+  // UTILITY (25)
+  {name:"JEI (Just Enough Items)",       file:"jei-1.20.1-forge-15.20.0.130.jar",                       type:"utility",    icon:"📖",pid:"u6dRKJwZ"},
+  {name:"Jade",                          file:"Jade-1.20.1-Forge-11.13.2.jar",                           type:"utility",    icon:"🔍",pid:"nvQzSEkH"},
+  {name:"Xaero's Minimap",               file:"xaerominimap-forge-1.20.1-25.3.13.jar",                   type:"utility",    icon:"🗺️",pid:"1bokaNcj"},
+  {name:"Xaero's World Map",             file:"xaeroworldmap-forge-1.20.1-1.40.16.jar",                  type:"utility",    icon:"🌐",pid:"NcUtCpym"},
+  {name:"Simple Voice Chat",             file:"voicechat-forge-1.20.1-2.6.18.jar",                      type:"utility",    icon:"🎙️",pid:"9eGKb6K1"},
+  {name:"e4mc",                          file:"e4mc-forge-6.1.0.jar",                                    type:"utility",    icon:"🌐",pid:"qANg5Jrr"},
+  {name:"AppleSkin",                     file:"appleskin-forge-mc1.20.1-2.5.1.jar",                      type:"utility",    icon:"🍎",pid:"EsAfCjCV"},
+  {name:"Vein Miner",                    file:"veinminer-1.1.0.jar",                                     type:"utility",    icon:"⛏️",pid:"OhduvhIc"},
+  {name:"Mouse Tweaks",                  file:"MouseTweaks-forge-mc1.20.1-2.25.1.jar",                   type:"utility",    icon:"🖱️",pid:"aC3cM3Vq"},
+  {name:"Shulker Box Tooltip",           file:"shulkerboxtooltip-forge-4.0.4+1.20.1.jar",                type:"utility",    icon:"📦",pid:"2M01OLQq"},
+  {name:"Carry On",                      file:"carryon-forge-1.20.1-2.1.2.7.jar",                        type:"utility",    icon:"📦",pid:"joEfVgkn"},
+  {name:"WI Zoom",                       file:"WI-Zoom-1.5-MC1.20.1-Forge.jar",                          type:"utility",    icon:"🔍",pid:"o7DitHWP"},
+  {name:"Do a Barrel Roll",              file:"do_a_barrel_roll-forge-3.5.6+1.20.1.jar",                 type:"utility",    icon:"🛩️",pid:"6FtRfnLg"},
+  {name:"Freecam",                       file:"freecam-forge-1.2.1+1.20.jar",                            type:"utility",    icon:"📷",pid:"XeEZ3fK2"},
+  {name:"Spark",                         file:"spark-1.10.53-forge.jar",                                 type:"utility",    icon:"🔥",pid:"l6YH9Als"},
+  {name:"CraftPresence",                 file:"CraftPresence-2.7.1+1.20.1-forge.jar",                    type:"utility",    icon:"🎮",pid:"DFqQfIBR"},
+  {name:"Clumps",                        file:"Clumps-forge-1.20.1-12.0.0.4.jar",                        type:"utility",    icon:"🧲",pid:"Wnxd13zP"},
+  {name:"Sit",                           file:"sit-1.20.1-1.3.5.jar",                                    type:"utility",    icon:"🪑",pid:"VKXzIykF"},
+  {name:"Showcase Item",                 file:"showcaseitem-1.20.1-1.2.jar",                             type:"utility",    icon:"🖼️",pid:"P5Jjjezm"},
+  {name:"Watut",                         file:"watut-forge-1.20.1-1.2.3.jar",                            type:"utility",    icon:"🌊",pid:"AtB5mHky"},
+  {name:"Skin Restorer",                 file:"skinrestorer-2.7.0+1.20-forge.jar",                       type:"utility",    icon:"🎭",pid:"ghrZDhGW"},
+  {name:"Self Expression",               file:"selfexpression-2.22a-forge-1.20.1.jar",                   type:"utility",    icon:"🎭",pid:"yv3OK08E"},
+  {name:"Better Third Person",           file:"BetterThirdPerson-Forge-1.20-1.9.0.jar",                  type:"utility",    icon:"📹",pid:"G1s2WpNo"},
+  {name:"Melody",                        file:"melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",                type:"utility",    icon:"🎵",pid:"CVT4pFB2"},
+  {name:"Kleider's Custom Renderer",     file:"kleiders_custom_renderer-7.4.1-forge-1.20.1.jar",         type:"utility",    icon:"👗",pid:"oaG6aa1j"},
+  {name:"BetterF3",                      file:"BetterF3-7.0.2-Forge-1.20.1.jar",                        type:"utility",    icon:"🔧",pid:"8shC1gFX"},
+  {name:"Essential",                     file:"Essential_1-3-10-9_forge_1-20-1.jar",                     type:"utility",    icon:"💫",pid:"k2ZPuTBm"},
+  {name:"Eye Mod",                       file:"eyemod-3.0.0.jar",                                        type:"utility",    icon:"👁️",pid:"ogyNE02t"},
+  {name:"Illias Addon",                  file:"illiasaddon-1.0-forge-1.20.1.jar",                        type:"utility",    icon:"✨",pid:"9Z2wBBTT"},
+  // LIBRARIES (25)
+  {name:"UniLib",                        file:"UniLib-1.2.1+1.20.1-forge.jar",                           type:"library",    icon:"📦",pid:"nT86WUER"},
+  {name:"Architectury",                  file:"architectury-9.2.14-forge.jar",                           type:"library",    icon:"📦",pid:"lhGA9TYQ"},
+  {name:"GeckoLib",                      file:"geckolib-forge-1.20.1-4.8.3.jar",                         type:"library",    icon:"🦎",pid:"8BmcQJ2H"},
+  {name:"Resourceful Lib",               file:"resourcefullib-forge-1.20.1-2.1.29.jar",                  type:"library",    icon:"📦",pid:"G1hIVOrD"},
+  {name:"Cloth Config",                  file:"cloth-config-11.1.136-forge.jar",                         type:"library",    icon:"📦",pid:"9s6osm5g"},
+  {name:"Kotlin for Forge",              file:"kotlinforforge-4.12.0-all.jar",                           type:"library",    icon:"📦",pid:"ordsPcFz"},
+  {name:"Citadel",                       file:"citadel-2.6.3-1.20.1.jar",                               type:"library",    icon:"📦",pid:"jJfV67b1"},
+  {name:"Konkrete",                      file:"konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",                 type:"library",    icon:"📦",pid:"J81TRJWm"},
+  {name:"MRU",                           file:"MRU-1.0.4+1.20.1+forge.jar",                             type:"library",    icon:"📦",pid:"SNVQ2c0g"},
+  {name:"CoroUtil",                      file:"coroutil-forge-1.20.1-1.3.7.jar",                         type:"library",    icon:"📦",pid:"rLLJ1OZM"},
+  {name:"Iceberg",                       file:"Iceberg-1.20.1-forge-1.1.25.jar",                        type:"library",    icon:"📦",pid:"5faXoLqX"},
+  {name:"Moonlight Lib",                 file:"moonlight-1.20-2.16.32-forge.jar",                        type:"library",    icon:"🌙",pid:"twkfQtEc"},
+  {name:"Curios API",                    file:"curios-forge-5.14.1+1.20.1.jar",                          type:"library",    icon:"💍",pid:"vvuO3ImH"},
+  {name:"Fabric API (Connector)",        file:"fabric-api-0.92.6+1.11.14+1.20.1.jar",                   type:"library",    icon:"📦",pid:"Aqlf1Shp"},
+  {name:"Connector",                     file:"Connector-1.0.0-beta.48+1.20.1.jar",                     type:"library",    icon:"📦",pid:"u58R1TMW"},
+  {name:"CreativeCore",                  file:"CreativeCore_FORGE_v2.12.38_mc1.20.1.jar",                type:"library",    icon:"📦",pid:"OsZiaDHq"},
+  {name:"Decorative Core",               file:"decorative_core-2.0602-forge-1.20.1.jar",                 type:"library",    icon:"📦",pid:"g0YZhKZF"},
+  {name:"MacuLib",                       file:"macu_lib-forge-1.0.6-1.20.1.jar",                         type:"library",    icon:"📦",pid:"XnLNz8og"},
+  {name:"Sounds",                        file:"Sounds-2.2.1+1.20.1+forge.jar",                          type:"library",    icon:"🔊",pid:"ZouiUX7t"},
+  {name:"SuperMartijn642 Config Lib",    file:"supermartijn642configlib-1.1.8-forge-mc1.20.jar",         type:"library",    icon:"📦",pid:"LN9BxssP"},
+  {name:"SuperMartijn642 Core Lib",      file:"supermartijn642corelib-1.1.21-forge-mc1.20.1.jar",        type:"library",    icon:"📦",pid:"rOUBggPv"},
 ];
 
 const SHADERS = [
-  {name:"BSL Shaders",              file:"BSL_v10.1.1.zip",                        emoji:"🌅",c1:"#0d1a30",c2:"#1a2a0d",level:"High-End"},
-  {name:"Complementary Reimagined", file:"ComplementaryReimagined_r5.7.1.zip",     emoji:"🌄",c1:"#1a0d30",c2:"#0d301a",level:"High-End"},
-  {name:"Hysteria Shaders",         file:"Hysteria-Shaders-Universal-v1.2.1.zip",  emoji:"⚡",c1:"#300d1a",c2:"#0d1a30",level:"High-End"},
-  {name:"Voyager Shader",           file:"Voyager shader 2.0.8.zip",               emoji:"🚀",c1:"#0d1030",c2:"#100d30",level:"Mid-Range"},
-  {name:"Mellow Shader",            file:"Mellow Shader v3.1.zip",                 emoji:"🌸",c1:"#1a0d20",c2:"#0d2020",level:"Mid-Range"},
-  {name:"Visual Vibrance",          file:"Visual-Vibrance-v0.3.5a.zip",            emoji:"🌈",c1:"#200d30",c2:"#0d3020",level:"Mid-Range"},
-  {name:"BVS — Best Vanilla Shader",file:"BVS - Best Vanilla Shader 1.9.2.zip",   emoji:"🌿",c1:"#0d1a10",c2:"#101a0d",level:"Lightweight"},
-  {name:"Pixel Perfect",            file:"Pixel-Perfect-1-5-2a.zip",               emoji:"🎮",c1:"#0d0d30",c2:"#300d0d",level:"Lightweight"},
-  {name:"Miniature Shader",         file:"miniature-shader-2.18.11.zip",           emoji:"🔬",c1:"#101010",c2:"#201020",level:"Lightweight"},
-  {name:"Patrix 32x",               file:"Patrix_1.20_32x_basic.zip",              emoji:"🏛️",c1:"#1a1510",c2:"#15101a",level:"Tex Pack"},
+  {name:"BSL Shaders",               file:"BSL_v10.1.3.zip",                        emoji:"🌅",c1:"#0d1a30",c2:"#1a2a0d",level:"High-End"},
+  {name:"Complementary Reimagined",  file:"ComplementaryReimagined_r5.8.1.zip",     emoji:"🌄",c1:"#1a0d30",c2:"#0d301a",level:"High-End"},
+  {name:"Hysteria Shaders",          file:"Hysteria-Shaders-Universal-v1.2.1.zip",  emoji:"⚡",c1:"#300d1a",c2:"#0d1a30",level:"High-End"},
+  {name:"Voyager Shader",            file:"Voyager shader 2.0.8.zip",               emoji:"🚀",c1:"#0d1030",c2:"#100d30",level:"Mid-Range"},
+  {name:"Mellow Shader",             file:"Mellow Shader v3.2.zip",                 emoji:"🌸",c1:"#1a0d20",c2:"#0d2020",level:"Mid-Range"},
+  {name:"Visual Vibrance",           file:"Visual-Vibrance-v0.3.5a.zip",            emoji:"🌈",c1:"#200d30",c2:"#0d3020",level:"Mid-Range"},
+  {name:"BVS — Best Vanilla Shader", file:"BVS - Best Vanilla Shader 1.9.2.zip",   emoji:"🌿",c1:"#0d1a10",c2:"#101a0d",level:"Lightweight"},
+  {name:"Pixel Perfect",             file:"Pixel-Perfect-1-5-2a.zip",               emoji:"🎮",c1:"#0d0d30",c2:"#300d0d",level:"Lightweight"},
+  {name:"Miniature Shader",          file:"miniature-shader-2.18.11.zip",           emoji:"🔬",c1:"#101010",c2:"#201020",level:"Lightweight"},
+  {name:"Patrix 32x",                file:"Patrix_1.20_32x_basic.zip",              emoji:"🏛️",c1:"#1a1510",c2:"#15101a",level:"Tex Pack"},
 ];
 
 const RESOURCE_PACKS = [
   {name:"Fresh Animations",               file:"FreshAnimations_v1.10.4.zip",                      icon:"🦊",desc:"Smooth, detailed animations for all game entities and mobs."},
-  {name:"FA+ Emissive",                   file:"FA+Emissive-v1.5.zip",                             icon:"✨",desc:"FreshAnimations extension — adds glowing emissive texture effects."},
-  {name:"FA+ Details",                    file:"FA+Details-v2.2.zip",                              icon:"🔍",desc:"FreshAnimations extension — extra fine-detail layers for entities."},
-  {name:"FA+ Objects",                    file:"FA+Objects-v2.1.zip",                              icon:"📦",desc:"FreshAnimations extension — animates held items and objects."},
-  {name:"FA+ All Extensions",             file:"FA+All_Extensions-v1.8.zip",                       icon:"🌟",desc:"All FreshAnimations extensions bundled into a single pack."},
-  {name:"Detailed Animations Reworked",   file:"DetailedAnimationsReworked - V1.15.zip",           icon:"🎭",desc:"Redesigned, high-detail entity animations reworked from scratch."},
-  {name:"Bare Bones",                     file:"Bare Bones 1.20.zip",                              icon:"🪵",desc:"Simplified, clean texture style inspired by classic pixel art."},
-  {name:"Re-covered",                     file:"Re-covered.zip",                                   icon:"🎨",desc:"Fully redesigned and refreshed texture overhaul pack."},
-  {name:"Recolourful Containers (Dark)",  file:"Recolourful Containers DARK 3.1.1 (1.19.4+).zip", icon:"🎨",desc:"Stylish dark-mode colored containers — chests, barrels, and more."},
+  {name:"FA+ Emissive",                   file:"FA+Emissive-v1.6.zip",                             icon:"✨",desc:"FreshAnimations extension — glowing emissive texture effects."},
+  {name:"FA+ Details",                    file:"FA+Details-v2.2.1.zip",                            icon:"🔍",desc:"FreshAnimations extension — extra fine-detail layers for entities."},
+  {name:"FA+ Objects",                    file:"FA+Objects-v2.1.1.zip",                            icon:"📦",desc:"FreshAnimations extension — animates held items and objects."},
+  {name:"FA+ All Extensions",             file:"FA+All_Extensions-v1.8.1.zip",                     icon:"🌟",desc:"All FreshAnimations extensions in one pack."},
+  {name:"Detailed Animations Reworked",   file:"DetailedAnimationsReworked - V1.15.zip",           icon:"🎭",desc:"High-detail entity animations reworked from scratch."},
+  {name:"Bare Bones",                     file:"Bare Bones 1.20.zip",                              icon:"🪵",desc:"Clean pixel-art style texture overhaul."},
+  {name:"Re-covered",                     file:"Re-covered.zip",                                   icon:"🎨",desc:"Fully redesigned texture overhaul pack."},
+  {name:"Recolourful Containers (Dark)",  file:"Recolourful Containers DARK 3.1.1 (1.19.4+).zip", icon:"🎨",desc:"Dark-mode styled containers — chests, barrels, and more."},
   {name:"Qrafty's Capitalized Font",      file:"qrafty's-capitalized-font-3.1.zip",               icon:"🔤",desc:"Improved uppercase font for clearer in-game text."},
-  {name:"Fresh Moves (New)",              file:"FreshMoves_v1.0.zip",                              icon:"🏃",desc:"Extended player movement animations compatible with FreshAnimations."},
-  {name:"Stay True (New)",                file:"StayTrue_1.20.zip",                                icon:"🌲",desc:"Vanilla-faithful texture overhaul with enhanced natural environments."},
+  {name:"Angel's Weather",               file:"Angel's_Weather_v1.9.1.3hf.zip",                   icon:"🌦️",desc:"Enhanced weather effects — rain, snow, and atmospheric visuals."},
+  {name:"ShivaKlans' Animated Textures", file:"ShivaKlans' animated textures.zip",                icon:"✨",desc:"Animated block and item textures for a more lively world."},
 ];
 
-// STATE
-let currentPage = 1;
-const PAGE_SIZE = 20;
-let currentTab = 'all';
-let filteredMods = [...ALL_MODS];
-let sortDir = 1, sortKey = 'name';
-
-const TYPE_CFG = {
+// ═══ TABLE STATE ═══
+let currentPage=1, PAGE_SIZE=20, currentTab='all', filteredMods=[...ALL_MODS], sortDir=1, sortKey='name';
+const TC = {
   performance:{label:'Performance',css:'tag-performance'},
   visual:     {label:'Visual',     css:'tag-visual'},
   content:    {label:'Content',    css:'tag-content'},
@@ -809,130 +1022,99 @@ const TYPE_CFG = {
 };
 
 window.onload = () => {
-  buildShaderGrid();
-  buildRPGrid();
-  filterMods();
-  setupScrollSpy();
+  buildShaderGrid(); buildRPGrid(); filterMods(); setupScrollSpy();
   setTimeout(() => {
     document.querySelectorAll('.perf-fill').forEach(b => {
-      const w = b.style.width; b.style.width = '0';
-      setTimeout(() => { b.style.width = w; }, 100);
+      const w = b.style.width; b.style.width='0'; setTimeout(()=>{b.style.width=w;},100);
     });
-  }, 200);
+  }, 250);
 };
 
 function switchTab(tab) {
-  currentTab = tab; currentPage = 1;
-  const tabs = ['all','performance','visual','content','utility','library'];
-  document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', tabs[i] === tab));
+  currentTab=tab; currentPage=1;
+  const tabs=['all','performance','visual','content','utility','library'];
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',tabs[i]===tab));
   filterMods();
 }
-
 function filterMods() {
   const q = document.getElementById('modSearch').value.toLowerCase();
-  filteredMods = ALL_MODS.filter(m => {
-    const ok1 = currentTab === 'all' || m.type === currentTab;
-    const ok2 = !q || m.name.toLowerCase().includes(q) || m.file.toLowerCase().includes(q);
-    return ok1 && ok2;
-  });
-  if (sortKey) filteredMods.sort((a,b) => (a[sortKey]||'').localeCompare(b[sortKey]||'') * sortDir);
-  currentPage = 1;
-  renderMods();
+  filteredMods = ALL_MODS.filter(m =>
+    (currentTab==='all'||m.type===currentTab) &&
+    (!q || m.name.toLowerCase().includes(q) || m.file.toLowerCase().includes(q))
+  );
+  if (sortKey) filteredMods.sort((a,b)=>(a[sortKey]||'').localeCompare(b[sortKey]||'')*sortDir);
+  currentPage=1; renderMods();
 }
-
-function sortMods(key) {
-  if (sortKey === key) sortDir *= -1; else { sortKey = key; sortDir = 1; }
-  filterMods();
-}
-
+function sortMods(k){ if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=1;} filterMods(); }
 function renderMods() {
-  const total = filteredMods.length;
-  const pages = Math.ceil(total / PAGE_SIZE);
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const slice = filteredMods.slice(start, start + PAGE_SIZE);
-
-  document.getElementById('modTableBody').innerHTML = slice.map(m => {
-    const tc = TYPE_CFG[m.type] || {label:m.type,css:'tag-utility'};
-    const url = m.pid ? `https://modrinth.com/mod/${m.pid}` : null;
+  const total=filteredMods.length, pages=Math.ceil(total/PAGE_SIZE), start=(currentPage-1)*PAGE_SIZE;
+  document.getElementById('modTableBody').innerHTML = filteredMods.slice(start,start+PAGE_SIZE).map(m => {
+    const tc=TC[m.type]||{label:m.type,css:'tag-utility'};
+    const url=m.pid?`https://modrinth.com/mod/${m.pid}`:null;
     return `<tr class="mod-row">
-      <td><div class="mod-name-cell"><div class="mod-icon">${m.icon}</div><div><div class="mod-title">${m.name}</div></div></div></td>
-      <td><span class="type-tag ${m.disabled?'tag-disabled':tc.css}">${m.disabled?'Disabled':tc.label}</span></td>
-      <td><div class="mod-filename" title="${m.file}">${m.file}</div></td>
-      <td>${url?`<a class="dl-btn" href="${url}" target="_blank">↗ Modrinth</a>`:'<span style="color:var(--text3);font-size:.75rem">—</span>'}</td>
+      <td><div class="mod-name-cell"><div class="mod-icon">${m.icon}</div><div>
+        <div class="mod-title">${m.name}</div>
+        <div class="mod-filename" title="${m.file}">${m.file}</div>
+      </div></div></td>
+      <td><span class="type-tag ${tc.css}">${tc.label}</span></td>
+      <td style="display:none">${m.file}</td>
+      <td>${url?`<a class="dl-btn" href="${url}" target="_blank">↗ Modrinth</a>`:'<span style="color:var(--text3);font-size:.72rem">—</span>'}</td>
     </tr>`;
   }).join('');
-
-  document.getElementById('pageInfo').textContent = `Showing ${start+1}–${Math.min(start+PAGE_SIZE,total)} of ${total}`;
-  renderPagination(pages);
-}
-
-function renderPagination(pages) {
-  const el = document.getElementById('pagination');
-  if (pages <= 1) { el.innerHTML = ''; return; }
-  let h = `<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
-  for (let i = 1; i <= pages; i++) {
-    if (pages > 7 && i > 2 && i < pages-1 && Math.abs(i-currentPage) > 1) {
-      if (i===3||i===pages-2) h += `<span style="color:var(--text3);padding:0 .3rem">…</span>`;
-      continue;
-    }
-    h += `<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  document.getElementById('pageInfo').textContent=`Showing ${start+1}–${Math.min(start+PAGE_SIZE,total)} of ${total}`;
+  // Pagination
+  let h=`<button class="page-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>`;
+  for(let i=1;i<=pages;i++){
+    if(pages>7&&i>2&&i<pages-1&&Math.abs(i-currentPage)>1){if(i===3||i===pages-2)h+=`<span style="color:var(--text3);padding:0 .3rem">…</span>`;continue;}
+    h+=`<button class="page-btn ${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
   }
-  h += `<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>›</button>`;
-  el.innerHTML = h;
+  h+=`<button class="page-btn" onclick="goPage(${currentPage+1})" ${currentPage===pages?'disabled':''}>›</button>`;
+  document.getElementById('pagination').innerHTML=h;
 }
+function goPage(p){const pages=Math.ceil(filteredMods.length/PAGE_SIZE);if(p<1||p>pages)return;currentPage=p;renderMods();document.getElementById('mods-section').scrollIntoView({behavior:'smooth',block:'start'});}
 
-function goPage(p) {
-  const pages = Math.ceil(filteredMods.length / PAGE_SIZE);
-  if (p < 1 || p > pages) return;
-  currentPage = p; renderMods();
-  document.getElementById('mods-section').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function buildShaderGrid() {
-  const lc = {'High-End':'var(--ruby)','Mid-Range':'var(--accent5)','Lightweight':'var(--emerald)','Tex Pack':'var(--amethyst)'};
-  document.getElementById('shaderGrid').innerHTML = SHADERS.map(s=>`
+function buildShaderGrid(){
+  const lc={'High-End':'var(--ruby)','Mid-Range':'var(--accent5)','Lightweight':'var(--emerald)','Tex Pack':'var(--amethyst)'};
+  document.getElementById('shaderGrid').innerHTML=SHADERS.map(s=>`
     <div class="shader-card">
       <div class="shader-thumb" style="--c1:${s.c1};--c2:${s.c2}"><span>${s.emoji}</span></div>
       <div class="shader-body">
         <div class="shader-name">${s.name}</div>
         <div class="shader-ver">${s.file}</div>
-        <div style="margin-top:.4rem"><span class="type-tag" style="background:rgba(0,0,0,.2);color:${lc[s.level]};border:1px solid ${lc[s.level]}40">${s.level}</span></div>
+        <div style="margin-top:.35rem"><span class="type-tag" style="background:rgba(0,0,0,.2);color:${lc[s.level]};border:1px solid ${lc[s.level]}40">${s.level}</span></div>
       </div>
     </div>`).join('');
 }
-
-function buildRPGrid() {
-  document.getElementById('rpGrid').innerHTML = RESOURCE_PACKS.map(r=>`
+function buildRPGrid(){
+  document.getElementById('rpGrid').innerHTML=RESOURCE_PACKS.map(r=>`
     <div class="rp-card">
       <div class="rp-icon">${r.icon}</div>
       <div>
         <div class="rp-name">${r.name}</div>
         <div class="rp-desc">${r.desc}</div>
-        <div style="margin-top:.3rem;font-size:.7rem;color:var(--text3);font-family:monospace">${r.file}</div>
+        <div style="margin-top:.25rem;font-size:.67rem;color:var(--text3);font-family:monospace">${r.file}</div>
       </div>
     </div>`).join('');
 }
-
-function handleGlobalSearch(q) {
-  if (!q) return;
-  document.getElementById('modSearch').value = q;
+function handleGlobalSearch(q){
+  if(!q) return;
+  document.getElementById('modSearch').value=q;
   filterMods();
   document.getElementById('mods-section').scrollIntoView({behavior:'smooth'});
 }
-
-function setupScrollSpy() {
-  const ids = ['overview','changelog','features','mods-section','shaders-section','rp-section','install-section','requirements','credits'];
-  const links = document.querySelectorAll('.toc-item a');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        links.forEach(l => l.classList.remove('active'));
-        const m = document.querySelector(`.toc-item a[href="#${e.target.id}"]`);
-        if (m) m.classList.add('active');
+function setupScrollSpy(){
+  const ids=['overview','changelog','features','server-section','discord-section','mods-section','shaders-section','rp-section','install-section','requirements','credits'];
+  const links=document.querySelectorAll('.toc-item a');
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        links.forEach(l=>l.classList.remove('active'));
+        const m=document.querySelector(`.toc-item a[href="#${e.target.id}"]`);
+        if(m)m.classList.add('active');
       }
     });
-  }, {rootMargin:'-25% 0px -65% 0px'});
-  ids.forEach(id => { const el = document.getElementById(id); if(el) obs.observe(el); });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  ids.forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
 }
 </script>
 </body>
