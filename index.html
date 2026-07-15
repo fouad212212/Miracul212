@@ -323,6 +323,8 @@ body::before{content:'';position:fixed;inset:0;background:
 .hb-discord{background:rgba(88,101,242,.12);border:1px solid rgba(88,101,242,.3);color:var(--discord);text-decoration:none}
 .hb-discord:hover{background:rgba(88,101,242,.22)}
 .hb-server{background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);color:var(--emerald)}
+.hb-web{background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.3);color:var(--accent);text-decoration:none}
+.hb-web:hover{background:rgba(88,166,255,.22)}
 
 .clearfix::after{content:'';display:table;clear:both}
 .tab-bar{display:flex;border-bottom:2px solid var(--wiki-line);margin-bottom:1.25rem;overflow-x:auto}
@@ -367,7 +369,7 @@ body::before{content:'';position:fixed;inset:0;background:
   <div class="header-right">
     <span class="badge badge-mc">MC 1.20.1</span>
     <span class="badge badge-forge">Forge</span>
-    <span class="badge badge-ver">v1.0.8</span>
+    <span class="badge badge-ver">v1.1.0</span>
     <a class="hdr-btn hdr-discord" href="https://discord.gg/XKs7btPSdf" target="_blank">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
       Discord
@@ -383,17 +385,18 @@ body::before{content:'';position:fixed;inset:0;background:
   <div class="toc-title">📋 Contents</div>
   <ul class="toc-list">
     <li class="toc-item"><a href="#overview">Overview</a></li>
-    <li class="toc-item"><a href="#changelog">Changelog (1.0.8)</a></li>
+    <li class="toc-item"><a href="#changelog">Changelog (1.1.0)</a></li>
     <li class="toc-item"><a href="#features">Features</a></li>
     <li class="toc-item sub"><a href="#performance">Performance</a></li>
     <li class="toc-item sub"><a href="#visuals">Visuals</a></li>
     <li class="toc-item sub"><a href="#content">Content</a></li>
+    <li class="toc-item sub"><a href="#qol-social">QoL &amp; Social</a></li>
     <div class="toc-section">Community</div>
     <li class="toc-item"><a href="#discord-section">💬 Discord</a></li>
     <div class="toc-section">Components</div>
-    <li class="toc-item"><a href="#mods-section">Mods <span class="toc-count">100</span></a></li>
-    <li class="toc-item"><a href="#shaders-section">Shaders <span class="toc-count">10</span></a></li>
-    <li class="toc-item"><a href="#rp-section">Resource Packs <span class="toc-count">12</span></a></li>
+    <li class="toc-item"><a href="#mods-section">Mods <span class="toc-count">102</span></a></li>
+    <li class="toc-item"><a href="#shaders-section">Shaders <span class="toc-count">9</span></a></li>
+    <li class="toc-item"><a href="#rp-section">Resource Packs <span class="toc-count">13</span></a></li>
     <div class="toc-section">Info</div>
     <li class="toc-item"><a href="#install-section">Installation</a></li>
     <li class="toc-item"><a href="#requirements">Requirements</a></li>
@@ -414,24 +417,25 @@ body::before{content:'';position:fixed;inset:0;background:
   <div class="hero-banner">
     <img class="hero-logo" src="https://i.imgur.com/b8gtnhj.jpeg" alt="Miracul212">
     <div class="hero-title">Miracul212</div>
-    <div class="hero-tagline">A comprehensive Minecraft modpack on Forge 1.20.1 — high performance, stunning visuals, and rich content for an exceptional gameplay experience.</div>
+    <div class="hero-tagline">A carefully crafted Minecraft modpack on Forge 1.20.1 — focused on performance, stunning visuals, and immersive gameplay, while staying lightweight and smooth.</div>
     <div class="hero-badges">
-      <span class="hero-badge hb-ver">✦ Version 1.0.8 — Latest</span>
+      <span class="hero-badge hb-ver">✦ Version 1.1.0 — Latest</span>
       <a class="hero-badge hb-discord" href="https://discord.gg/XKs7btPSdf" target="_blank">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.045.036.057a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
         Join Discord
       </a>
+      <a class="hero-badge hb-web" href="https://fouad212212.github.io/Miracul212/" target="_blank">🌐 Official Website</a>
     </div>
   </div>
 
   <!-- ARTICLE HEADER -->
   <div class="article-header" id="overview">
     <div class="article-title">Miracul212</div>
-    <div class="article-subtitle">Comprehensive Minecraft Modpack · Version 1.0.8</div>
+    <div class="article-subtitle">Comprehensive Minecraft Modpack · Version 1.1.0</div>
     <div class="article-meta">
       <div class="meta-chip"><span class="dot dot-green"></span> Active &amp; Updated</div>
       <div class="meta-chip"><span class="dot dot-orange"></span> Forge 1.20.1</div>
-      <div class="meta-chip"><span class="dot dot-blue"></span> 122 Components</div>
+      <div class="meta-chip"><span class="dot dot-blue"></span> 124 Components</div>
       <div class="meta-chip"><span class="dot dot-purple"></span> Nastia Special Edition</div>
     </div>
   </div>
@@ -446,62 +450,59 @@ body::before{content:'';position:fixed;inset:0;background:
         <div class="infobox-name">Miracul212</div>
       </div>
       <div class="infobox-body">
-        <div class="infobox-row"><div class="infobox-key">Version</div><div class="infobox-val">1.0.8</div></div>
+        <div class="infobox-row"><div class="infobox-key">Version</div><div class="infobox-val">1.1.0</div></div>
         <div class="infobox-row"><div class="infobox-key">Minecraft</div><div class="infobox-val">1.20.1</div></div>
         <div class="infobox-row"><div class="infobox-key">Loader</div><div class="infobox-val">Forge</div></div>
         <div class="infobox-row"><div class="infobox-key">Author</div><div class="infobox-val"><strong>fouad212</strong></div></div>
-        <div class="infobox-row"><div class="infobox-key">Mods</div><div class="infobox-val">100 mods</div></div>
-        <div class="infobox-row"><div class="infobox-key">Shaders</div><div class="infobox-val">10 packs</div></div>
-        <div class="infobox-row"><div class="infobox-key">Resource Packs</div><div class="infobox-val">12 packs</div></div>
+        <div class="infobox-row"><div class="infobox-key">Mods</div><div class="infobox-val">102 mods</div></div>
+        <div class="infobox-row"><div class="infobox-key">Shaders</div><div class="infobox-val">9 packs</div></div>
+        <div class="infobox-row"><div class="infobox-key">Resource Packs</div><div class="infobox-val">13 packs</div></div>
+        <div class="infobox-row"><div class="infobox-key">Website</div><div class="infobox-val"><a href="https://fouad212212.github.io/Miracul212/" target="_blank">Official site ↗</a></div></div>
         <div class="infobox-row"><div class="infobox-key">Discord</div><div class="infobox-val"><a href="https://discord.gg/XKs7btPSdf" target="_blank">Join ↗</a></div></div>
         <div class="infobox-row"><div class="infobox-key">Modrinth</div><div class="infobox-val"><a href="https://modrinth.com/modpack/miracul212" target="_blank">miracul212 ↗</a></div></div>
       </div>
     </div>
 
     <div class="wiki-section">
-      <p class="wiki-p"><strong>Miracul212</strong> is a comprehensive Minecraft modpack for version <strong>1.20.1</strong> using <strong>Forge</strong>. It contains <strong>122 carefully curated components</strong> — 100 mods, 10 shaders, and 12 resource packs — delivering an exceptional experience that balances high performance with stunning visuals and rich content.</p>
-      <p class="wiki-p">The pack features the exclusive <strong>nastias_miracle_stones_mod</strong>, creature additions from <strong>Alex's Mobs</strong> &amp; <strong>Naturalist</strong>, the revolutionary <strong>Create</strong> mod for mechanical automation, and a complete performance suite including <strong>Embeddium</strong>, <strong>ModernFix 5.27.40</strong>, and <strong>FerriteCore</strong>.</p>
-      <p class="wiki-p">Join the official community server at <strong style="color:var(--emerald);font-family:monospace">play.minetro.com:1795</strong> and connect with other players on <a href="https://discord.gg/XKs7btPSdf" target="_blank">Discord</a>.</p>
+      <p class="wiki-p">✨ <strong>Miracul212</strong> is a carefully crafted Minecraft modpack experience focused on <strong>performance, visuals, and immersive gameplay</strong>, while staying lightweight and smooth. Built for <strong>Forge 1.20.1</strong>, it contains <strong>124 curated components</strong> — 102 mods, 9 shaders, and 13 resource packs.</p>
+      <p class="wiki-p">The pack features the exclusive <strong>nastias_miracle_stones_mod</strong>, creature additions from <strong>Alex's Mobs</strong> &amp; <strong>Naturalist</strong>, the mechanical automation of <strong>Create</strong>, and a complete performance suite including <strong>Embeddium</strong>, <strong>ModernFix</strong>, and <strong>FerriteCore</strong> — so the pack runs smoothly even on mid-range systems.</p>
+      <p class="wiki-p">Join the official community server at <strong style="color:var(--emerald);font-family:monospace">play.minetro.com:1795</strong>, visit the <a href="https://fouad212212.github.io/Miracul212/" target="_blank">official website</a>, and connect with other players on <a href="https://discord.gg/XKs7btPSdf" target="_blank">Discord</a>.</p>
     </div>
   </div>
 
   <!-- STATS -->
   <div class="stats-grid">
-    <div class="stat-card blue"><div class="stat-num">100</div><div class="stat-label">Mods</div></div>
-    <div class="stat-card purple"><div class="stat-num">10</div><div class="stat-label">Shaders</div></div>
-    <div class="stat-card orange"><div class="stat-num">12</div><div class="stat-label">Resource Packs</div></div>
-    <div class="stat-card green"><div class="stat-num">122</div><div class="stat-label">Total</div></div>
+    <div class="stat-card blue"><div class="stat-num">102</div><div class="stat-label">Mods</div></div>
+    <div class="stat-card purple"><div class="stat-num">9</div><div class="stat-label">Shaders</div></div>
+    <div class="stat-card orange"><div class="stat-num">13</div><div class="stat-label">Resource Packs</div></div>
+    <div class="stat-card green"><div class="stat-num">124</div><div class="stat-label">Total</div></div>
   </div>
 
   <!-- CHANGELOG -->
   <div class="wiki-section" id="changelog">
-    <div class="section-heading"><span class="sh-icon sh-green">📝</span>Changelog — Version 1.0.8</div>
-    <p class="wiki-p">Version 1.0.8 is a major content update — adding <strong>7 new mods</strong> including <strong>Create</strong> for mechanical engineering, <strong>Moving Elevators</strong>, <strong>Cluttered</strong>, and more. This brings the total to 100 mods.</p>
-    <div class="notice info"><span class="notice-icon">ℹ️</span><div>Compared to v1.0.7 (93 mods): <strong>7 new mods added</strong> including Create 6.0.8. Illias Addon returns. No mods were removed.</div></div>
+    <div class="section-heading"><span class="sh-icon sh-green">📝</span>Changelog — Version 1.1.0</div>
+    <p class="wiki-p">Version 1.1.0 is a maintenance &amp; polish update — adding <strong>2 new mods</strong> (<strong>Yet Another Config Lib</strong> and <strong>Illias Ring Addon</strong>) and bumping roughly <strong>20 mods, 1 shader, and 2 resource packs</strong> to their latest versions. No mods were removed. The <strong>Patrix 32x</strong> texture pack was also re-classified from the shaders list into resource packs, where it belongs.</p>
+    <div class="notice info"><span class="notice-icon">ℹ️</span><div>Compared to v1.0.8 (100 mods / 10 shaders / 12 resource packs): <strong>2 new mods added</strong>, dozens of dependency and content mods updated to their newest builds, and no components removed.</div></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
       <div class="side-widget">
-        <div class="side-widget-header" style="color:var(--emerald)">🟢 New Mods (7)</div>
+        <div class="side-widget-header" style="color:var(--emerald)">🟢 New Mods (2)</div>
         <div class="side-widget-body">
-          <div class="side-stat"><span class="label">⚙️ Create</span><span class="value" style="color:var(--emerald);font-size:.75rem">v6.0.8 ✓</span></div>
-          <div class="side-stat"><span class="label">🛗 Moving Elevators</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
-          <div class="side-stat"><span class="label">📚 Cluttered</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
-          <div class="side-stat"><span class="label">🪑 Furniture Tools Refurbished</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
-          <div class="side-stat"><span class="label">✨ Illias Addon</span><span class="value" style="color:var(--emerald);font-size:.75rem">returned ✓</span></div>
-          <div class="side-stat"><span class="label">🔧 SuperMartijn642 Config Lib</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
-          <div class="side-stat"><span class="label">📦 SuperMartijn642 Core Lib</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">🧩 Yet Another Config Lib</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
+          <div class="side-stat"><span class="label">💍 Illias Ring Addon</span><span class="value" style="color:var(--emerald);font-size:.75rem">new ✓</span></div>
         </div>
       </div>
       <div class="side-widget">
         <div class="side-widget-header" style="color:var(--accent)">📊 Pack Stats After Update</div>
         <div class="side-widget-body">
-          <div class="side-stat"><span class="label">Total Mods</span><span class="value" style="color:var(--accent)">93 → 100</span></div>
-          <div class="side-stat"><span class="label">Total Components</span><span class="value" style="color:var(--accent)">115 → 122</span></div>
+          <div class="side-stat"><span class="label">Total Mods</span><span class="value" style="color:var(--accent)">100 → 102</span></div>
+          <div class="side-stat"><span class="label">Total Components</span><span class="value" style="color:var(--accent)">122 → 124</span></div>
           <div class="side-stat"><span class="label">Removed</span><span class="value" style="color:var(--text2)">None</span></div>
-          <div class="side-stat"><span class="label">ModernFix</span><span class="value" style="color:var(--text2)">5.27.40 ✓</span></div>
-          <div class="side-stat"><span class="label">Nastia Stones</span><span class="value" style="color:var(--amethyst)">1.7.2 ✓</span></div>
+          <div class="side-stat"><span class="label">ModernFix</span><span class="value" style="color:var(--text2)">5.27.63 ✓</span></div>
+          <div class="side-stat"><span class="label">Nastia Stones</span><span class="value" style="color:var(--amethyst)">1.7.5 Beta ✓</span></div>
         </div>
       </div>
     </div>
+    <div class="notice tip" style="margin-top:1rem"><span class="notice-icon">💡</span><div>Notable version bumps: <strong>Xaero's Minimap/Worldmap</strong>, <strong>Skin Restorer</strong>, <strong>e4mc</strong>, <strong>Simple Voice Chat</strong>, <strong>Essential</strong>, <strong>JEI</strong>, <strong>GeckoLib</strong>, <strong>Illias Addon</strong>, and <strong>Deco Storage</strong> all received updates in this release.</div></div>
   </div>
 
   <!-- FEATURES -->
@@ -509,8 +510,8 @@ body::before{content:'';position:fixed;inset:0;background:
     <div class="section-heading"><span class="sh-icon sh-gold">⭐</span>Key Features</div>
 
     <div id="performance">
-      <div class="sub-heading">⚡ Performance &amp; Optimization</div>
-      <p class="wiki-p"><strong>Embeddium</strong> rewrites the rendering engine for maximum FPS. <strong>Oculus</strong> enables efficient shader support. <strong>FerriteCore</strong> dramatically cuts memory usage. <strong>ModernFix 5.27.40</strong> speeds startup and improves tick rates. <strong>Entity Culling</strong> hides off-screen entities. <strong>Noisium</strong> accelerates world generation. <strong>Starlight</strong> provides a fully rewritten light engine.</p>
+      <div class="sub-heading">🚀 Performance and Optimization</div>
+      <p class="wiki-p">Optimized for smooth gameplay and high FPS, even on mid-range systems. <strong>Embeddium</strong> rewrites the rendering engine for maximum FPS, <strong>Oculus</strong> enables efficient shader support, <strong>FerriteCore</strong> dramatically cuts memory usage, and <strong>ModernFix</strong> speeds startup and improves tick rates. Rounded out by <strong>Entity Culling</strong>, <strong>Noisium</strong>, <strong>Starlight</strong>, <strong>BadOptimizations</strong>, <strong>Dynamic FPS</strong>, <strong>ImmediatelyFast</strong>, <strong>Memory Leak Fix</strong>, <strong>RRLS</strong>, <strong>Fastload Reforged</strong>, <strong>Rubidium Extra</strong>, and <strong>GPU Tape</strong>.</p>
       <div style="margin:.9rem 0">
         <div class="perf-bar"><div class="perf-label"><span>Rendering</span><span style="color:var(--emerald)">Very High</span></div><div class="perf-track"><div class="perf-fill" style="width:92%;background:var(--emerald)"></div></div></div>
         <div class="perf-bar"><div class="perf-label"><span>Memory</span><span style="color:var(--accent)">High</span></div><div class="perf-track"><div class="perf-fill" style="width:82%;background:var(--accent)"></div></div></div>
@@ -520,17 +521,23 @@ body::before{content:'';position:fixed;inset:0;background:
     </div>
 
     <div id="visuals">
-      <div class="sub-heading">🎨 Visuals &amp; Graphics</div>
-      <p class="wiki-p"><strong>FreshAnimations</strong> and its extensions bring smooth, detailed animations to every entity. <strong>Entity Model Features 3.2.4</strong> and <strong>Entity Texture Features 7.1</strong> add variety to mob appearances. <strong>Continuity</strong> enables connected textures. Ten curated shaders cover all hardware tiers — from lightweight <strong>BVS</strong> to powerhouse <strong>BSL v10.1.3</strong> and <strong>Complementary Reimagined r5.8.1</strong>.</p>
+      <div class="sub-heading">🎨 Visuals and Immersion</div>
+      <p class="wiki-p">Enhances graphics, animations, and overall atmosphere. <strong>Entity Texture Features</strong> and <strong>Entity Model Features</strong> add variety to mob appearances, <strong>Continuity</strong> enables connected textures, and <strong>Skin Layers 3D</strong>, <strong>Prism</strong>, <strong>Chat Animation</strong>, <strong>Sound Physics Remastered</strong>, <strong>Chat Heads</strong>, <strong>Photon</strong>, <strong>CIT Resewn</strong>, and <strong>Polytone</strong> round out the atmosphere. Nine curated shaders cover every hardware tier — from lightweight <strong>BVS</strong> to powerhouse <strong>BSL v10.1.3</strong> and <strong>Complementary Reimagined r5.8.1</strong>.</p>
     </div>
 
     <div id="content">
-      <div class="sub-heading">🌍 Content &amp; Gameplay</div>
-      <p class="wiki-p"><strong>Create 6.0.8</strong> (new in v1.0.8) adds a complete mechanical engineering system — build factories, automate farms, and engineer contraptions. <strong>Alex's Mobs</strong> and <strong>Naturalist</strong> add hundreds of creatures. <strong>Farmer's Delight</strong> expands cooking and farming. <strong>Moving Elevators</strong> adds functional elevator blocks. <strong>Cluttered</strong> and <strong>Furniture Tools Refurbished</strong> enhance decoration. <strong>Nastia's Miracle Stones 1.7.2</strong> remains the signature exclusive mod.</p>
+      <div class="sub-heading">🌍 Gameplay and Content</div>
+      <p class="wiki-p">Adds new mechanics, decorations, creatures, and immersive features. <strong>Create</strong> adds a complete mechanical engineering system for factories and contraptions. <strong>Alex's Mobs</strong> and <strong>Naturalist</strong> add hundreds of creatures. <strong>Farmer's Delight</strong>, <strong>Supplementaries</strong>, <strong>Another Furniture</strong>, <strong>Handcrafted</strong>, <strong>Traveler's Backpack</strong>, <strong>Exposure</strong> &amp; <strong>Exposure Polaroid</strong>, <strong>Immersive Vehicles</strong>, <strong>New Cars</strong>, <strong>Modern Japan City</strong>, <strong>Deco Storage</strong>, <strong>GWoodworks</strong>, <strong>Dinnerware</strong>, <strong>Spudacious Shops</strong>, <strong>FazRoleplay Clothes</strong>, <strong>ClothingCraft</strong>, <strong>Cluttered</strong>, <strong>Moving Elevators</strong>, and <strong>Furniture Tools Refurbished</strong> add depth to building and decorating. <strong>Nastia's Miracle Stones</strong> and its <strong>Unified Stones extension</strong> remain the signature exclusive mods.</p>
     </div>
 
-    <div class="notice info"><span class="notice-icon">ℹ️</span><div><strong>Simple Voice Chat 2.6.18</strong> enables proximity voice and <strong>e4mc</strong> allows direct LAN-over-internet play.</div>
+    <div id="qol-social">
+      <div class="sub-heading">🧰 Quality of Life &amp; 🌐 Multiplayer/Social</div>
+      <p class="wiki-p">Improves usability, interface, and everyday gameplay with <strong>JEI</strong>, <strong>Jade</strong>, <strong>Xaero's Minimap &amp; World Map</strong>, <strong>AppleSkin</strong>, <strong>Vein Miner</strong>, <strong>Mouse Tweaks</strong>, <strong>Shulker Box Tooltip</strong>, <strong>Carry On</strong>, <strong>WI Zoom</strong>, <strong>Freecam</strong>, <strong>Spark</strong>, <strong>Clumps</strong>, <strong>Sit</strong>, <strong>Skin Restorer</strong>, and more. On the social side, <strong>Simple Voice Chat</strong> enables proximity voice chat, <strong>e4mc</strong> allows direct LAN-over-internet play, <strong>CraftPresence</strong> shows off your session on Discord, and <strong>Essential</strong> rounds out the social toolkit.</p>
+    </div>
+
+    <div class="notice info"><span class="notice-icon">ℹ️</span><div><strong>Simple Voice Chat</strong> enables proximity voice and <strong>e4mc</strong> allows direct LAN-over-internet play.</div></div>
   </div>
+
   <!-- DISCORD -->
   <div class="wiki-section" id="discord-section">
     <div class="section-heading"><span class="sh-icon sh-discord">💬</span>Community Discord</div>
@@ -553,9 +560,9 @@ body::before{content:'';position:fixed;inset:0;background:
 
   <!-- MODS -->
   <div class="wiki-section" id="mods-section">
-    <div class="section-heading"><span class="sh-icon sh-blue">🧩</span>Mod List — 100 Mods</div>
+    <div class="section-heading"><span class="sh-icon sh-blue">🧩</span>Mod List — 102 Mods</div>
     <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab('all')">All (100)</button>
+      <button class="tab-btn active" onclick="switchTab('all')">All (102)</button>
       <button class="tab-btn" onclick="switchTab('performance')">⚡ Performance</button>
       <button class="tab-btn" onclick="switchTab('visual')">🎨 Visual</button>
       <button class="tab-btn" onclick="switchTab('content')">🌍 Content</button>
@@ -590,7 +597,7 @@ body::before{content:'';position:fixed;inset:0;background:
 
   <!-- SHADERS -->
   <div class="wiki-section" id="shaders-section">
-    <div class="section-heading"><span class="sh-icon sh-purple">🌈</span>Shaders — 10 Packs</div>
+    <div class="section-heading"><span class="sh-icon sh-purple">🌈</span>Shaders — 9 Packs</div>
     <p class="wiki-p">Powered by <strong>Oculus</strong>. Covers every hardware tier from lightweight to ultra.</p>
     <div class="notice warning"><span class="notice-icon">⚠️</span><div>Mid-range: <strong>Mellow Shader v3.2</strong> or <strong>BVS</strong>. High-end: <strong>BSL v10.1.3</strong> or <strong>Complementary Reimagined r5.8.1</strong>.</div></div>
     <div class="card-grid" id="shaderGrid"></div>
@@ -598,7 +605,7 @@ body::before{content:'';position:fixed;inset:0;background:
 
   <!-- RESOURCE PACKS -->
   <div class="wiki-section" id="rp-section">
-    <div class="section-heading"><span class="sh-icon sh-orange">🖼️</span>Resource Packs — 12 Packs</div>
+    <div class="section-heading"><span class="sh-icon sh-orange">🖼️</span>Resource Packs — 13 Packs</div>
     <p class="wiki-p">Overhauls entity animations, block textures, weather effects, and font rendering.</p>
     <div style="display:grid;gap:.65rem;margin-top:.9rem" id="rpGrid"></div>
   </div>
@@ -606,7 +613,7 @@ body::before{content:'';position:fixed;inset:0;background:
   <!-- INSTALLATION -->
   <div class="wiki-section" id="install-section">
     <div class="section-heading"><span class="sh-icon sh-green">⬇️</span>Installation Guide</div>
-    <div class="notice tip"><span class="notice-icon">💡</span><div>Use the <strong>Modrinth App</strong> — it downloads Forge and all 100 mods automatically.</div></div>
+    <div class="notice tip"><span class="notice-icon">💡</span><div>Use the <strong>Modrinth App</strong> — it downloads Forge and all 102 mods automatically.</div></div>
 
     <div class="sub-heading">🟢 Method 1 — Modrinth App (Recommended)</div>
     <div class="install-steps">
@@ -616,11 +623,11 @@ body::before{content:'';position:fixed;inset:0;background:
       </div></div>
       <div class="install-step"><div class="step-num">2</div><div class="step-body">
         <div class="step-title">Import the Pack</div>
-        <div class="step-desc">Click <strong>"+"</strong> → <strong>"Import"</strong> → select <span class="step-tag">Miracul212_1_0_8.mrpack</span></div>
+        <div class="step-desc">Click <strong>"+"</strong> → <strong>"Import"</strong> → select <span class="step-tag">Miracul212_1_1_0.mrpack</span></div>
       </div></div>
       <div class="install-step"><div class="step-num">3</div><div class="step-body">
         <div class="step-title">Wait for Download</div>
-        <div class="step-desc">All 100 mods download automatically. Takes 2–5 minutes.</div>
+        <div class="step-desc">All 102 mods download automatically. Takes 2–5 minutes.</div>
       </div></div>
       <div class="install-step"><div class="step-num">4</div><div class="step-body">
         <div class="step-title">Set RAM &amp; Play</div>
@@ -636,7 +643,7 @@ body::before{content:'';position:fixed;inset:0;background:
       </div></div>
       <div class="install-step"><div class="step-num">2</div><div class="step-body">
         <div class="step-title">Extract the .mrpack</div>
-        <div class="step-desc">Rename <span class="step-tag">Miracul212_1_0_8.mrpack</span> to <span class="step-tag">.zip</span> and extract it.</div>
+        <div class="step-desc">Rename <span class="step-tag">Miracul212_1_1_0.mrpack</span> to <span class="step-tag">.zip</span> and extract it.</div>
       </div></div>
       <div class="install-step"><div class="step-num">3</div><div class="step-body">
         <div class="step-title">Copy Overrides</div>
@@ -650,12 +657,12 @@ body::before{content:'';position:fixed;inset:0;background:
 
     <div class="code-block">
 <span class="comment"># .mrpack structure</span>
-Miracul212_1_0_8.mrpack
-├── <span class="kw">modrinth.index.json</span>   <span class="comment"># all 100 mod download URLs</span>
+Miracul212_1_1_0.mrpack
+├── <span class="kw">modrinth.index.json</span>   <span class="comment"># all 102 mod download URLs</span>
 └── overrides/
     ├── mods/             <span class="comment"># pre-bundled .jar files</span>
-    ├── shaderpacks/      <span class="comment"># 10 shader packs</span>
-    ├── resourcepacks/    <span class="comment"># 12 resource packs</span>
+    ├── shaderpacks/      <span class="comment"># 9 shader packs</span>
+    ├── resourcepacks/    <span class="comment"># 13 resource packs</span>
     └── options.txt       <span class="comment"># pre-configured settings</span>
     </div>
     <div class="notice warning"><span class="notice-icon">⚠️</span><div>Requires <strong>Java 17+</strong>. For best performance use <a href="https://www.graalvm.org" target="_blank">GraalVM JDK 17</a>. Allocate at least <strong>8 GB RAM</strong> — Create mod needs extra memory.</div></div>
@@ -735,11 +742,11 @@ Miracul212_1_0_8.mrpack
   <div class="side-widget">
     <div class="side-widget-header">📊 Quick Stats</div>
     <div class="side-widget-body">
-      <div class="side-stat"><span class="label">Mods</span><span class="value" style="color:var(--accent)">100</span></div>
-      <div class="side-stat"><span class="label">Shaders</span><span class="value" style="color:var(--amethyst)">10</span></div>
-      <div class="side-stat"><span class="label">Resource Packs</span><span class="value" style="color:var(--accent5)">12</span></div>
-      <div class="side-stat"><span class="label">Total</span><span class="value" style="color:var(--emerald)">122</span></div>
-      <div class="side-stat"><span class="label">Version</span><span class="value">1.0.8</span></div>
+      <div class="side-stat"><span class="label">Mods</span><span class="value" style="color:var(--accent)">102</span></div>
+      <div class="side-stat"><span class="label">Shaders</span><span class="value" style="color:var(--amethyst)">9</span></div>
+      <div class="side-stat"><span class="label">Resource Packs</span><span class="value" style="color:var(--accent5)">13</span></div>
+      <div class="side-stat"><span class="label">Total</span><span class="value" style="color:var(--emerald)">124</span></div>
+      <div class="side-stat"><span class="label">Version</span><span class="value">1.1.0</span></div>
     </div>
   </div>
 
@@ -750,11 +757,11 @@ Miracul212_1_0_8.mrpack
       <a href="https://discord.gg/XKs7btPSdf" target="_blank" style="display:block;text-align:center;padding:.45rem;background:var(--discord);border-radius:7px;color:#fff;text-decoration:none;font-size:.82rem;font-weight:700">Join Discord</a>
     </div>
   </div>
-  </div>
 
   <div class="side-widget">
     <div class="side-widget-header">🔗 Quick Links</div>
     <div class="side-widget-body">
+      <a class="quick-link" href="https://fouad212212.github.io/Miracul212/" target="_blank">🌐 Official Website</a>
       <a class="quick-link" href="https://modrinth.com/modpack/miracul212" target="_blank">🟢 Miracul212 on Modrinth</a>
       <a class="quick-link" href="https://discord.gg/XKs7btPSdf" target="_blank" style="color:var(--discord)">💬 Discord Community</a>
       <a class="quick-link" href="https://modrinth.com/app" target="_blank">📱 Modrinth App</a>
@@ -769,11 +776,11 @@ Miracul212_1_0_8.mrpack
   <div class="side-widget">
     <div class="side-widget-header">🌟 Highlights</div>
     <div class="side-widget-body">
-      <div class="side-stat"><span class="label">⚙️ Create</span><span class="value" style="font-size:.7rem;color:var(--accent)">new! v6.0.8</span></div>
+      <div class="side-stat"><span class="label">💍 Illias Ring Addon</span><span class="value" style="font-size:.7rem;color:var(--emerald)">new!</span></div>
+      <div class="side-stat"><span class="label">🧩 Yet Another Config Lib</span><span class="value" style="font-size:.7rem;color:var(--emerald)">new!</span></div>
       <div class="side-stat"><span class="label">💎 Nastia Stones</span><span class="value" style="font-size:.7rem;color:var(--amethyst)">exclusive</span></div>
+      <div class="side-stat"><span class="label">⚙️ Create</span><span class="value" style="font-size:.7rem;color:var(--accent)">automation</span></div>
       <div class="side-stat"><span class="label">🦁 Alex's Mobs</span><span class="value" style="font-size:.7rem;color:var(--accent)">creatures</span></div>
-      <div class="side-stat"><span class="label">🌿 Farmer's Delight</span><span class="value" style="font-size:.7rem;color:var(--emerald)">content</span></div>
-      <div class="side-stat"><span class="label">🚗 Immersive Vehicles</span><span class="value" style="font-size:.7rem;color:var(--accent5)">vehicles</span></div>
       <div class="side-stat"><span class="label">⚡ Embeddium</span><span class="value" style="font-size:.7rem;color:var(--accent)">performance</span></div>
     </div>
   </div>
@@ -782,11 +789,11 @@ Miracul212_1_0_8.mrpack
 </div>
 
 <div class="wiki-footer">
-  <span>© 2026 <strong style="color:var(--text2)">fouad212</strong> · Miracul212 Wiki · v1.0.8 · Forge 1.20.1 · <em style="color:var(--text3)">nastias_miracle_stones_mod © nastia</em></span>
+  <span>© 2026 <strong style="color:var(--text2)">fouad212</strong> · Miracul212 Wiki · v1.1.0 · Forge 1.20.1 · <em style="color:var(--text3)">nastias_miracle_stones_mod © nastia</em></span>
   <div class="footer-links">
+    <a href="https://fouad212212.github.io/Miracul212/" target="_blank">Website</a>
     <a href="https://modrinth.com/modpack/miracul212" target="_blank">Modrinth</a>
     <a href="https://discord.gg/XKs7btPSdf" target="_blank">Discord</a>
-    <a href="#server-section">Server</a>
     <a href="#mods-section">Mods</a>
     <a href="#install-section">Installation</a>
     <a href="#credits">Credits</a>
@@ -804,142 +811,144 @@ function copyIP() {
 }
 
 // ═══════════════════════════════════════════════
-// MOD DATA — v1.0.8 (100 mods, PIDs from modrinth.index.json)
+// MOD DATA — v1.1.0 (102 mods, PIDs from modrinth.index.json)
 // ═══════════════════════════════════════════════
 const ALL_MODS = [
   // PERFORMANCE (15)
-  {name:"Embeddium",                     file:"embeddium-0.3.31+mc1.20.1.jar",                           type:"performance",icon:"🚀",pid:"sk9rgfiA"},
-  {name:"Oculus",                        file:"oculus-mc1.20.1-1.8.0.jar",                               type:"performance",icon:"👁️",pid:"GchcoXML"},
-  {name:"FerriteCore",                   file:"ferritecore-6.0.1-forge.jar",                             type:"performance",icon:"🧠",pid:"uXXizFIs"},
-  {name:"ModernFix",                     file:"modernfix-forge-5.27.40+mc1.20.1.jar",                    type:"performance",icon:"⚡",pid:"nmDcB62a"},
-  {name:"Entity Culling",                file:"entityculling-forge-1.10.2-mc1.20.1.jar",                 type:"performance",icon:"⚡",pid:"NNAgCjsB"},
-  {name:"Noisium",                       file:"noisium-forge-2.3.0+mc1.20-1.20.1.jar",                   type:"performance",icon:"🌍",pid:"KuNKN7d2"},
-  {name:"Starlight",                     file:"starlight-1.1.2+forge.1cda73c.jar",                       type:"performance",icon:"⭐",pid:"iRfIGC1s"},
-  {name:"BadOptimizations",              file:"BadOptimizations-2.4.1-1.20.1.jar",                       type:"performance",icon:"⚡",pid:"g96Z4WVZ"},
-  {name:"Dynamic FPS",                   file:"dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",           type:"performance",icon:"🖥️",pid:"LQ3K71Q1"},
-  {name:"ImmediatelyFast",               file:"ImmediatelyFast-Forge-1.5.4+1.20.4.jar",                  type:"performance",icon:"⚡",pid:"5ZwdcRci"},
-  {name:"Memory Leak Fix",               file:"memoryleakfix-forge-1.17+-1.1.5.jar",                     type:"performance",icon:"🧠",pid:"NRjRiSSD"},
-  {name:"RRLS",                          file:"rrls-4.0.6.1+mc1.20.1-forge.jar",                         type:"performance",icon:"⚡",pid:"ZP7xHXtw"},
-  {name:"Fastload Reforged",             file:"Fastload-Reforged-mc1.20.1-3.4.0.jar",                    type:"performance",icon:"🚀",pid:"kCpssoSb"},
-  {name:"Rubidium Extra",                file:"rubidium-extra-0.5.4.4+mc1.20.1-build.131.jar",           type:"performance",icon:"⚡",pid:"oY2B1pjg"},
-  {name:"GPU Tape",                      file:"GPUTape-1.18x-1.21x-1.0.5.1.jar",                         type:"performance",icon:"🖥️",pid:"5CTSrY8X"},
+  {name:"BadOptimizations",file:"BadOptimizations-2.4.1-1.20.1.jar",type:"performance",icon:"⚡",pid:"g96Z4WVZ"},
+  {name:"Dynamic FPS",file:"dynamic-fps-3.11.4+minecraft-1.20.0-forge.jar",type:"performance",icon:"🖥️",pid:"LQ3K71Q1"},
+  {name:"Embeddium",file:"embeddium-0.3.31+mc1.20.1.jar",type:"performance",icon:"🚀",pid:"sk9rgfiA"},
+  {name:"Entity Culling",file:"entityculling-forge-1.10.5-mc1.20.1.jar",type:"performance",icon:"⚡",pid:"NNAgCjsB"},
+  {name:"Fastload Reforged",file:"Fastload-Reforged-mc1.20.1-3.4.0.jar",type:"performance",icon:"🚀",pid:"kCpssoSb"},
+  {name:"FerriteCore",file:"ferritecore-6.0.1-forge.jar",type:"performance",icon:"🧠",pid:"uXXizFIs"},
+  {name:"GPU Tape",file:"GPUTape-1.18x-1.21x-1.0.5.1.jar",type:"performance",icon:"🖥️",pid:"5CTSrY8X"},
+  {name:"ImmediatelyFast",file:"ImmediatelyFast-Forge-1.5.5+1.20.4.jar",type:"performance",icon:"⚡",pid:"5ZwdcRci"},
+  {name:"Memory Leak Fix",file:"memoryleakfix-forge-1.17+-1.1.5.jar",type:"performance",icon:"🧠",pid:"NRjRiSSD"},
+  {name:"ModernFix",file:"modernfix-forge-5.27.63+mc1.20.1.jar",type:"performance",icon:"⚡",pid:"nmDcB62a"},
+  {name:"Noisium",file:"noisium-forge-2.3.0+mc1.20-1.20.1.jar",type:"performance",icon:"🌍",pid:"KuNKN7d2"},
+  {name:"Oculus",file:"oculus-mc1.20.1-1.8.0.jar",type:"performance",icon:"👁️",pid:"GchcoXML"},
+  {name:"RRLS",file:"rrls-4.0.6.1+mc1.20.1-forge.jar",type:"performance",icon:"⚡",pid:"ZP7xHXtw"},
+  {name:"Rubidium Extra",file:"rubidium-extra-0.5.4.4+mc1.20.1-build.131.jar",type:"performance",icon:"⚡",pid:"oY2B1pjg"},
+  {name:"Starlight",file:"starlight-1.1.2+forge.1cda73c.jar",type:"performance",icon:"⭐",pid:"iRfIGC1s"},
   // VISUAL (11)
-  {name:"Entity Texture Features",       file:"entity_texture_features_1.20.1-forge-7.1.jar",            type:"visual",     icon:"🎨",pid:"BVzZfTc1"},
-  {name:"Entity Model Features",         file:"entity_model_features-3.2.4-1.20.1-forge.jar",            type:"visual",     icon:"🦊",pid:"4I1XuqiY"},
-  {name:"Skin Layers 3D",                file:"skinlayers3d-forge-1.11.1-mc1.20.1.jar",                  type:"visual",     icon:"👤",pid:"zV5r3pPn"},
-  {name:"Prism",                         file:"Prism-1.20.1-forge-1.0.5.jar",                            type:"visual",     icon:"🌈",pid:"1OE8wbN0"},
-  {name:"Chat Animation",                file:"chatanimation-forge-1.20.1-1.1.3.jar",                    type:"visual",     icon:"💬",pid:"DnNYdJsx"},
-  {name:"Sound Physics Remastered",      file:"sound-physics-remastered-forge-1.20.1-1.5.1.jar",         type:"visual",     icon:"🔊",pid:"qyVF9oeo"},
-  {name:"Chat Heads",                    file:"chat_heads-0.15.1-forge-1.20.jar",                        type:"visual",     icon:"👤",pid:"Wb5oqrBJ"},
-  {name:"Photon",                        file:"photon-forge-1.20.1-1.1.17.jar",                          type:"visual",     icon:"💡",pid:"gzevkJbM"},
-  {name:"CIT Resewn",                    file:"citresewn-1.2.2+1.20.1.jar",                              type:"visual",     icon:"🎨",pid:"otVJckYQ"},
-  {name:"Continuity",                    file:"continuity-3.0.0+1.20.1.forge.jar",                       type:"visual",     icon:"🪟",pid:"1IjD5062"},
-  {name:"Polytone",                      file:"polytone-1.20-3.5.26.jar",                                type:"visual",     icon:"🎨",pid:"3qAYkBMB"},
-  // CONTENT (24)
-  {name:"Nastia's Miracle Stones",       file:"nastias_miracle_stones_mod-1.7.2_Bugfix.jar",              type:"content",    icon:"💎",pid:"wiKMnwWH"},
-  {name:"Unified Stones (Nastia Ext.)",  file:"unified_stones_nastias_extension-1.3.5.0-forge-1.20.1.jar",type:"content",   icon:"🪨",pid:"4LBBy7c4"},
-  {name:"Alex's Mobs",                   file:"alexsmobs-1.22.9.jar",                                    type:"content",    icon:"🦁",pid:"2cMuAZAp"},
-  {name:"Naturalist",                    file:"naturalist-5.0pre3+forge-1.20.1.jar",                     type:"content",    icon:"🦊",pid:"F8BQNPWX"},
-  {name:"Farmer's Delight",              file:"FarmersDelight-1.20.1-1.3.2.jar",                         type:"content",    icon:"🌾",pid:"R2OftAxM"},
-  {name:"Supplementaries",               file:"supplementaries-1.20-3.1.43-forge.jar",                   type:"content",    icon:"🏮",pid:"fFEIiSDQ"},
-  {name:"Another Furniture",             file:"another_furniture-forge-1.20.1-3.0.4.jar",                type:"content",    icon:"🛋️",pid:"ulloLmqG"},
-  {name:"Handcrafted",                   file:"handcrafted-forge-1.20.1-3.0.6.jar",                      type:"content",    icon:"🪑",pid:"pJmCFF0p"},
-  {name:"Traveler's Backpack",           file:"travelersbackpack-forge-1.20.1-9.1.55.jar",               type:"content",    icon:"🎒",pid:"rlloIFEV"},
-  {name:"Exposure",                      file:"exposure-forge-1.20.1-1.9.20.jar",                        type:"content",    icon:"📸",pid:"hB899VmG"},
-  {name:"Exposure Polaroid",             file:"exposure_polaroid-forge-1.20.1-1.1.4.jar",                type:"content",    icon:"📷",pid:"WEWiqYkW"},
-  {name:"Immersive Vehicles",            file:"Immersive Vehicles-1.20.1-24.0.0.jar",                    type:"content",    icon:"🚗",pid:"BCzBuhJ5"},
-  {name:"New Cars",                      file:"New_Cars4.4(1.16-1.20)cut.jar",                           type:"content",    icon:"🏎️",pid:"TYrKkSaT"},
-  {name:"Modern Japan City",             file:"ModernJapanCity-Forge-1.20.1-1.0.8.jar",                  type:"content",    icon:"🏯",pid:"htWs7oGd"},
-  {name:"Deco Storage",                  file:"deco_storage-4.0405-forge-1.20.1.jar",                    type:"content",    icon:"📦",pid:"DLpaTTzJ"},
-  {name:"GWoodworks",                    file:"gwoodworks-1.1.1a-1.20.1-forge.jar",                      type:"content",    icon:"🪵",pid:"NTFyR6MX"},
-  {name:"Dinnerware",                    file:"dinnerware-1.0.0-1.20.1-forge.jar",                       type:"content",    icon:"🍽️",pid:"TcN3MJnS"},
-  {name:"Spudacious Shops",              file:"spudaciousshops-1.10.2-forge-1.20.1.jar",                 type:"content",    icon:"🏪",pid:"sHFbDnFN"},
-  {name:"FazRoleplay Clothes",           file:"FazRoleplayClothes-1.20.1-2.4.jar",                       type:"content",    icon:"👗",pid:"zjMFbe7B"},
-  {name:"ClothingCraft",                 file:"clothingcraft-1.0.0.jar",                                 type:"content",    icon:"🧵",pid:"9QeKihMe"},
-  {name:"Create",                        file:"create-1.20.1-6.0.8.jar",                                 type:"content",    icon:"⚙️",pid:"LNytGWDc"},
-  {name:"Cluttered",                     file:"cluttered-[Forge]-3.0.3-1.20.1.jar",                      type:"content",    icon:"📚",pid:"UnAEo77V"},
-  {name:"Moving Elevators",              file:"movingelevators-1.4.12-forge-mc1.20.1.jar",               type:"content",    icon:"🛗",pid:"9KZOe6HD"},
-  {name:"Furniture Tools Refurbished",   file:"furniture_mod_tools_refurbished-1.0.1-forge-1.20.1.jar",  type:"content",    icon:"🪑",pid:"wjNYBh7l"},
-  // UTILITY (25)
-  {name:"JEI (Just Enough Items)",       file:"jei-1.20.1-forge-15.20.0.130.jar",                       type:"utility",    icon:"📖",pid:"u6dRKJwZ"},
-  {name:"Jade",                          file:"Jade-1.20.1-Forge-11.13.2.jar",                           type:"utility",    icon:"🔍",pid:"nvQzSEkH"},
-  {name:"Xaero's Minimap",               file:"xaerominimap-forge-1.20.1-25.3.13.jar",                   type:"utility",    icon:"🗺️",pid:"1bokaNcj"},
-  {name:"Xaero's World Map",             file:"xaeroworldmap-forge-1.20.1-1.40.16.jar",                  type:"utility",    icon:"🌐",pid:"NcUtCpym"},
-  {name:"Simple Voice Chat",             file:"voicechat-forge-1.20.1-2.6.18.jar",                      type:"utility",    icon:"🎙️",pid:"9eGKb6K1"},
-  {name:"e4mc",                          file:"e4mc-forge-6.1.0.jar",                                    type:"utility",    icon:"🌐",pid:"qANg5Jrr"},
-  {name:"AppleSkin",                     file:"appleskin-forge-mc1.20.1-2.5.1.jar",                      type:"utility",    icon:"🍎",pid:"EsAfCjCV"},
-  {name:"Vein Miner",                    file:"veinminer-1.1.0.jar",                                     type:"utility",    icon:"⛏️",pid:"OhduvhIc"},
-  {name:"Mouse Tweaks",                  file:"MouseTweaks-forge-mc1.20.1-2.25.1.jar",                   type:"utility",    icon:"🖱️",pid:"aC3cM3Vq"},
-  {name:"Shulker Box Tooltip",           file:"shulkerboxtooltip-forge-4.0.4+1.20.1.jar",                type:"utility",    icon:"📦",pid:"2M01OLQq"},
-  {name:"Carry On",                      file:"carryon-forge-1.20.1-2.1.2.7.jar",                        type:"utility",    icon:"📦",pid:"joEfVgkn"},
-  {name:"WI Zoom",                       file:"WI-Zoom-1.5-MC1.20.1-Forge.jar",                          type:"utility",    icon:"🔍",pid:"o7DitHWP"},
-  {name:"Do a Barrel Roll",              file:"do_a_barrel_roll-forge-3.5.6+1.20.1.jar",                 type:"utility",    icon:"🛩️",pid:"6FtRfnLg"},
-  {name:"Freecam",                       file:"freecam-forge-1.2.1+1.20.jar",                            type:"utility",    icon:"📷",pid:"XeEZ3fK2"},
-  {name:"Spark",                         file:"spark-1.10.53-forge.jar",                                 type:"utility",    icon:"🔥",pid:"l6YH9Als"},
-  {name:"CraftPresence",                 file:"CraftPresence-2.7.1+1.20.1-forge.jar",                    type:"utility",    icon:"🎮",pid:"DFqQfIBR"},
-  {name:"Clumps",                        file:"Clumps-forge-1.20.1-12.0.0.4.jar",                        type:"utility",    icon:"🧲",pid:"Wnxd13zP"},
-  {name:"Sit",                           file:"sit-1.20.1-1.3.5.jar",                                    type:"utility",    icon:"🪑",pid:"VKXzIykF"},
-  {name:"Showcase Item",                 file:"showcaseitem-1.20.1-1.2.jar",                             type:"utility",    icon:"🖼️",pid:"P5Jjjezm"},
-  {name:"Watut",                         file:"watut-forge-1.20.1-1.2.3.jar",                            type:"utility",    icon:"🌊",pid:"AtB5mHky"},
-  {name:"Skin Restorer",                 file:"skinrestorer-2.7.0+1.20-forge.jar",                       type:"utility",    icon:"🎭",pid:"ghrZDhGW"},
-  {name:"Self Expression",               file:"selfexpression-2.22a-forge-1.20.1.jar",                   type:"utility",    icon:"🎭",pid:"yv3OK08E"},
-  {name:"Better Third Person",           file:"BetterThirdPerson-Forge-1.20-1.9.0.jar",                  type:"utility",    icon:"📹",pid:"G1s2WpNo"},
-  {name:"Melody",                        file:"melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",                type:"utility",    icon:"🎵",pid:"CVT4pFB2"},
-  {name:"Kleider's Custom Renderer",     file:"kleiders_custom_renderer-7.4.1-forge-1.20.1.jar",         type:"utility",    icon:"👗",pid:"oaG6aa1j"},
-  {name:"BetterF3",                      file:"BetterF3-7.0.2-Forge-1.20.1.jar",                        type:"utility",    icon:"🔧",pid:"8shC1gFX"},
-  {name:"Essential",                     file:"Essential_1-3-10-9_forge_1-20-1.jar",                     type:"utility",    icon:"💫",pid:"k2ZPuTBm"},
-  {name:"Eye Mod",                       file:"eyemod-3.0.0.jar",                                        type:"utility",    icon:"👁️",pid:"ogyNE02t"},
-  {name:"Illias Addon",                  file:"illiasaddon-1.0-forge-1.20.1.jar",                        type:"utility",    icon:"✨",pid:"9Z2wBBTT"},
-  // LIBRARIES (25)
-  {name:"UniLib",                        file:"UniLib-1.2.1+1.20.1-forge.jar",                           type:"library",    icon:"📦",pid:"nT86WUER"},
-  {name:"Architectury",                  file:"architectury-9.2.14-forge.jar",                           type:"library",    icon:"📦",pid:"lhGA9TYQ"},
-  {name:"GeckoLib",                      file:"geckolib-forge-1.20.1-4.8.3.jar",                         type:"library",    icon:"🦎",pid:"8BmcQJ2H"},
-  {name:"Resourceful Lib",               file:"resourcefullib-forge-1.20.1-2.1.29.jar",                  type:"library",    icon:"📦",pid:"G1hIVOrD"},
-  {name:"Cloth Config",                  file:"cloth-config-11.1.136-forge.jar",                         type:"library",    icon:"📦",pid:"9s6osm5g"},
-  {name:"Kotlin for Forge",              file:"kotlinforforge-4.12.0-all.jar",                           type:"library",    icon:"📦",pid:"ordsPcFz"},
-  {name:"Citadel",                       file:"citadel-2.6.3-1.20.1.jar",                               type:"library",    icon:"📦",pid:"jJfV67b1"},
-  {name:"Konkrete",                      file:"konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",                 type:"library",    icon:"📦",pid:"J81TRJWm"},
-  {name:"MRU",                           file:"MRU-1.0.4+1.20.1+forge.jar",                             type:"library",    icon:"📦",pid:"SNVQ2c0g"},
-  {name:"CoroUtil",                      file:"coroutil-forge-1.20.1-1.3.7.jar",                         type:"library",    icon:"📦",pid:"rLLJ1OZM"},
-  {name:"Iceberg",                       file:"Iceberg-1.20.1-forge-1.1.25.jar",                        type:"library",    icon:"📦",pid:"5faXoLqX"},
-  {name:"Moonlight Lib",                 file:"moonlight-1.20-2.16.32-forge.jar",                        type:"library",    icon:"🌙",pid:"twkfQtEc"},
-  {name:"Curios API",                    file:"curios-forge-5.14.1+1.20.1.jar",                          type:"library",    icon:"💍",pid:"vvuO3ImH"},
-  {name:"Fabric API (Connector)",        file:"fabric-api-0.92.6+1.11.14+1.20.1.jar",                   type:"library",    icon:"📦",pid:"Aqlf1Shp"},
-  {name:"Connector",                     file:"Connector-1.0.0-beta.48+1.20.1.jar",                     type:"library",    icon:"📦",pid:"u58R1TMW"},
-  {name:"CreativeCore",                  file:"CreativeCore_FORGE_v2.12.38_mc1.20.1.jar",                type:"library",    icon:"📦",pid:"OsZiaDHq"},
-  {name:"Decorative Core",               file:"decorative_core-2.0602-forge-1.20.1.jar",                 type:"library",    icon:"📦",pid:"g0YZhKZF"},
-  {name:"MacuLib",                       file:"macu_lib-forge-1.0.6-1.20.1.jar",                         type:"library",    icon:"📦",pid:"XnLNz8og"},
-  {name:"Sounds",                        file:"Sounds-2.2.1+1.20.1+forge.jar",                          type:"library",    icon:"🔊",pid:"ZouiUX7t"},
-  {name:"SuperMartijn642 Config Lib",    file:"supermartijn642configlib-1.1.8-forge-mc1.20.jar",         type:"library",    icon:"📦",pid:"LN9BxssP"},
-  {name:"SuperMartijn642 Core Lib",      file:"supermartijn642corelib-1.1.21-forge-mc1.20.1.jar",        type:"library",    icon:"📦",pid:"rOUBggPv"},
+  {name:"Chat Animation",file:"chatanimation-forge-1.3.0+mc1.20.1.jar",type:"visual",icon:"💬",pid:"DnNYdJsx"},
+  {name:"Chat Heads",file:"chat_heads-0.15.2-forge-1.20.jar",type:"visual",icon:"👤",pid:"Wb5oqrBJ"},
+  {name:"CIT Resewn",file:"citresewn-1.2.2+1.20.1.jar",type:"visual",icon:"🎨",pid:"otVJckYQ"},
+  {name:"Continuity",file:"continuity-3.0.0+1.20.1.forge.jar",type:"visual",icon:"🪟",pid:"1IjD5062"},
+  {name:"Entity Model Features",file:"entity_model_features-3.2.4-1.20.1-forge.jar",type:"visual",icon:"🦊",pid:"4I1XuqiY"},
+  {name:"Entity Texture Features",file:"entity_texture_features_1.20.1-forge-7.1.jar",type:"visual",icon:"🎨",pid:"BVzZfTc1"},
+  {name:"Photon",file:"photon-forge-1.20.1-1.1.17.jar",type:"visual",icon:"💡",pid:"gzevkJbM"},
+  {name:"Polytone",file:"polytone-1.20-3.5.26.jar",type:"visual",icon:"🎨",pid:"3qAYkBMB"},
+  {name:"Prism",file:"Prism-1.20.1-forge-1.0.5.jar",type:"visual",icon:"🌈",pid:"1OE8wbN0"},
+  {name:"Skin Layers 3D",file:"skinlayers3d-forge-1.11.2-mc1.20.1.jar",type:"visual",icon:"👤",pid:"zV5r3pPn"},
+  {name:"Sound Physics Remastered",file:"sound-physics-remastered-forge-1.20.1-1.5.1.jar",type:"visual",icon:"🔊",pid:"qyVF9oeo"},
+  // CONTENT (25)
+  {name:"Alex's Mobs",file:"alexsmobs-1.22.9.jar",type:"content",icon:"🦁",pid:"2cMuAZAp"},
+  {name:"Another Furniture",file:"another_furniture-forge-1.20.1-3.0.4.jar",type:"content",icon:"🛋️",pid:"ulloLmqG"},
+  {name:"ClothingCraft",file:"clothingcraft-1.0.0.jar",type:"content",icon:"🧵",pid:"9QeKihMe"},
+  {name:"Cluttered",file:"cluttered-[Forge]-3.0.3-1.20.1.jar",type:"content",icon:"📚",pid:"UnAEo77V"},
+  {name:"Create",file:"create-1.20.1-6.0.8.jar",type:"content",icon:"⚙️",pid:"LNytGWDc"},
+  {name:"Deco Storage",file:"deco_storage-4.0606-forge-1.20.1.jar",type:"content",icon:"📦",pid:"DLpaTTzJ"},
+  {name:"Dinnerware",file:"dinnerware-1.0.0-1.20.1-forge.jar",type:"content",icon:"🍽️",pid:"TcN3MJnS"},
+  {name:"Exposure",file:"exposure-forge-1.20.1-1.9.21.jar",type:"content",icon:"📸",pid:"hB899VmG"},
+  {name:"Exposure Polaroid",file:"exposure_polaroid-forge-1.20.1-1.1.4.jar",type:"content",icon:"📷",pid:"WEWiqYkW"},
+  {name:"Farmer's Delight",file:"FarmersDelight-1.20.1-1.3.2.jar",type:"content",icon:"🌾",pid:"R2OftAxM"},
+  {name:"FazRoleplay Clothes",file:"FazRoleplayClothes-1.20.1-2.4.jar",type:"content",icon:"👗",pid:"zjMFbe7B"},
+  {name:"Furniture Tools Refurbished",file:"furniture_mod_tools_refurbished-1.0.1-forge-1.20.1.jar",type:"content",icon:"🪑",pid:"wjNYBh7l"},
+  {name:"GWoodworks",file:"gwoodworks-1.1.1a-1.20.1-forge.jar",type:"content",icon:"🪵",pid:"NTFyR6MX"},
+  {name:"Handcrafted",file:"handcrafted-forge-1.20.1-3.0.6.jar",type:"content",icon:"🪑",pid:"pJmCFF0p"},
+  {name:"Illias Ring Addon",file:"illiasringaddon-1.3.0-forge-1.20.1.jar",type:"content",icon:"💍",pid:"e4eLj6lX"},
+  {name:"Immersive Vehicles",file:"Immersive Vehicles-1.20.1-24.0.0.jar",type:"content",icon:"🚗",pid:"BCzBuhJ5"},
+  {name:"Modern Japan City",file:"ModernJapanCity-Forge-1.20.1-1.0.8.jar",type:"content",icon:"🏯",pid:"htWs7oGd"},
+  {name:"Moving Elevators",file:"movingelevators-1.4.12-forge-mc1.20.1.jar",type:"content",icon:"🛗",pid:"9KZOe6HD"},
+  {name:"Nastia's Miracle Stones",file:"nastias_miracle_stones_mod-1.7.5-Snake_Public_Beta.jar",type:"content",icon:"💎",pid:"wiKMnwWH"},
+  {name:"Naturalist",file:"naturalist-5.0pre3+forge-1.20.1.jar",type:"content",icon:"🦊",pid:"F8BQNPWX"},
+  {name:"New Cars",file:"New_Cars4.4(1.16-1.20)cut.jar",type:"content",icon:"🏎️",pid:"TYrKkSaT"},
+  {name:"Spudacious Shops",file:"spudaciousshops-1.10.2-forge-1.20.1.jar",type:"content",icon:"🏪",pid:"sHFbDnFN"},
+  {name:"Supplementaries",file:"supplementaries-1.20-3.1.43-forge.jar",type:"content",icon:"🏮",pid:"fFEIiSDQ"},
+  {name:"Traveler's Backpack",file:"travelersbackpack-forge-1.20.1-9.1.55.jar",type:"content",icon:"🎒",pid:"rlloIFEV"},
+  {name:"Unified Stones (Nastia Ext.)",file:"unified_stones_nastias_extension-1.3.5.0-forge-1.20.1 (1).jar",type:"content",icon:"🪨",pid:"4LBBy7c4"},
+  // UTILITY (29)
+  {name:"AppleSkin",file:"appleskin-forge-mc1.20.1-2.5.1.jar",type:"utility",icon:"🍎",pid:"EsAfCjCV"},
+  {name:"Better Third Person",file:"BetterThirdPerson-Forge-1.20-1.9.0.jar",type:"utility",icon:"📹",pid:"G1s2WpNo"},
+  {name:"BetterF3",file:"BetterF3-7.0.2-Forge-1.20.1.jar",type:"utility",icon:"🔧",pid:"8shC1gFX"},
+  {name:"Carry On",file:"carryon-forge-1.20.1-2.1.2.7.jar",type:"utility",icon:"📦",pid:"joEfVgkn"},
+  {name:"Clumps",file:"Clumps-forge-1.20.1-12.0.0.4.jar",type:"utility",icon:"🧲",pid:"Wnxd13zP"},
+  {name:"CraftPresence",file:"CraftPresence-2.7.1+1.20.1-forge.jar",type:"utility",icon:"🎮",pid:"DFqQfIBR"},
+  {name:"Do a Barrel Roll",file:"do_a_barrel_roll-forge-3.5.6+1.20.1.jar",type:"utility",icon:"🛩️",pid:"6FtRfnLg"},
+  {name:"e4mc",file:"e4mc-forge-6.2.0.jar",type:"utility",icon:"🌐",pid:"qANg5Jrr"},
+  {name:"Essential",file:"Essential_1-4-0-3_forge_1-20-1.jar",type:"utility",icon:"💫",pid:"k2ZPuTBm"},
+  {name:"Eye Mod",file:"eyemod-3.0.0.jar",type:"utility",icon:"👁️",pid:"ogyNE02t"},
+  {name:"Freecam",file:"freecam-forge-1.2.1+1.20.jar",type:"utility",icon:"📷",pid:"XeEZ3fK2"},
+  {name:"Illias Addon",file:"illiasaddon-1.5-forge-1.20.1.jar",type:"utility",icon:"✨",pid:"9Z2wBBTT"},
+  {name:"Jade",file:"Jade-1.20.1-Forge-11.13.2.jar",type:"utility",icon:"🔍",pid:"nvQzSEkH"},
+  {name:"JEI (Just Enough Items)",file:"jei-1.20.1-forge-15.20.0.134.jar",type:"utility",icon:"📖",pid:"u6dRKJwZ"},
+  {name:"Kleider's Custom Renderer",file:"kleiders_custom_renderer-7.4.1-forge-1.20.1.jar",type:"utility",icon:"👗",pid:"oaG6aa1j"},
+  {name:"Melody",file:"melody_forge_1.0.3_MC_1.20.1-1.20.4.jar",type:"utility",icon:"🎵",pid:"CVT4pFB2"},
+  {name:"Mouse Tweaks",file:"MouseTweaks-forge-mc1.20.1-2.25.1.jar",type:"utility",icon:"🖱️",pid:"aC3cM3Vq"},
+  {name:"Self Expression",file:"selfexpression-2.22a-forge-1.20.1.jar",type:"utility",icon:"🎭",pid:"yv3OK08E"},
+  {name:"Showcase Item",file:"showcaseitem-1.20.1-1.2.jar",type:"utility",icon:"🖼️",pid:"P5Jjjezm"},
+  {name:"Shulker Box Tooltip",file:"shulkerboxtooltip-forge-4.0.4+1.20.1.jar",type:"utility",icon:"📦",pid:"2M01OLQq"},
+  {name:"Simple Voice Chat",file:"voicechat-forge-1.20.1-2.6.20.jar",type:"utility",icon:"🎙️",pid:"9eGKb6K1"},
+  {name:"Sit",file:"sit-1.20.1-1.3.5.jar",type:"utility",icon:"🪑",pid:"VKXzIykF"},
+  {name:"Skin Restorer",file:"skinrestorer-2.9.0+1.20-forge.jar",type:"utility",icon:"🎭",pid:"ghrZDhGW"},
+  {name:"Spark",file:"spark-1.10.53-forge.jar",type:"utility",icon:"🔥",pid:"l6YH9Als"},
+  {name:"Vein Miner",file:"veinminer-1.1.0.jar",type:"utility",icon:"⛏️",pid:"OhduvhIc"},
+  {name:"Watut",file:"watut-forge-1.20.1-1.2.3.jar",type:"utility",icon:"🌊",pid:"AtB5mHky"},
+  {name:"WI Zoom",file:"WI-Zoom-1.5-MC1.20.1-Forge.jar",type:"utility",icon:"🔍",pid:"o7DitHWP"},
+  {name:"Xaero's Minimap",file:"xaerominimap-forge-1.20.1-26.3.0.jar",type:"utility",icon:"🗺️",pid:"1bokaNcj"},
+  {name:"Xaero's World Map",file:"xaeroworldmap-forge-1.20.1-1.43.0.jar",type:"utility",icon:"🌐",pid:"NcUtCpym"},
+  // LIBRARIES (22)
+  {name:"Architectury",file:"architectury-9.2.14-forge.jar",type:"library",icon:"📦",pid:"lhGA9TYQ"},
+  {name:"Citadel",file:"citadel-2.6.3-1.20.1.jar",type:"library",icon:"📦",pid:"jJfV67b1"},
+  {name:"Cloth Config",file:"cloth-config-11.1.136-forge.jar",type:"library",icon:"📦",pid:"9s6osm5g"},
+  {name:"Connector",file:"Connector-1.0.0-beta.49+1.20.1.jar",type:"library",icon:"📦",pid:"u58R1TMW"},
+  {name:"CoroUtil",file:"coroutil-forge-1.20.1-1.3.7.jar",type:"library",icon:"📦",pid:"rLLJ1OZM"},
+  {name:"CreativeCore",file:"CreativeCore_FORGE_v2.12.39_mc1.20.1.jar",type:"library",icon:"📦",pid:"OsZiaDHq"},
+  {name:"Curios API",file:"curios-forge-5.14.1+1.20.1.jar",type:"library",icon:"💍",pid:"vvuO3ImH"},
+  {name:"Decorative Core",file:"decorative_core-2.0705-forge-1.20.1.jar",type:"library",icon:"📦",pid:"g0YZhKZF"},
+  {name:"Fabric API (Connector)",file:"fabric-api-0.92.6+1.11.14+1.20.1.jar",type:"library",icon:"📦",pid:"Aqlf1Shp"},
+  {name:"GeckoLib",file:"geckolib-forge-1.20.1-4.8.4.jar",type:"library",icon:"🦎",pid:"8BmcQJ2H"},
+  {name:"Iceberg",file:"Iceberg-1.20.1-forge-1.1.25.jar",type:"library",icon:"📦",pid:"5faXoLqX"},
+  {name:"Konkrete",file:"konkrete_forge_1.8.0_MC_1.20-1.20.1.jar",type:"library",icon:"📦",pid:"J81TRJWm"},
+  {name:"Kotlin for Forge",file:"kotlinforforge-4.12.0-all.jar",type:"library",icon:"📦",pid:"ordsPcFz"},
+  {name:"MacuLib",file:"macu_lib-forge-1.0.6-1.20.1.jar",type:"library",icon:"📦",pid:"XnLNz8og"},
+  {name:"Moonlight Lib",file:"moonlight-1.20-2.16.34-forge.jar",type:"library",icon:"🌙",pid:"twkfQtEc"},
+  {name:"MRU",file:"MRU-1.0.4+1.20.1+forge.jar",type:"library",icon:"📦",pid:"SNVQ2c0g"},
+  {name:"Resourceful Lib",file:"resourcefullib-forge-1.20.1-2.1.29.jar",type:"library",icon:"📦",pid:"G1hIVOrD"},
+  {name:"Sounds",file:"Sounds-2.2.1+1.20.1+forge.jar",type:"library",icon:"🔊",pid:"ZouiUX7t"},
+  {name:"SuperMartijn642 Config Lib",file:"supermartijn642configlib-1.1.8-forge-mc1.20.jar",type:"library",icon:"📦",pid:"LN9BxssP"},
+  {name:"SuperMartijn642 Core Lib",file:"supermartijn642corelib-1.1.21-forge-mc1.20.1.jar",type:"library",icon:"📦",pid:"rOUBggPv"},
+  {name:"UniLib",file:"UniLib-1.2.1+1.20.1-forge.jar",type:"library",icon:"📦",pid:"nT86WUER"},
+  {name:"Yet Another Config Lib",file:"yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar",type:"library",icon:"📦",pid:"1eAoo2KR"},
 ];
 
 const SHADERS = [
-  {name:"BSL Shaders",               file:"BSL_v10.1.3.zip",                        emoji:"🌅",c1:"#0d1a30",c2:"#1a2a0d",level:"High-End"},
-  {name:"Complementary Reimagined",  file:"ComplementaryReimagined_r5.8.1.zip",     emoji:"🌄",c1:"#1a0d30",c2:"#0d301a",level:"High-End"},
-  {name:"Hysteria Shaders",          file:"Hysteria-Shaders-Universal-v1.2.1.zip",  emoji:"⚡",c1:"#300d1a",c2:"#0d1a30",level:"High-End"},
-  {name:"Voyager Shader",            file:"Voyager shader 2.0.8.zip",               emoji:"🚀",c1:"#0d1030",c2:"#100d30",level:"Mid-Range"},
-  {name:"Mellow Shader",             file:"Mellow Shader v3.2.zip",                 emoji:"🌸",c1:"#1a0d20",c2:"#0d2020",level:"Mid-Range"},
-  {name:"Visual Vibrance",           file:"Visual-Vibrance-v0.3.5a.zip",            emoji:"🌈",c1:"#200d30",c2:"#0d3020",level:"Mid-Range"},
-  {name:"BVS — Best Vanilla Shader", file:"BVS - Best Vanilla Shader 1.9.2.zip",   emoji:"🌿",c1:"#0d1a10",c2:"#101a0d",level:"Lightweight"},
-  {name:"Pixel Perfect",             file:"Pixel-Perfect-1-5-2a.zip",               emoji:"🎮",c1:"#0d0d30",c2:"#300d0d",level:"Lightweight"},
-  {name:"Miniature Shader",          file:"miniature-shader-2.18.11.zip",           emoji:"🔬",c1:"#101010",c2:"#201020",level:"Lightweight"},
-  {name:"Patrix 32x",                file:"Patrix_1.20_32x_basic.zip",              emoji:"🏛️",c1:"#1a1510",c2:"#15101a",level:"Tex Pack"},
+  {name:"BSL Shaders",file:"BSL_v10.1.3.zip",emoji:"🌅",c1:"#0d1a30",c2:"#1a2a0d",level:"High-End"},
+  {name:"Complementary Reimagined",file:"ComplementaryReimagined_r5.8.1.zip",emoji:"🌄",c1:"#1a0d30",c2:"#0d301a",level:"High-End"},
+  {name:"Hysteria Shaders",file:"Hysteria-Shaders-Universal-v1.2.1.zip",emoji:"⚡",c1:"#300d1a",c2:"#0d1a30",level:"High-End"},
+  {name:"Mellow Shader",file:"Mellow Shader v3.2.zip",emoji:"🌸",c1:"#1a0d20",c2:"#0d2020",level:"Mid-Range"},
+  {name:"Visual Vibrance",file:"Visual-Vibrance-v0.3.5a.zip",emoji:"🌈",c1:"#200d30",c2:"#0d3020",level:"Mid-Range"},
+  {name:"Voyager Shader",file:"Voyager shader 2.0.8.zip",emoji:"🚀",c1:"#0d1030",c2:"#100d30",level:"Mid-Range"},
+  {name:"BVS — Best Vanilla Shader",file:"BVS - Best Vanilla Shader 1.9.2.zip",emoji:"🌿",c1:"#0d1a10",c2:"#101a0d",level:"Lightweight"},
+  {name:"Miniature Shader",file:"miniature-shader-2.18.12.zip",emoji:"🔬",c1:"#101010",c2:"#201020",level:"Lightweight"},
+  {name:"Pixel Perfect",file:"Pixel-Perfect-1-5-2a.zip",emoji:"🎮",c1:"#0d0d30",c2:"#300d0d",level:"Lightweight"},
 ];
 
 const RESOURCE_PACKS = [
-  {name:"Fresh Animations",               file:"FreshAnimations_v1.10.4.zip",                      icon:"🦊",desc:"Smooth, detailed animations for all game entities and mobs."},
-  {name:"FA+ Emissive",                   file:"FA+Emissive-v1.6.zip",                             icon:"✨",desc:"FreshAnimations extension — glowing emissive texture effects."},
-  {name:"FA+ Details",                    file:"FA+Details-v2.2.1.zip",                            icon:"🔍",desc:"FreshAnimations extension — extra fine-detail layers for entities."},
-  {name:"FA+ Objects",                    file:"FA+Objects-v2.1.1.zip",                            icon:"📦",desc:"FreshAnimations extension — animates held items and objects."},
-  {name:"FA+ All Extensions",             file:"FA+All_Extensions-v1.8.1.zip",                     icon:"🌟",desc:"All FreshAnimations extensions in one pack."},
-  {name:"Detailed Animations Reworked",   file:"DetailedAnimationsReworked - V1.15.zip",           icon:"🎭",desc:"High-detail entity animations reworked from scratch."},
-  {name:"Bare Bones",                     file:"Bare Bones 1.20.zip",                              icon:"🪵",desc:"Clean pixel-art style texture overhaul."},
-  {name:"Re-covered",                     file:"Re-covered.zip",                                   icon:"🎨",desc:"Fully redesigned texture overhaul pack."},
-  {name:"Recolourful Containers (Dark)",  file:"Recolourful Containers DARK 3.1.1 (1.19.4+).zip", icon:"🎨",desc:"Dark-mode styled containers — chests, barrels, and more."},
-  {name:"Qrafty's Capitalized Font",      file:"qrafty's-capitalized-font-3.1.zip",               icon:"🔤",desc:"Improved uppercase font for clearer in-game text."},
-  {name:"Angel's Weather",               file:"Angel's_Weather_v1.9.1.3hf.zip",                   icon:"🌦️",desc:"Enhanced weather effects — rain, snow, and atmospheric visuals."},
-  {name:"ShivaKlans' Animated Textures", file:"ShivaKlans' animated textures.zip",                icon:"✨",desc:"Animated block and item textures for a more lively world."},
+  {name:"Angel\'s Weather",file:"Angel\'s_Weather_v1.9.1.3hf.zip",icon:"🌦️",desc:"Enhanced weather effects — rain, snow, and atmospheric visuals."},
+  {name:"Bare Bones",file:"Bare Bones 1.20.zip",icon:"🪵",desc:"Clean pixel-art style texture overhaul."},
+  {name:"Detailed Animations Reworked",file:"DetailedAnimationsReworked - V1.15.zip",icon:"🎭",desc:"High-detail entity animations reworked from scratch."},
+  {name:"FA+ All Extensions",file:"FA+All_Extensions-v1.8.1.zip",icon:"🌟",desc:"All FreshAnimations extensions in one pack."},
+  {name:"FA+ Details",file:"FA+Details-v2.2.1.zip",icon:"🔍",desc:"FreshAnimations extension — extra fine-detail layers for entities."},
+  {name:"FA+ Emissive",file:"FA+Emissive-v1.6.zip",icon:"✨",desc:"FreshAnimations extension — glowing emissive texture effects."},
+  {name:"FA+ Objects",file:"FA+Objects-v2.1.2.zip",icon:"📦",desc:"FreshAnimations extension — animates held items and objects."},
+  {name:"Fresh Animations",file:"FreshAnimations_v1.10.4.zip",icon:"🦊",desc:"Smooth, detailed animations for all game entities and mobs."},
+  {name:"Patrix 32x",file:"Patrix_1.20_32x_basic.zip",icon:"🏛️",desc:"Clean 32x basic texture pack covering vanilla blocks and items."},
+  {name:"Qrafty\'s Capitalized Font",file:"qrafty\'s-capitalized-font-3.1.zip",icon:"🔤",desc:"Improved uppercase font for clearer in-game text."},
+  {name:"Re-covered",file:"Re-covered.zip",icon:"🎨",desc:"Fully redesigned texture overhaul pack."},
+  {name:"Recolourful Containers (Dark)",file:"Recolourful Containers DARK 3.1.2 (1.19.4+).zip",icon:"🎨",desc:"Dark-mode styled containers — chests, barrels, and more."},
+  {name:"ShivaKlans\' Animated Textures",file:"ShivaKlans\' animated textures.zip",icon:"✨",desc:"Animated block and item textures for a more lively world."},
 ];
 
 // ═══ TABLE STATE ═══
@@ -1034,7 +1043,7 @@ function handleGlobalSearch(q){
   document.getElementById('mods-section').scrollIntoView({behavior:'smooth'});
 }
 function setupScrollSpy(){
-  const ids=['overview','changelog','features','server-section','discord-section','mods-section','shaders-section','rp-section','install-section','requirements','credits'];
+  const ids=['overview','changelog','features','discord-section','mods-section','shaders-section','rp-section','install-section','requirements','credits'];
   const links=document.querySelectorAll('.toc-item a');
   const obs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
